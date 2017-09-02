@@ -44,11 +44,14 @@ Team members should communicate regularly via the established Messenger chat and
 
 Should you happen to miss a meeting, follow up with the group to catch up. The team members present in the meeting are also responsible for helping each other stay updated.
 
-Consequences for failing to abide by the above policies: 
+### Consequences for failing to abide by the above policies: 
 
 The group as a whole should address any individual who fails to abide by the above policies for any reason to make sure that:
+
 a) they are on the same page
+
 b) they brought the snacks
+
 c) they will diligently catch up on the work and continue contributing on time for the team.
 
 Should any heinous infractions of these very simple guidelines continue, the team will go to a TA/Kirstin.
