@@ -22,17 +22,15 @@ Welcome to our webpage!
 
 * Stephanie Lin (scl97)
 
-[Get to know us!](./about_us.md)
+Get to know us [here](./about_us.md)!
 
 You can contact the team at: ece3400.team17.2017@gmail.com
 
 ## Team Contract
-View our commitment:
-
-[Team Contract](./team_contract.md)
+View our commitment:[Team Contract](./team_contract.md)
 
 ## Labs 
-* Lab1
+* [Lab1](./labs/lab1.md)
 
 
 
