@@ -68,8 +68,12 @@ Every person on the team will be assigned a leadership role for at least two wee
 
 11/18 - 12/5 (Final competition and submission deadline): (We could all pitch in for this moment) 
 
-## We Agree
+## We Commit
 I have participated in formulating the above standards, roles, and procedures. I understand that I am obligated to abide by these terms and conditions, and that if I do not, I will suffer the consequences as stated in this contract. 
+
+*Mira A. Bhut*
+
+*Yijia Chen*
 
 *Yirong Alan Cheng*
 
@@ -77,9 +81,9 @@ I have participated in formulating the above standards, roles, and procedures. I
 
 *Stephanie Lin*
 
-*Yijia Chen*
 
-*Mira A. Bhut
+
+
 
 
 
