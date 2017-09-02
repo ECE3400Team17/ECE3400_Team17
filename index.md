@@ -30,7 +30,7 @@ You can contact the team at: ece3400.team17.2017@gmail.com
 View our commitment:[Team Contract](./team_contract.md)
 
 ## Labs 
-* [Lab1](./labs/lab1.md)
+* [Lab1](./lab1.md)
 
 
 
