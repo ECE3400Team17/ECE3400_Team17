@@ -10,7 +10,7 @@
 ![](./ourPics/alan.jpg)
 
 ## Thinesiya Krishnthasan (tk455)
-![](./ourPics/thinesiya.jpg)
+![](./ourPics/thinesiya.JPG)
 
 ## Stephanie Lin (scl97)
 ![](./ourPics/stephanie.jpg)
