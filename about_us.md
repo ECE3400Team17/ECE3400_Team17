@@ -9,5 +9,5 @@
 ## Thinesiya Krishnthasan (tk455)
 
 ## Stephanie Lin (scl97)
-![](./outPics/stephanie.jpg)
+![](./ourPics/stephanie.jpg)
 
