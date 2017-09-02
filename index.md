@@ -24,6 +24,8 @@ Welcome to our webpage!
 
 [Get to know us!](./about_us.md)
 
+You can contact the team at: ece3400.team17.2017@gmail.com
+
 ## Team Contract
 View our commitment:
 
