@@ -1,4 +1,4 @@
-[To Home Page](/master/index.md)
+[To Home Page](./index.md)
 
 # Lab 1
 
