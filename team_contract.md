@@ -4,10 +4,11 @@
 ## Team Procedures
 Members of the team should be aware of the dates and times for each meeting and notify the group when they will be late/absent. Our weekly meeting and designated workplace will be: 
 
-* Friday 11:15am - 12:05pm  at Kimball Hall B11 
+* Friday 11:15am - 12:05pm in Kimball Hall B11 
+* Friday 1:25pm - 4:25pm in Phillips 4th Floor Lab
 * Study rooms in Olin, Uris, or Rhodes if whiteboard and projector are needed.
 
-Team members will decide on an agenda to be announced at least 2 days before the following meeting. Team members will be notified first in person, and then reminded via Messenger group chat. During each meeting, the team leader will be responsible for following the agenda. We will check in with each other via the online Messenger every 2 days to ensure that everybody is on track.
+Team members will decide on an agenda to be announced atleast 2 days before the following meeting. Team members will be notified first in person, and then reminded via Messenger group chat. During each meeting, the team leader will be responsible for following the agenda. We will check in with each other via the online Messenger every 2 days to ensure that everybody is on track.
 
 We will make team decisions via group voting to make sure that everyone has an equal say. The decision/plan with majority vote would be the one that the group implements.
 
@@ -58,13 +59,13 @@ Every person on the team will be assigned a leadership role for at least two wee
 
 8/28 - 9/15 (Lab 1, start Lab 2): Stephanie Lin
 
-9/16 - 9/29 (Lab 2, Milestones 1 & 2) Mira A. Bhut
+9/16 - 9/29 (Lab 2, Milestones 1 & 2): Mira A. Bhut
 
-9/30 - 10/20 (Lab 3, start Lab 4) Thinesiya Krishnathasan
+9/30 - 10/20 (Lab 3, start Lab 4): Thinesiya Krishnathasan
 
-10/21 - 11/3 (Lab 4, Milestone 3) Yirong Alan Cheng
+10/21 - 11/3 (Lab 4, Milestone 3): Yirong Alan Cheng
 
-11/4 - 11/17 (Milestone 4) Yijia Chen    
+11/4 - 11/17 (Milestone 4): Yijia Chen    
 
 11/18 - 12/5 (Final competition and submission deadline): (We could all pitch in for this moment) 
 
