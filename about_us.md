@@ -16,6 +16,8 @@ I am a junior in ECE. I just transferred here from UIUC in Illinois. I am the me
 ## Thinesiya Krishnthasan (tk455)
 ![](./ourPics/thinesiya.JPG)
 
+I'm a senior in ECE from New York City.
+
 ## Stephanie Lin (scl97)
 ![](./ourPics/stephanie.jpg)
 
