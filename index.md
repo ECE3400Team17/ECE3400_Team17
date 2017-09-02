@@ -14,7 +14,7 @@ Stephanie Lin (scl97)
 
 
 
-[Team Contract](https://github.com/ECE3400Team17/ECE3400_Team17/blob/master/team_contract.md#team-contract)
+[Team Contract](https://docs.google.com/document/d/1Xt7pdA_RPvZ9keraK63RIFv9XpdDYXum8W-u2rcYqI0/edit?ts=59aa0cff)
 
 
 
