@@ -12,7 +12,7 @@ mab586@cornell.edu
 ### Contact:
 yc2366@cornell.edu
 ### Background:
-I am a junior in ECE,  I am from China,  I am interested in playing all kinds of instruments, taking a walk whenever I'm free, and reading whatever is interesting. I am Right now, I am making a robot with 4 brilliant buddies.
+I am a junior in ECE, from China.  I am interested in playing all kinds of instruments, taking a walk whenever I'm free, and reading whatever is interesting. I am Right now, making a robot with 4 brilliant buddies.
 
 ## Yirong Alan Cheng
 ![](./ourPics/alan.jpg) 
@@ -26,7 +26,7 @@ I am a junior in ECE. I just transferred here from UIUC in Illinois. I am the me
 ### Contact:
 tk455@cornll.edu
 ### Background:
-I'm a senior in ECE from New York City. I'm part of Cornell's Cube Satillite Team name OAAN (will be renamed VERONA soon). My hobbies include drawing and painting.
+I'm a senior in ECE from New York City. I'm part of Cornell's Cube Satillite Team named OAAN (will be renamed VERONA soon). My hobbies include drawing and painting.
 
 ## Stephanie Lin
 ![](./ourPics/stephanie.jpg)
