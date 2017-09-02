@@ -51,6 +51,35 @@ c) they will diligently catch up on the work and continue contributing on time f
 
 Should any heinous infractions of these very simple guidelines continue, the team will go to a TA/Kirstin.
 
+## Team Leadership
+
+Every person on the team will be assigned a leadership role for at least two weeks. The role of the leader will be to organize meetings and ensure that work is submitted in a timely fashion.  
+
+8/28 - 9/15 (Lab 1, start Lab 2): Stephanie Lin
+
+9/16 - 9/29 (Lab 2, Milestones 1 & 2) Mira A. Bhut
+
+9/30 - 10/20 (Lab 3, start Lab 4) Thinesiya Krishnathasan
+
+10/21 - 11/3 (Lab 4, Milestone 3) Yirong Alan Cheng
+
+11/4 - 11/17 (Milestone 4) Yijia Chen    
+
+11/18 - 12/5 (Final competition and submission deadline): (We could all pitch in for this moment) 
+
+## 
+I have participated in formulating the above standards, roles, and procedures. I understand that I am obligated to abide by these terms and conditions, and that if I do not, I will suffer the consequences as stated in this contract. 
+
+*Yirong Alan Cheng
+
+*Thinesiya Krishnathasan
+
+*Stephanie Lin
+
+*Yijia Chen
+
+*Mira A. Bhut
+
 
 
 
