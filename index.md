@@ -1,5 +1,5 @@
-# ECE3400_Team17
-
+# ECE3400 Team17
+ 
 # Team member:
 Mira A. Bhut (mab586)
 Yijia Chen (yc2366)
