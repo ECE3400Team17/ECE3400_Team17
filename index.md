@@ -8,7 +8,7 @@ Thinesiya Krishnthasan (tk455)
 Stephanie Lin (scl97)
 
 
-ECE3400_Team17/team_contract.md 
+
 
 
 
