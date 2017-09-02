@@ -1,4 +1,4 @@
-[<-- Home Page](./index.md)
+[To Home Page](./index.md)
 # Team Contract
 
 ## Team Procedures
@@ -68,16 +68,16 @@ Every person on the team will be assigned a leadership role for at least two wee
 
 11/18 - 12/5 (Final competition and submission deadline): (We could all pitch in for this moment) 
 
-## 
+## We Agree
 I have participated in formulating the above standards, roles, and procedures. I understand that I am obligated to abide by these terms and conditions, and that if I do not, I will suffer the consequences as stated in this contract. 
 
-*Yirong Alan Cheng
+*Yirong Alan Cheng*
 
-*Thinesiya Krishnathasan
+*Thinesiya Krishnathasan*
 
-*Stephanie Lin
+*Stephanie Lin*
 
-*Yijia Chen
+*Yijia Chen*
 
 *Mira A. Bhut
 
