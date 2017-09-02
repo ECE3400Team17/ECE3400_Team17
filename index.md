@@ -14,10 +14,8 @@
 
 [Get to know us!](./about_us.md)
 
-
-
-
-## [Team Contract](./team_contract.md)
+## Team Contract
+[Team Contract](./team_contract.md)
 
 ## Labs 
 * Lab1
