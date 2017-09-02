@@ -1,7 +1,7 @@
 # Get to Know Us
 
 ## Mira A. Bhut (mab586) 
-![](./ourPics/mira.jpg)
+<center> ![](./ourPics/mira.jpg) </center>
 
 ## Yijia Chen (yc2366)
 ![](./ourPics/yijia.jpg)
