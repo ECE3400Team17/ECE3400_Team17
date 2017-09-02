@@ -12,7 +12,7 @@ mab586@cornell.edu
 ### Contact:
 yc2366@cornell.edu
 ### Background:
-I'm Yijia, from China, I like anything interesting. 
+I am a junior in ECE,  I am from China,  I am interested in playing all kinds of instruments, taking a walk whenever I'm free, and reading whatever is interesting. I am Right now, I am making a robot with 4 brilliant buddies.
 
 ## Yirong Alan Cheng
 ![](./ourPics/alan.jpg) 
