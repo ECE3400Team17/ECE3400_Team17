@@ -3,7 +3,7 @@
 ## Mira A. Bhut 
   ![](./ourPics/mira.jpg)
   ### Contact: 
-    mab586@cornell.edu
+  mab586@cornell.edu
 
 
 ## Yijia Chen 
