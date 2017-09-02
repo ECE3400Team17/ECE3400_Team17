@@ -1,4 +1,3 @@
-
 # Team Contract
 
 ## Team Procedures
@@ -32,5 +31,26 @@ Members should speak up if they require help. We will try to balance the distrib
 During team meetings, every member should be allowed to talk and share ideas/concerns about the project and their progress. For task maintenance, we will use an Excel sheet to keep track of everyone’s assignments.
 
 Please reach out to the rest of the group if you have any problems or are confused. Nobody is expected to know everything. The team leader can help coordinate other members to resolve the issue.
+
+## Personal Accountability
+
+All members are expected to attend meetings punctually and participate during each session. Attendance is mandatory unless there is an unavoidable conflict or a valid excuse that is announced to the team beforehand.
+
+Each member should complete his/her task with special attention to quality and timeliness. You are responsible for fulfilling team assignments and making deadlines. If you cannot complete your work in time, be sure to let the group know well before the due date. 
+
+Team members should communicate regularly via the established Messenger chat and respond in a reasonably prompt manner. Keep track of project updates via the Google Drive folder or the Github project.
+
+Should you happen to miss a meeting, follow up with the group to catch up. The team members present in the meeting are also responsible for helping each other stay updated.
+
+Consequences for failing to abide by the above policies: 
+
+The group as a whole should address any individual who fails to abide by the above policies for any reason to make sure that:
+a) they are on the same page
+b) they brought the snacks
+c) they will diligently catch up on the work and continue contributing on time for the team.
+
+Should any heinous infractions of these very simple guidelines continue, the team will go to a TA/Kirstin.
+
+
 
 
