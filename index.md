@@ -14,7 +14,7 @@ Stephanie Lin (scl97)
 
 
 
-## [Team Contract New](./team_contract.md)
+## [Team Contract](./team_contract.md)
 
 ## Labs 
 * Lab1
