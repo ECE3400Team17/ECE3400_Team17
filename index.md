@@ -1,9 +1,11 @@
 # ECE3400: Intelligent Physical Systems 
 Cornell University | Fall 2017
+
 Instructor: Kirstin Petersen
 
 ## Team 17
 Lab time: Friday 1:25-4:25pm
+
 Lab TAs: Leah Forrest and Curran Sinha
 
 
@@ -24,6 +26,7 @@ Welcome to our webpage!
 
 ## Team Contract
 View our commitment:
+
 [Team Contract](./team_contract.md)
 
 ## Labs 
