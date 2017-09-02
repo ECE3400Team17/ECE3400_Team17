@@ -14,7 +14,7 @@ Stephanie Lin (scl97)
 
 
 
-## [Team Contract](https://docs.google.com/a/cornell.edu/document/d/1Xt7pdA_RPvZ9keraK63RIFv9XpdDYXum8W-u2rcYqI0/edit?usp=sharing)
+## [Team Contract](./team_contract.md)
 
 ## Labs 
 * Lab1
