@@ -1,4 +1,4 @@
-[Home Page](./index.md)
+[To Home Page](./index.md)
 
 # Get to Know Us
 
@@ -26,7 +26,7 @@ I am a junior in ECE. I just transferred here from UIUC in Illinois. I am the me
 ### Contact:
 tk455@cornll.edu
 ### Background:
-I'm a senior in ECE from New York City.
+I'm a senior in ECE from New York City. I'm part of Cornell's Cube Satillite Team name OAAN (will be renamed VERONA soon). My hobbies include drawing and painting.
 
 ## Stephanie Lin
 ![](./ourPics/stephanie.jpg)
