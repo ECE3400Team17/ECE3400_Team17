@@ -6,6 +6,8 @@
 ![](./ourPics/mira.jpg)
 ### Contact: 
 mab586@cornell.edu
+### Background:
+Hi, I'm Mira, a junior ECE. My interests in ECE are in electronics and embedded systems. At cornell I'm involved in Cornell Mars Rover, the fitness centers and recreational sports officiating, and tradition. I enjoy hiking and cycling and love pottery. I love reading about technology and would happily take any cool links to articles or videos you have!
 
 ## Yijia Chen 
 ![](./ourPics/yijia.jpg)
