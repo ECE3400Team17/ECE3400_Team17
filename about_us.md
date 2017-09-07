@@ -24,7 +24,7 @@ yc2353@cornell.edu
 I am a junior in ECE. I just transferred here from UIUC in Illinois. I am the member of the IEEE-HKN (an ECE honor society). My main interests are signal processing and multimedia. I used to play badminton and swim, but now become much more indoor-orientated. I love reading books about philosophy and history on the free time, and I am also a member of the drama club.
 
 ## Thinesiya Krishnthasan
-![](./images/ourPics/thinesiya.JPG)
+![](./images/ourPics/thinesiya.jpg)
 ### Contact:
 tk455@cornll.edu
 ### Background:
