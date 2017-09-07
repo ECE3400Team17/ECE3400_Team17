@@ -2,6 +2,14 @@
 
 # Lab 1
 
-## We are working on it!
+## Part1: Modify the Blink Sketch
 
-## Comeback on Friday, September 8, 2017
+## Part2: The Serial Monitor and the Analog Pins
+
+## Part3: Analog Output
+
+## Part4: Parallax Servos
+
+## Part5: Assemble and Run Your Robot
+
+
