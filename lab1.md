@@ -63,7 +63,7 @@ Our assembled robot:
 
 Watch our robot move back and forth:
 
-<iframe width="560" height="315" src="https://www.youtube.com/watch?v=Do-kx_vWezc&feature=youtu.be" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/Do-kx_vWezc" frameborder="0" allowfullscreen></iframe>
 
 
 [To Home Page](./index.md)
