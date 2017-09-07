@@ -1,9 +1,29 @@
-
 [To Home Page](./index.md)
 
 # Lab 1
+### Objective: 
+The objective of this lab was to familiarize ourselves with the Arduino Uno board and IDE. We utilized digital and analog outputs, digital outputs, and writing analog PWM outputs.
+
+### Equipment:
+* 1 Arduino Uno
+* 1 solderless breadboard
+* 1 USB A/B cable
+* 1 LED 
+* 2-3 resistors (kΩ range)
+* 1 potentiometer
+* 1 continuous rotation servo
+* 1 pushbutton
 
 ## Part1: Modify the Blink Sketch
+To learn about the input/output functionalities of the Uno board, we modified sample code from the blink program provided by Arduino to make an LED blink on and off every second.
+
+
+
+
+
+
+
+
 
 ## Part2: The Serial Monitor and the Analog Pins
 
