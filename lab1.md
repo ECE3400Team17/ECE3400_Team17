@@ -17,6 +17,19 @@ The objective of this lab was to familiarize ourselves with the Arduino Uno boar
 ## Part1: Modify the Blink Sketch
 To learn about the input/output functionalities of the Uno board, we modified sample code from the blink program provided by Arduino to make an LED blink on and off every second.
 
+```
+void setup() {
+    pinMode(LED_BUILTIN, OUTPUT);  // set signal to built-in LED
+}
+
+void loop() {
+  digitalWrite(LED_BUILTIN, HIGH);  //toggle on
+  delay(1000);                       
+  digitalWrite(LED_BUILTIN, LOW);   //toggle off  
+  delay(1000);                       
+}
+```
+
 
 
 
