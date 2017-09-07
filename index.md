@@ -20,6 +20,8 @@ Welcome to our webpage!
 
 * Thinesiya Krishnthasan (tk455)
 
+* Peter Slater (pas324)
+
 * Stephanie Lin (scl97)
 
 Get to know us [here](./about_us.md)!
