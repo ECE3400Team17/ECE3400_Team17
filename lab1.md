@@ -11,5 +11,7 @@
 ## Part4: Parallax Servos
 
 ## Part5: Assemble and Run Your Robot
+Our assembled robot:
+
 
 
