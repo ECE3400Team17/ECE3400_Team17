@@ -29,16 +29,27 @@ void loop() {
   delay(1000);                       
 }
 ```
-
-
-
-
-
-
-
-
+The code compiled and was sent to the Arduino board, which began to blink an LED embedded on the board as desired.
 
 ## Part2: The Serial Monitor and the Analog Pins
+Utilizing the board’s digital writing capabilities, we set up an LED to digital output pin 12 on the Arduino board. Then we modified the code to send a signal to the LED. 
+
+```
+void setup() {
+    pinMode(12, OUTPUT);  // set LED connection to pin 12
+}
+
+void loop() {
+  digitalWrite(12, HIGH);	// toggle on
+  delay(1000);                       
+  digitalWrite(12, LOW);    // toggle off
+  delay(1000);                       
+}
+```
+The blue LED repeatedly toggled on and off with a time interval of one second in between. Here is a photo of the LED turned on.
+
+* photo
+
 
 ## Part3: Analog Output
 
