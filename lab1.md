@@ -112,10 +112,11 @@ void loop() {
 }
 ```
 We checked the signal on the oscilloscope:
-![](./images/Lab1/90_far.jpeg)
-![](./images/Lab1/90_near.jpeg)
+![](./images/Lab1/90_far.jpg)
 
+![](./images/Lab1/90_near.jpg)
 
+We then ran the servo set to a value of 180. This is the maximum speed, with the motor turning clockwise. 
 ### Code:
 ```
 #include <Servo.h>
@@ -135,7 +136,12 @@ void loop() {
   delay(1000);
 }
 ```
+We checked the signal on the oscilloscope:
+![](./images/Lab1/180_far.jpg)
 
+![](./images/Lab1/180_near.jpg)
+
+We then ran the servo set to a value of 0. This is the maximum speed, with the motor turning counter-clockwise. 
 ### Code:
 ```
 #include <Servo.h>
@@ -155,7 +161,10 @@ void loop() {
   delay(1000);
 }
 ```
+We checked the signal on the oscilloscope:
+![](./images/Lab1/0_far.jpg)
 
+![](./images/Lab1/0_near.jpg)
 
 
 
@@ -168,7 +177,6 @@ To assemble our robot, first, we attached two frame on each side of the board, a
 After upload the forward and back code, we can see that the car can move in a line as expected.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Do-kx_vWezc" frameborder="0" allowfullscreen></iframe>
-
 
 Code is as follows, to make the car go front and back direction, we change the direction of wheels' movement by seting the parameter in the code, ranging from 0 to 180.
 
