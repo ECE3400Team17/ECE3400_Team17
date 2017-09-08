@@ -90,7 +90,7 @@ And changing the potentiometer settings, dimmed the light:
 ## Part 5: Parallax Servos
 
 ### Servo written to 90
-We calibrated our motors by running the following code, which sets the write value for eat motor to 90. At 90, calibrated motors should not move, in our case the motors were not calibrated. We turned the knob inthe side of the motor, until they stoped moving.
+We calibrated our motors by running the following code, which sets the write value for eat motor to 90. At 90, calibrated motors should not move, in our case the motors were not calibrated. We turned the knob in the side of the motor, until they stopped moving.
 
 ### Code:
 ```
