@@ -81,7 +81,67 @@ void loop()
 
 ## Part 5: Parallax Servos
 
+We callabrated our motors by running the following code, which sets the :
+```
+#include <Servo.h>
+Servo servoL;
+Servo servoR;
 
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  servoL.attach(10); 
+  servoR.attach(11);
+}
+
+void loop() {
+  servoL.write(90);
+  servoR.write(90);
+  delay(1000);
+}
+```
+
+
+
+
+```
+#include <Servo.h>
+Servo servoL;
+Servo servoR;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  servoL.attach(10); 
+  servoR.attach(11);
+}
+
+void loop() {
+  servoL.write(180);
+  servoR.write(180);
+  delay(1000);
+}
+```
+
+
+```
+#include <Servo.h>
+Servo servoL;
+Servo servoR;
+
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600);
+  servoL.attach(10); 
+  servoR.attach(11);
+}
+
+void loop() {
+  servoL.write(0);
+  servoR.write(0);
+  delay(1000);
+}
+```
 
 
 
