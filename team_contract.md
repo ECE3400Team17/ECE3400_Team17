@@ -6,16 +6,19 @@ Members of the team should be aware of the dates and times for each meeting and 
 
 * Friday 11:15am - 12:05pm in Kimball Hall B11 
 * Friday 1:25pm - 4:25pm in Phillips 4th Floor Lab
+* Sunday 10:00am : Duff. (team catch-up)
 * Study rooms in Olin, Uris, or Rhodes if whiteboard and projector are needed.
 
-Team members will decide on an agenda to be announced atleast 2 days before the following meeting. Team members will be notified first in person, and then reminded via Messenger group chat. During each meeting, the team leader will be responsible for following the agenda. We will check in with each other via the online Messenger every 2 days to ensure that everybody is on track.
+Team members will decide on an agenda to be announced atleast 10 hours before the following meeting. Team members will be notified first in person, and then reminded via Messenger group chat. During each meeting, the team leader will be responsible for following the agenda. We will check in with each other via the online Messenger every 2 days to ensure that everybody is on track.
+
+We plan to submitt each of our Lab report parts by 3:00 pm Thursday, this will provide and buffer and ample time to update the website.
 
 We will make team decisions via group voting to make sure that everyone has an equal say. The decision/plan with majority vote would be the one that the group implements.
 
 #### Record of meeting:
 For each meeting, we will have one person in the team record the content of the meeting. The record will be used as a reference for the team to update the webpage with the new project progress of the week.  
 
-Our main mode of communication is via the Facebook/Messenger group chat. Timely responses are expected; the delay time should depend on the urgency of the matter. 
+Our main mode of communication is via the Facebook/Messenger group chat. Timely responses are expected (within 3hours closer to deadlines and 6 hours otherwise, not at 4am); the delay time should depend on the urgency of the matter. 
 
 ## Team Expectations
 
@@ -82,6 +85,8 @@ I have participated in formulating the above standards, roles, and procedures. I
 *Yirong Alan Cheng*
 
 *Thinesiya Krishnathasan*
+
+*Peter Slater*
 
 *Stephanie Lin*
 
