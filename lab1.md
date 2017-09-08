@@ -47,10 +47,8 @@ void loop() {
   delay(1000);                       
 }
 ```
-The blue LED repeatedly toggled on and off with a time interval of one second in between. Here is a photo of the LED turned on.
-
-* photo
-
+The blue LED repeatedly toggled on and off with a time interval of one second in between. Here is a video of the LED:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/WlTisecNfO4" frameborder="0" allowfullscreen></iframe>
 
 ## Part3: Analog Output
 
