@@ -14,7 +14,7 @@ The objective of this lab was to familiarize ourselves with the Arduino Uno boar
 * 1 continuous rotation servo
 * 1 pushbutton
 
-## Part1: Modify the Blink Sketch
+## Part 1: Communicating between the Uno and IDE
 To learn about the input/output functionalities of the Uno board, we modified sample code from the blink program provided by Arduino to make an LED blink on and off every second.
 
 ```
@@ -33,7 +33,7 @@ The code compiled and was sent to the Arduino board, which began to blink an LED
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/ttuvQ9fFO5o" frameborder="0" allowfullscreen></iframe>
 
-## Part2: The Serial Monitor and the Analog Pins
+## Part 2: Modify the Blink Sketch
 Utilizing the board’s digital writing capabilities, we set up an LED to digital output pin 12 on the Arduino board. Then we modified the code to send a signal to the LED. 
 
 ```
@@ -52,9 +52,11 @@ The blue LED repeatedly toggled on and off with a time interval of one second in
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WlTisecNfO4" frameborder="0" allowfullscreen></iframe>
 
-## Part3: Analog Output
+## Part 3: The Serial Monitor and the Analog Pins
 
-## Part4: Parallax Servos
+## Part 4: Analog Output
+
+## Part 5: Parallax Servos
 
 
 ```
@@ -99,7 +101,7 @@ void loop() {
 
 
 
-## Part5: Assemble and Run Your Robot
+## Part 6: Assemble and Run Your Robot
 Our assembled robot:
 
 ![](./images/Lab1/assembled_bot.jpg)
