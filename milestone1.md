@@ -2,6 +2,6 @@
 
 # Milestone 1
 
-## Part
+## Part 1
 
 [To Home Page](./index.md)
