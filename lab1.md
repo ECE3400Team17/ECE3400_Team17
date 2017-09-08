@@ -17,6 +17,7 @@ The objective of this lab was to familiarize ourselves with the Arduino Uno boar
 ## Part 1: Communicating between the Uno and IDE
 To learn about the input/output functionalities of the Uno board, we modified sample code from the blink program provided by Arduino to make an LED blink on and off every second.
 
+### Code:
 ```
 void setup() {
     pinMode(LED_BUILTIN, OUTPUT);  // set signal to built-in LED
@@ -36,6 +37,7 @@ The code compiled and was sent to the Arduino board, which began to blink an LED
 ## Part 2: Modify the Blink Sketch
 Utilizing the board’s digital writing capabilities, we set up an LED to digital output pin 12 on the Arduino board. Then we modified the code to send a signal to the LED. 
 
+### Code:
 ```
 void setup() {
     pinMode(12, OUTPUT);  // set LED connection to pin 12
@@ -58,10 +60,10 @@ The blue LED repeatedly toggled on and off with a time interval of one second in
 ## Part 4: Analog Output
 Besides the voltage divider circuit with potentiometer, we also attached a LED and a 330 Ohm resistor in serial to port #9. We write an arduino program to read the analog value of the potentiometer and output it to power the LED circuit.
 
-Diagram:
+### Diagram:
 ![](./images/Lab1/part4_diagram.png)
 
-Code:
+### Code:
 ```
 int INPUT_PIN = A0;
 int val;
