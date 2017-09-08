@@ -58,7 +58,7 @@ The blue LED repeatedly toggled on and off with a time interval of one second in
 ![](./images/Lab1/pot.jpg)
 
 ## Part 4: Analog Output
-Besides the voltage divider circuit with potentiometer, we also attached a LED and a 330 Ohm resistor in serial to port #9. We write an arduino program to read the analog value of the potentiometer and output it to power the LED circuit.
+Besides the voltage divider circuit with potentiometer, we also attached a LED and a 330 Ohm resistor in serial to port 9. We write an arduino program to read the analog value of the potentiometer and output it to power the LED circuit.
 
 ### Diagram:
 ![](./images/Lab1/part4_diagram.png)
@@ -91,6 +91,8 @@ And changing the potentiometer settings, dimmed the light:
 
 
 We calibrated our motors by running the following code, which sets the write value for eat motor to 90. At 90, calibrated motors should not move, in our case the motors were not calibrated. We turned the knob inthe side of the motor, until they stoped moving.
+
+### Code:
 ```
 #include <Servo.h>
 Servo servoL;
@@ -109,10 +111,12 @@ void loop() {
   delay(1000);
 }
 ```
+We checked the signal on the oscilloscope:
+![](./images/Lab1/90_far.jpeg)
+![](./images/Lab1/90_near.jpeg)
 
 
-
-
+### Code:
 ```
 #include <Servo.h>
 Servo servoL;
@@ -132,7 +136,7 @@ void loop() {
 }
 ```
 
-
+### Code:
 ```
 #include <Servo.h>
 Servo servoL;
@@ -157,12 +161,18 @@ void loop() {
 
 
 ## Part 6: Assemble and Run Your Robot
-Our assembled robot:
+To assemble our robot, first, we attached two frame on each side of the board, and using nuts, nails to attach servos on that frame so that they can drive wheels later. Second, we added a front wheel to the robot using a plastic structure with a small caster, attached with a nail which is a temporary design and we’ll improve it later. Third, we rearranged the space on the robot to place Arduino, breadboard and battery in a reasonable way so that the whole robot is in a balance.
 
 ![](./images/Lab1/assembled_bot.jpg)
 
-We wrote code to have out robot move back and forth autonomously: 
+After upload the forward and back code, we can see that the car can move in a line as expected.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Do-kx_vWezc" frameborder="0" allowfullscreen></iframe>
+
+
+Code is as follows, to make the car go front and back direction, we change the direction of wheels' movement by seting the parameter in the code, ranging from 0 to 180.
+
+### Code:
 ```
 #include <Servo.h>
 Servo servoL;
@@ -201,9 +211,7 @@ void loop() {
 }
 ```
 
-Watch our robot move back and forth:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/Do-kx_vWezc" frameborder="0" allowfullscreen></iframe>
 
 [To Home Page](./index.md)
 
