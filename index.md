@@ -32,7 +32,7 @@ You can contact the team at: ece3400.team17.2017@gmail.com
 View our commitment: [Team Contract](./team_contract.md)
 
 ## Labs 
-* [Lab1](./lab1.md)
+* [Lab1: Microcontroller](./lab1.md)
 
 ## Meeting Minutes
 Minutes for each meeting can be viewed [here](./meeting_min.md).
