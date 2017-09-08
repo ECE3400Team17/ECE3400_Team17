@@ -61,6 +61,7 @@ Besides the voltage divider circuit with potentiometer, we also attached a LED a
 Diagram:
 ![](./images/Lab1/part4_diagram.png)
 
+Code:
 ```
 int INPUT_PIN = A0;
 int val;
@@ -77,6 +78,7 @@ void loop() {
                               // we divide the val by 4 here since the range change from 1024 to 256.  
 }
 ```
+
 This is how our setup looked like at the brighest:
 ![](./images/Lab1/File_005.jpeg)
 
