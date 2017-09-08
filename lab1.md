@@ -1,4 +1,4 @@
-[To Home Page](./index.md)
+ [To Home Page](./index.md)
 
 # Lab 1: Microcontroller
 ### Objective: 
@@ -29,7 +29,8 @@ void loop() {
   delay(1000);                       
 }
 ```
-The code compiled and was sent to the Arduino board, which began to blink an LED embedded on the board as desired.
+The code compiled and was sent to the Arduino board, which began to blink an LED embedded on the board as desired. As shown below:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ttuvQ9fFO5o" frameborder="0" allowfullscreen></iframe>
 
 ## Part2: The Serial Monitor and the Analog Pins
 Utilizing the board’s digital writing capabilities, we set up an LED to digital output pin 12 on the Arduino board. Then we modified the code to send a signal to the LED. 
