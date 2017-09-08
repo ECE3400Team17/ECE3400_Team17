@@ -117,7 +117,7 @@ We checked the signal on the oscilloscope:
 
 ![](./images/Lab1/90_near.jpg)
 
-We then ran the servo set to a value of 180. This is the maximum speed, with the motor turning clockwise. 
+We then ran the servo set to a value of 180. This is the maximum speed, with the motor turning counter-clockwise. 
 ### Code:
 ```
 #include <Servo.h>
@@ -143,7 +143,7 @@ We checked the signal on the oscilloscope:
 
 ![](./images/Lab1/180_near.jpg)
 
-We then ran the servo set to a value of 0. This is the maximum speed, with the motor turning counter-clockwise. 
+We then ran the servo set to a value of 0. This is the maximum speed, with the motor turning clockwise. 
 
 ### Code:
 ```
