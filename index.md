@@ -34,6 +34,9 @@ View our commitment: [Team Contract](./team_contract.md)
 ## Labs 
 * [Lab1: Microcontroller](./lab1.md)
 
+## Milestones
+* [Milestone 1](./milestone1.md)
+
 ## Meeting Minutes
 Minutes for each meeting can be viewed [here](./meeting_min.md).
 
