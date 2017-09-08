@@ -58,6 +58,9 @@ The blue LED repeatedly toggled on and off with a time interval of one second in
 ## Part 4: Analog Output
 Besides the voltage divider circuit with potentiometer, we also attached a LED and a 330 Ohm resistor in serial to port #9. We write an arduino program to read the analog value of the potentiometer and output it to power the LED circuit.
 
+Diagram:
+![](./images/Lab1/part4_diagram.png)
+
 ```
 int INPUT_PIN = A0;
 int val;
@@ -74,9 +77,11 @@ void loop() {
                               // we divide the val by 4 here since the range change from 1024 to 256.  
 }
 ```
-This is how out setup looked like:
-![](./images/Lab1/pot_LED.jpg)
+This is how our setup looked like at the brighest:
+![](./images/Lab1/File_005.jpeg)
 
+And changing the potentiometer settings, dimmed the light:
+![](./images/Lab1/File_010.jpeg)
 
 ## Part 5: Parallax Servos
 
