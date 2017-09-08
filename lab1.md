@@ -81,7 +81,8 @@ void loop()
 
 ## Part 5: Parallax Servos
 
-We callabrated our motors by running the following code, which sets the :
+
+We calibrated our motors by running the following code, which sets the write value for eat motor to 90. At 90, calibrated motors should not move, in our case the motors were not calibrated. We turned the knob inthe side of the motor, until they stoped moving.
 ```
 #include <Servo.h>
 Servo servoL;
