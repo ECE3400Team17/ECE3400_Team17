@@ -55,6 +55,25 @@ The blue LED repeatedly toggled on and off with a time interval of one second in
 <iframe width="560" height="315" src="https://www.youtube.com/embed/WlTisecNfO4" frameborder="0" allowfullscreen></iframe>
 
 ## Part 3: The Serial Monitor and the Analog Pins
+In setting up the potentiometer to Arduino analog pins. Every Arduino board contains a 6 channel, 10 bit analog to digital converter. Our task was to read the varying analog voltages and print these values to the serial monitor. To set up the potentiometer on the analog pin, we used the common Arduino ground, a 5V Vcc input voltage an had the signal line in series with a 330 ohm resistor going to our analog pins, A1. We then developed code to take the values of the potentiometer and output them to the serial monitor. The voltages between 0-5 volts are linearly mapped to an integer value between 0 and 1023. Though we did not change the input range or resolution in the analogReference() function, we observe that this could be one. We set up the serial monitor to run at 9600 baud (default) and then read and printed the value of the analog voltage being imputed from the analog input pin A1. We did so in the loop and create a delay of 100 ms between each iteration. 
+
+### Code:
+```
+int analogPin = 1;     // potentiometer connected to pin 1
+          
+int analogvin = 0;    // variable to store the value read
+
+void setup()
+{
+  Serial.begin(9600);   //  setup serial
+}
+
+void loop()
+{
+  analogvin = analogRead(analogPin);    // read the input pin
+  Serial.println(analogvin);             // debug value
+}
+```
 ![](./images/Lab1/pot.jpg)
 
 ## Part 4: Analog Output
