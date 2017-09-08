@@ -1,6 +1,6 @@
 [To Home Page](./index.md)
 
-# Lab 1
+# Lab 1: Microcontroller
 ### Objective: 
 The objective of this lab was to familiarize ourselves with the Arduino Uno board and IDE. We utilized digital and analog outputs, digital outputs, and writing analog PWM outputs.
 
@@ -54,6 +54,48 @@ The blue LED repeatedly toggled on and off with a time interval of one second in
 ## Part3: Analog Output
 
 ## Part4: Parallax Servos
+
+
+```
+#include <Servo.h>
+Servo servoL;
+Servo servoR;
+
+void setup() {
+  Serial.begin(9600);
+  servoL.attach(10); 
+  servoR.attach(11);
+}
+
+void loop() {
+  // move forward for 2 seconds
+  servoL.write(60); 
+  servoR.write(120);
+  delay(2000);
+  
+  // pause for 1 second
+  servoL.detach(); 
+  servoR.detach();
+  delay(1000);
+  
+  // move backward for 2 seconds
+  servoL.attach(10); 
+  servoR.attach(11);
+  servoL.write(120);
+  servoR.write(60);
+  delay(2000);
+  
+  // pause for 1 second
+  servoL.detach(); 
+  servoR.detach();
+  delay(1000);
+  
+  servoL.attach(10); 
+  servoR.attach(11);
+}
+```
+
+
 
 
 ## Part5: Assemble and Run Your Robot
