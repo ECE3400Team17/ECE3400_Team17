@@ -56,28 +56,27 @@ The blue LED repeatedly toggled on and off with a time interval of one second in
 ![](./images/Lab1/pot.jpg)
 
 ## Part 4: Analog Output
+Besides the voltage divider circuit with potentiometer, we also attached a LED and a 330 Ohm resistor in serial to port #9. We write an arduino program to read the analog value of the potentiometer and output it to power the LED circuit.
+
+```
+int INPUT_PIN = A0;
+int val;
+int ledpin = 9;
+void setup() {
+  // put your setup code here, to run once:
+  Serial.begin(9600); //set up the serial monitor
+}
+
+void loop() {
+  val = analogRead(INPUT_PIN);  // read in the voltage of potentiometer
+  Serial.println(val);  // print the voltage value on serial monitor
+  analogWrite(ledpin, val/4); // map the voltage value of potentiometer to the output voltage of the led
+                              // we divide the val by 4 here since the range change from 1024 to 256.  
+}
+```
+This is how out setup looked like:
 ![](./images/Lab1/pot_LED.jpg)
 
-```
-int ledPin = 6;      // LED connected to digital pin 6
-int analogPin = 5;   // potentiometer connected to analog pin 5
-
-int val = 0;         // variable to store the read value
-
-void setup()
-{
-  Serial.begin(9600);
-  pinMode(ledPin, OUTPUT);   // sets the pin as output
-}
-
-void loop()
-{
-  val = analogRead(analogPin);   // read the input pin
-  Serial.println(val);
-  analogWrite(ledPin, val / 4);  // analogRead values go from 0 to 1023, analogWrite values from 0 to 255
-  delay(1000);
-}
-```
 
 ## Part 5: Parallax Servos
 
