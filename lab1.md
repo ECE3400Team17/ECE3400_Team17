@@ -112,6 +112,7 @@ void loop() {
 }
 ```
 We checked the signal on the oscilloscope:
+
 ![](./images/Lab1/90_far.jpg)
 
 ![](./images/Lab1/90_near.jpg)
@@ -137,11 +138,13 @@ void loop() {
 }
 ```
 We checked the signal on the oscilloscope:
+
 ![](./images/Lab1/180_far.jpg)
 
 ![](./images/Lab1/180_near.jpg)
 
 We then ran the servo set to a value of 0. This is the maximum speed, with the motor turning counter-clockwise. 
+
 ### Code:
 ```
 #include <Servo.h>
@@ -162,11 +165,10 @@ void loop() {
 }
 ```
 We checked the signal on the oscilloscope:
+
 ![](./images/Lab1/0_far.jpg)
 
 ![](./images/Lab1/0_near.jpg)
-
-
 
 
 ## Part 6: Assemble and Run Your Robot
