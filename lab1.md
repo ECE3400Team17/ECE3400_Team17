@@ -89,7 +89,7 @@ And changing the potentiometer settings, dimmed the light:
 
 ## Part 5: Parallax Servos
 
-
+### Servo written to 90
 We calibrated our motors by running the following code, which sets the write value for eat motor to 90. At 90, calibrated motors should not move, in our case the motors were not calibrated. We turned the knob inthe side of the motor, until they stoped moving.
 
 ### Code:
@@ -111,12 +111,13 @@ void loop() {
   delay(1000);
 }
 ```
-We checked the signal on the oscilloscope:
+We checked the signal on the oscilloscope, which has a frequency of 49.95Hz and a duty cycle of 7.49%:
 
 ![](./images/Lab1/90_far.jpg)
 
 ![](./images/Lab1/90_near.jpg)
 
+### Servo written to 180
 We then ran the servo set to a value of 180. This is the maximum speed, with the motor turning counter-clockwise. 
 ### Code:
 ```
@@ -137,12 +138,13 @@ void loop() {
   delay(1000);
 }
 ```
-We checked the signal on the oscilloscope:
+We checked the signal on the oscilloscope, which has a frequency of 49.95Hz and a duty cycle of 12.49%:
 
 ![](./images/Lab1/180_far.jpg)
 
 ![](./images/Lab1/180_near.jpg)
 
+### Servo written to 0
 We then ran the servo set to a value of 0. This is the maximum speed, with the motor turning clockwise. 
 
 ### Code:
@@ -164,7 +166,7 @@ void loop() {
   delay(1000);
 }
 ```
-We checked the signal on the oscilloscope:
+We checked the signal on the oscilloscope, which has a frequency of 49.95Hz and a duty cycle of 2.75%:
 
 ![](./images/Lab1/0_far.jpg)
 
