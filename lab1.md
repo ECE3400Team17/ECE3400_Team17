@@ -82,6 +82,18 @@ void loop()
 ## Part 5: Parallax Servos
 
 
+
+
+
+
+
+## Part 6: Assemble and Run Your Robot
+Our assembled robot:
+
+![](./images/Lab1/assembled_bot.jpg)
+
+We wrote code to have out robot move back and forth autonomously: 
+
 ```
 #include <Servo.h>
 Servo servoL;
@@ -115,19 +127,10 @@ void loop() {
   servoL.detach(); 
   servoR.detach();
   delay(1000);
-  
   servoL.attach(10); 
   servoR.attach(11);
 }
 ```
-
-
-
-
-## Part 6: Assemble and Run Your Robot
-Our assembled robot:
-
-![](./images/Lab1/assembled_bot.jpg)
 
 Watch our robot move back and forth:
 
