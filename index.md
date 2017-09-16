@@ -12,6 +12,8 @@ Lab TAs: Leah Forrest and Curran Sinha
 ## Team members:
 Welcome to our webpage!
 
+![](./images/frenchPolice.jpg)
+
 * Mira A. Bhut (mab586) 
 
 * Yijia Chen (yc2366)
