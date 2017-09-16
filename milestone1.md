@@ -121,8 +121,8 @@ The robot will move in a figure 8 if we make the turning direction in a loop sho
 
 That is :
  
-* 1st Cross Section &rarr L
-* 2nd Cross Section &rarr L
+* 1st Cross Section &rarr; L
+* 2nd Cross Section &rarr; L
 * 3 -> R
 * 4 -> R
 * 5 -> R
