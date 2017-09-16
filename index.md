@@ -33,6 +33,7 @@ View our commitment: [Team Contract](./team_contract.md)
 
 ## Labs 
 * [Lab1: Microcontroller](./lab1.md)
+* [Lab2: Analog Circuitry and FFTs](./lab2.md)
 
 ## Milestones
 * [Milestone 1](./milestone1.md)
