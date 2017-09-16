@@ -79,15 +79,18 @@ void loop(){
     servoL.write(90);
     servoR.write(60);
   }
+  
+  // if s2 is on White
   else if((val2<500)){  
     // turn Left
-	  servoL.write(120);
-	  servoR.write(90);
+    servoL.write(120);
+    servoR.write(90);
   }
+  
   else{ 
     // stop
-	  servoL.write(90);
-	  servoR.write(90);
+    servoL.write(90);
+    servoR.write(90);
   } 
 }
 ```
@@ -98,16 +101,15 @@ void loop(){
  
 #### 1.     Crossline detection:
  
-For the grid paths on which our robot moves, the robot would turn 90 degrees at the crossline point to draw a figure 8. Hence how to detect the place to turn is the first fundamental sub-routine we need design. When the robot comes across a crossline, all of the sensors lined up at the bottom of the robot will be on the black tapes. That is to say, if all sensors have a very high input value, we make the robot start to rotate.
+For the grid on which our robot moves, the robot would turn 90 degrees at the crossroad points to draw a figure 8. Hence how to detect the place to turn is the first fundamental sub-routine we need to design. When the robot comes across a crossline, all of the sensors lined up at the bottom of the robot will be on the black tapes. That is to say, if all sensors have a very high input value, we make the robot start to rotate.
 
 ![](./images/Milestone1/crossingMap.PNG) 
-
 
 #### 2.     Turning 90 degrees: 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Wm7HhTSVdLU" frameborder="0" allowfullscreen></iframe>
  
-To make the robot turn 90 degrees, we basically use the delay method. We make the two wheels turn in opposite direction for a small amount of time to rotate the robot for a certain angle. The rotating time is controlled by the time we delay, and according to our experiments, the robot will rotate 90 degrees when we delay 800 ms.
+To make the robot turn 90 degrees, we basically used the delay method. We make the two wheels turn in opposite direction for a small amount of time to rotate the robot for a certain angle. The rotating time is controlled by the time we delay, and according to our experiments, the robot will rotate 90 degrees when we delay 800 ms.
 
 #### 3.     Moving in figure-8 pattern:
  
