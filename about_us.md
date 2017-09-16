@@ -38,7 +38,7 @@ scl97@cornell.edu
 A junior in ECE with a business minor. Hometown is the Windy City of Chicago. Likes to draw, learn languages, and drink bubble tea. Currently part of the Cornell Badminton Club with three State championship medals and will challenge anyone who dares, even a robot.
 
 ## Peter Slater
-
+![](./images/ourPics/peter.jpg)
 ### Contact:
 pas324@cornell.edu
 ### Background:
