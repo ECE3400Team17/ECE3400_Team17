@@ -116,14 +116,14 @@ The robot will move in a figure 8 if we make the turning direction in a loop sho
 
 That is :
  
-1 -> L
-2 -> L
-3 -> R
-4 -> R
-5 -> R
-6 -> R
-7 -> L
-8 -> L
+* 1 -> L
+* 2 -> L
+* 3 -> R
+* 4 -> R
+* 5 -> R
+* 6 -> R
+* 7 -> L
+* 8 -> L
 
 Hence, we use a mod function and a counter to help the robot decide which way it should turn (See the detail in the code).
  
