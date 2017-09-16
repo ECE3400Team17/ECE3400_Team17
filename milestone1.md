@@ -17,7 +17,7 @@ We plan to use 4 sensors to detect the black line. Right middle two of them are 
 #### 1.     Check all sensors to make sure they work.
 We connect sensor and Arduino, used a paper to block the light in front of a certain sensor, and find that the parameter changes. When it detects black tape, the value goes high, because the tape will reflect light. When it detects white, the value goes low.
  
- #### 2.     Develop the control algorithm
+#### 2.     Develop the control algorithm
 The key in this logic is to make sure the car will automatically change its moving direction slightly so that it can move on line.
 
 ![](./images/Milestone1/sensor_followLine.PNG) 
