@@ -44,7 +44,6 @@ The key in this logic is to make sure the car will automatically change its movi
 The code is as follow:
 ``` 
 #include <Servo.h>
-
 // instantiate the 2 servos
 Servo servoL;
 Servo servoR;
@@ -94,14 +93,177 @@ void loop(){
 
 ### Basic sub-routines for driving in a figure 8:
  
-## 1.     Crossline detection:
+#### 1.     Crossline detection:
  
 For the grid paths on which our robot moves, the robot would turn 90 degrees at the crossline point to draw a figure 8. Hence how to detect the place to turn is the first fundamental sub-routine we need design. When the robot comes across a crossline, all of the sensors lined up at the bottom of the robot will be on the black tapes. That is to say, if all sensors have a very high input value, we make the robot start to rotate.
 
 ![](./images/Milestone1/crossingMap.PNG) 
 
 
-8:
-<iframe width="560" height="315" src="https://www.youtube.com/embed/XdLqsoAvZ2k" frameborder="0" allowfullscreen></iframe>
+#### 2.     Turning 90 degrees: 
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Wm7HhTSVdLU" frameborder="0" allowfullscreen></iframe>
+ 
+To make the robot turn 90 degrees, we basically use the delay method. We make the two wheels turn in opposite direction for a small amount of time to rotate the robot for a certain angle. The rotating time is controlled by the time we delay, and according to our experiments, the robot will rotate 90 degrees when we delay 800 ms.
+
+#### 3.     Moving in figure-8 pattern:
+ 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XdLqsoAvZ2k" frameborder="0" allowfullscreen></iframe> 
+ 
+The robot will move in a figure 8 if we make the turning direction in a loop shown below:
+
+![](./images/Milestone1/figure8.PNG) 
+
+That is :
+ 
+1 -> L
+2 -> L
+3 -> R
+4 -> R
+5 -> R
+6 -> R
+7 -> L
+8 -> L
+
+Hence, we use a mod function and a counter to help the robot decide which way it should turn (See the detail in the code).
+ 
+ 
+Code for driving in figure 8:
+``` 
+#include <Servo.h>
+ 
+Servo servoL;
+Servo servoR;
+ 
+int s0 = A0;
+int s2 = A2;
+int s3 = A3;
+int s5 = A5;
+ 
+int val0 ;
+int val2 ;
+int val3 ;
+int val5 ;
+ 
+int thres = 500;
+int count = 0;
+ 
+void setup(){
+  count = 0;
+  Serial.begin(9600);
+  servoL.attach(10);
+  servoR.attach(11);
+  servoL.write(120);
+  servoR.write(60);
+  delay(800);
+}
+ 
+void goForward(){
+  servoL.write(120);
+  servoR.write(60);
+}
+ 
+void turnLeft(){
+  servoL.write(120);
+  servoR.write(60);
+ 
+  delay(100);
+  stay();
+  servoL.write(0);
+  servoR.write(0);
+ 
+  delay(800);
+ 
+  servoL.write(90);
+  servoR.write(90);
+}
+ 
+void turnRight(){
+  servoL.write(120);
+  servoR.write(60);
+  delay(100);
+  stay();
+  servoL.write(180);
+  servoR.write(180);
+ 
+  delay(800);
+ 
+  servoL.write(90);
+  servoR.write(90);
+}
+ 
+void stay(){
+  servoL.write(90);
+  servoR.write(90);
+ 
+ 
+}
+ 
+ 
+void followLine(){
+  val0 = analogRead(s0);
+  val2 = analogRead(s2);
+  val3 = analogRead(s3);
+  val5 = analogRead(s5);
+ 
+	if ((val2>500)&&(val3>500)){
+  	goForward();
+	}
+	else if((val3<500 && val2>500)){
+      servoL.write(90);
+  	servoR.write(60);
+	}
+	else if((val2<500 && val3>500)){
+  	servoL.write(120);
+  	servoR.write(90);
+	}
+	else{
+  	stay();
+	}
+}
+ 
+ 
+void turn_eight(int count) {
+  val0 = analogRead(s0);
+  val2 = analogRead(s2);
+  val3 = analogRead(s3);
+  val5 = analogRead(s5);
+  if((count%8 >=2) && (count%8 <=5)) {
+  	turnRight();
+  	val0 = analogRead(s0);
+  	val2 = analogRead(s2);
+  	val3 = analogRead(s3);
+  	val5 = analogRead(s5);
+	
+  }
+  else {
+  	turnLeft();
+  	val0 = analogRead(s0);
+  	val2 = analogRead(s2);
+  	val3 = analogRead(s3);
+  	val5 = analogRead(s5);
+  }
+}
+ 
+void loop(){
+ 
+  val0 = analogRead(s0);
+  val2 = analogRead(s2);
+  val3 = analogRead(s3);
+  val5 = analogRead(s5);
+ 
+  Serial.println(val0);
+  if ((val0>thres)&&(val2>thres)&&(val3>thres)&&(val5>thres)){ // at a crosssection
+	stay();
+	turn_eight(count);
+	count = count +1;
+  }
+  else{
+	followLine();
+  }
+}  
+```
+
+
 
 [To Home Page](./index.md)
