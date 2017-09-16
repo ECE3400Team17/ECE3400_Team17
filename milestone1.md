@@ -14,7 +14,7 @@ We plan to use 4 sensors to detect the black line. Right middle two of them are 
 
 ### Preparation:
 
-#### 1.     Check all sensors to make sure they work.
+#### 1.     Check all sensors to make sure they work
 We connect sensor and Arduino, used a paper to block the light in front of a certain sensor, and find that the parameter changes. When it detects black tape, the value goes high, because the tape will reflect light. When it detects white, the value goes low.
  
 #### 2.     Develop the control algorithm
@@ -66,17 +66,20 @@ void loop(){
   val2 = analogRead(s2);
   val3 = analogRead(s3);
  
-  if ((val2>500)&&(val3>500)){ // if both sensors are on Black
+  // if both sensors are on Black 
+  if ((val2>500)&&(val3>500)){ 
     // move forward
-	  servoL.write(120);
-	  servoR.write(60);
+    servoL.write(120);
+    servoR.write(60);
   }
-  else if ((val3<500)){ // if s3 is on White
+  
+  // if s3 is on White
+  else if ((val3<500)){ 
     // turn Right
-	  servoL.write(90);
-	  servoR.write(60);
+    servoL.write(90);
+    servoR.write(60);
   }
-  else if((val2<500)){ // if s2 is on White 
+  else if((val2<500)){  
     // turn Left
 	  servoL.write(120);
 	  servoR.write(90);
