@@ -6,16 +6,19 @@
 
 
 ## Following a line:
-First step: we want the car can move following the black line.
+### First step: 
+We want the car to move following the black line.
  
-The big idea: we plan to use 4 sensors to detect the black line. Right middle two of them are responsible for detect black line on the way, to make sure it is moving. The left one and the right one are responsible for detect the turning junction. Then send further instruction to the servos. We develop a logic to adjust its direction.
+### The Big Idea:  
+We plan to use 4 sensors to detect the black line. Right middle two of them are responsible for detecting the black line on the way, to make sure it is moving. The left one and the right one are responsible for detecting the turning junction. Then send further instruction to the servos. We develop a logic to adjust its direction.
 
-Preparation:
-1.     Check all sensors to make sure it works.
-We connect sensor and Arduino, use a paper to block the light in front of a certain sensor, and find that the parameter changes. When it detects black tape, the value goes high, because the tape will reflect light. When it detects white, the value goes low.
+### Preparation:
+
+#### 1.     Check all sensors to make sure they work.
+We connect sensor and Arduino, used a paper to block the light in front of a certain sensor, and find that the parameter changes. When it detects black tape, the value goes high, because the tape will reflect light. When it detects white, the value goes low.
  
-2.     Develop the control algorithm
-The key in this logic is to make sure the car will automatically change its moving direction slightly so that it can move in line.
+ #### 2.     Develop the control algorithm
+The key in this logic is to make sure the car will automatically change its moving direction slightly so that it can move on line.
 
 ![](./images/Milestone1/sensor_followLine.PNG) 
 
@@ -26,13 +29,13 @@ The key in this logic is to make sure the car will automatically change its movi
 * If S2 and S3 both sees black, move forward;
 (the right and the left sensor move in the same speed)
 
-3.     Based on the work done in number 2, we successfully made the car follow the line
+#### 3.     Based on the work done in number 2, we successfully made the car follow the line
 
-(video1----straight line)
+* Video of the Robot following a strainght black line: 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-5cJnf9C_Cc" frameborder="0" allowfullscreen></iframe>
 
-(video2----curve line)
+* Video of the Robot following a curved black line: 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QfTaJXfL2IU" frameborder="0" allowfullscreen></iframe>
 
@@ -84,5 +87,11 @@ void loop(){
   } 
 }
 ```
+
+
+
+
+8:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XdLqsoAvZ2k" frameborder="0" allowfullscreen></iframe>
 
 [To Home Page](./index.md)
