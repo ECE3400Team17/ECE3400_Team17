@@ -17,20 +17,26 @@ We connect sensor and Arduino, use a paper to block the light in front of a cert
 2.     Develop the control algorithm
 The key in this logic is to make sure the car will automatically change its moving direction slightly so that it can move in line.
 
-If S2 sees white and S3 sees black, adjust right;
+![](./images/Milestone1/sensor_followLine.PNG) 
+
+* If S2 sees white and S3 sees black, adjust right;
 (the left sensor moves faster)
-If S3 sees white and S2 sees white, adjust left;
+* If S3 sees white and S2 sees white, adjust left;
 (the right sensor moves faster)
-If S2 and S3 both sees black, move forward;
+* If S2 and S3 both sees black, move forward;
 (the right and the left sensor move in the same speed)
 
 3.     Based on the work done in number 2, we successfully made the car follow the line
+
 (video1----straight line)
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-5cJnf9C_Cc" frameborder="0" allowfullscreen></iframe>
+
 (video2----curve line)
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QfTaJXfL2IU" frameborder="0" allowfullscreen></iframe>
- The code is as follow:
- 
+
+The code is as follow:
 ``` 
 #include <Servo.h>
 
