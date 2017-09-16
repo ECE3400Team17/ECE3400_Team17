@@ -26,9 +26,9 @@ If S2 and S3 both sees black, move forward;
 
 3.     Based on the work done in number 2, we successfully made the car follow the line
 (video1----straight line)
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/-5cJnf9C_Cc" frameborder="0" allowfullscreen></iframe>
 (video2----curve line)
-
+<iframe width="560" height="315" src="https://www.youtube.com/embed/QfTaJXfL2IU" frameborder="0" allowfullscreen></iframe>
  The code is as follow:
  
 ``` 
