@@ -121,16 +121,16 @@ The robot will move in a figure 8 if we make the turning direction in a loop sho
 
 That is :
  
-* 1st Cross Section &rarr; L
-* 2nd Cross Section &rarr; L
-* 3 -> R
-* 4 -> R
-* 5 -> R
-* 6 -> R
-* 7 -> L
-* 8 -> L
+* 1st Cross Section &rarr; turn: Left
+* 2nd Cross Section &rarr; turn: Left
+* 3rd Cross Section &rarr; turn: Right
+* 4th Cross Section &rarr; turn: Right
+* 5th Cross Section &rarr; turn: Right
+* 6th Cross Section &rarr; turn: Right
+* 7th Cross Section &rarr; turn: Left
+* 8th Cross Section &rarr; turn: Left
 
-Hence, we use a mod function and a counter to help the robot decide which way it should turn (See the details in the code).
+Hence, we used a mod function and a counter to help the robot decide which way it should turn (See the details in the code).
  
 Code for driving in figure 8:
 ``` 
