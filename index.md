@@ -12,7 +12,7 @@ Lab TAs: Leah Forrest and Curran Sinha
 ## Team members:
 Welcome to our webpage!
 
-![](./images/frenchPolice.jpg)
+![](./images/frenchPolice.PNG)
 
 * Mira A. Bhut (mab586) 
 
