@@ -35,9 +35,11 @@ The key in this logic is to make sure the car will automatically change its movi
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/-5cJnf9C_Cc" frameborder="0" allowfullscreen></iframe>
 
+
 * Video of the Robot following a curved black line: 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/QfTaJXfL2IU" frameborder="0" allowfullscreen></iframe>
+
 
 The code is as follow:
 ``` 
@@ -88,6 +90,13 @@ void loop(){
 }
 ```
 
+## Driving in a figure 8:
+
+### Basic sub-routines for driving in a figure 8:
+ 
+## 1.     Crossline detection:
+ 
+For the grid paths on which our robot moves, the robot would turn 90 degrees at the crossline point to draw a figure 8. Hence how to detect the place to turn is the first fundamental sub-routine we need design. When the robot comes across a crossline, all of the sensors lined up at the bottom of the robot will be on the black tapes. That is to say, if all sensors have a very high input value, we make the robot start to rotate.
 
 
 
