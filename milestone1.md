@@ -2,7 +2,17 @@
 
 # Milestone 1
 
-## Hardware Implementation(picture & circuit):
+## Hardware Implementation:
+We attached 4 sensors in a horizontal line at the bottom of our robot, two of them being in the middle of the car (S2, S3), and the other two being at relatively marginal area of the robot(S0, S5). 
+
+![](./images/Milestone1/sensor_followLine.PNG) 
+
+Besides connecting all the sensors to 5v and GND pins, we input the signals of the sensors to arduino's analog input pins:
+	
+S0 &rarr; A0 pin
+S2 &rarr; A2 pin
+S3 &rarr; A3 pin
+S5 &rarr; A5 pin
 
 
 ## Following a line:
@@ -132,6 +142,8 @@ That is :
 
 Hence, we used a mod function and a counter to help the robot decide which way it should turn (See the details in the code).
  
+Also, since the position of our sensors is at the middle bottom of the robot, so to make sure that the robot would be able to detect the black tapes and keep moving straight after the turning, we make the robot to keep moving forward for 100 ms before turning and after detecting the crossline. Thus the robot would be located front enough to keep itself on the track after turning.
+  
 Code for driving in figure 8:
 ``` 
 #include <Servo.h>
