@@ -9,10 +9,10 @@ We attached 4 sensors in a horizontal line at the bottom of our robot, two of th
 
 Besides connecting all the sensors to 5v and GND pins, we input the signals of the sensors to arduino's analog input pins:
 	
-S0 &rarr; A0 pin
-S2 &rarr; A2 pin
-S3 &rarr; A3 pin
-S5 &rarr; A5 pin
+* S0 &rarr; A0 pin
+* S2 &rarr; A2 pin
+* S3 &rarr; A3 pin
+* S5 &rarr; A5 pin
 
 
 ## Following a line:
