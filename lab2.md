@@ -211,7 +211,6 @@ Just for fun, we built a low pass filter.  We selected our parameters using the 
 ![](./images/Lab2/acoustics/20170916_150159.jpg) 
 
 
-
 ## Optical Team:
 
 ### General Objective: 
@@ -237,6 +236,7 @@ We notice that the amplitude of the signal produced is not high enough to meet t
 5) Our Schematic is complete
 
 FINAL CIRCUIT:
+
 ![](./images/Lab2/optics/IR-AMP-Circuit.png)
 
 6) We then checked by probing the IR LED that each frequency was being omitted.
