@@ -135,7 +135,8 @@ Here is a video demonstration:
 
 We found that the code worked for sensing the difference between very high, very low, and ~660Hz range tone. However, when testing a smaller interval, the code couldn’t distinguish between 585Hz, 660Hz, and 735Hz. To resolve this, we decided to specifically increase the rate of the Analog-to-Digital Converter (ADC) clock. To do so, we modified the setup to set ADC to free running mode and added code in the main body to accommodate using the ADC clock instead of AnalogRead(). We looked at the sample FFC library code to learn how to adjust the ADC clock. 
 
-Result: We successfully separated the closer values into different bins. One more problem we encountered was that our LED would light up for the 735Hz tone instead of the 660Hz one. We realized that the starting index of the bin was different from the first index of our Excel chart (from which we read our data), so we simply changed the target bin number. The final code is below:
+##### Result: 
+We successfully separated the closer values into different bins. One more problem we encountered was that our LED would light up for the 735Hz tone instead of the 660Hz one. We realized that the starting index of the bin was different from the first index of our Excel chart (from which we read our data), so we simply changed the target bin number. The final code is below:
 
 ```
 #define LOG_OUT 1 // use the log output function
@@ -200,19 +201,23 @@ Here is our data in an Excel chart:
 Just for fun, we built a low pass filter.  We selected our parameters using the provided filter [wizard website] (http://www.analog.com/designtools/en/filterwizard/).
 
 
-![](./images/Lab2/acoustics/Low Pass Filter Specs.PNG)
+![](./images/Lab2/acoustics/LowPassFilterSpecs.PNG)
 
 
-![](./images/Lab2/acoustics/Low Pass Circuit.PNG)
+![](./images/Lab2/acoustics/LowPassCircuit.PNG)
 
 ![](./images/Lab2/acoustics/20170916_150159.jpg) 
 
 
 
 ## Optical Team:
+
 ### General Objective: 
+
 In this lab, we utilize skills we learn about IR sensors to integrate sensors and signal processing to interface with the arduino controller on our robot. The two types of IR sensors we explored were acoustic and optical. 
+
 ### Optical Sensor Objective: 
+
 In this part of the lab we use a phototransistor to detect an IR beacon transmitter with multiple IR modulation frequencies. We use the FFT music library to create digital filters to allow the IR sensitive transistor to clearly read a signal ranging from 7-17 kHz. 
 
 1) We first begin by developing our photo transistor circuit on a breadboard.
@@ -223,22 +228,44 @@ We notice that the amplitude of the signal produced is not high enough to meet t
 
 2) Connecting amplifier to output line of phototransistor 
 
-
-
-
 3) With the amplifier, we notice that the phototransistor is able to determine the threshold between IR light present or not, so we know that we needed a filter to remove the unwanted signals 
 
 4) Designing a high-pass filter 
 
-
-
 5) Our Schematic is complete
 
-FINAL CIRCUIT
+FINAL CIRCUIT:
+![](./images/Lab2/optics/IR-AMP-Circuit.png)
 
 6) We then checked by probing the IR LED that each frequency was being omitted.
 
+![](./images/Lab2/2.png)
 
+7) We then apply a digital filter through the FFT library and check to see if our treasurer is detected by the phototransistor at various frequencies. As seen in the graph below,
+
+
+When there was no IR light detected, we notice that there is no obvious spike in any of the bins, indicating no frequencies were detected
+
+![](./images/Lab2/not_etected.PNG)
+
+7kHz, we see that there is a spike, as calculated at bin 49.
+
+![](./images/Lab2/7k.PNG)
+
+12kHz, we see that there is a spike around bin 80.
+![](./images/Lab2/12k.PNG)
+
+
+17kHz, we observe a spike around bin 117. 
+![](./images/Lab2/17k.PNG)
+
+
+
+Once confirming the design on the breadboard was successful, we prototyped a breakout board to fit onto our robot. Reevaluating the new circuit with multiple tests.  
+
+
+Good News: We were successfully able to identify IR treasurer with all frequencies. 
+![](./images/Lab2/peter.PNG)
 
 
 ## Merge:
