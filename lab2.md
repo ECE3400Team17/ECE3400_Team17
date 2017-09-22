@@ -73,7 +73,7 @@ The graph shows the reading in each bin, and since we don’t have a filter, you
 
 #### Microphone Signal Output:
 
-	We ran the sample code shown above, but with the signal generator replaced by the Microphone.  We played a tones at various frequencies (660Hz, 1320Hz, 1980Hz, 2640Hz, 3300Hz, and 3960Hz) from our phone and plotted the results the Arduino outputted onto an plot:
+We ran the sample code shown above, but with the signal generator replaced by the Microphone.  We played a tones at various frequencies (660Hz, 1320Hz, 1980Hz, 2640Hz, 3300Hz, and 3960Hz) from our phone and plotted the results the Arduino outputted onto an plot:
   
 ![](./images/Lab2/acoustics/microFFT.png)
   
