@@ -194,6 +194,8 @@ void loop() {
 }
 ```
 Here is our data in an Excel chart:
+
+
 ![](./images/Lab2/acoustics/distinguishFFT.png)
 
 ### BONUS!!!!:
