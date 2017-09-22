@@ -241,25 +241,25 @@ FINAL CIRCUIT:
 
 6) We then checked by probing the IR LED that each frequency was being omitted.
 
-![](./images/Lab2/2.png)
+![](./images/Lab2/optics/2.png)
 
 7) We then apply a digital filter through the FFT library and check to see if our treasurer is detected by the phototransistor at various frequencies. As seen in the graph below,
 
 
 When there was no IR light detected, we notice that there is no obvious spike in any of the bins, indicating no frequencies were detected
 
-![](./images/Lab2/not_etected.PNG)
+![](./images/Lab2/optics/not_etected.PNG)
 
 7kHz, we see that there is a spike, as calculated at bin 49.
 
-![](./images/Lab2/7k.PNG)
+![](./images/Lab2/optics/7k.PNG)
 
 12kHz, we see that there is a spike around bin 80.
-![](./images/Lab2/12k.PNG)
+![](./images/Lab2/optics/12k.PNG)
 
 
 17kHz, we observe a spike around bin 117. 
-![](./images/Lab2/17k.PNG)
+![](./images/Lab2/optics/17k.PNG)
 
 
 
@@ -267,7 +267,7 @@ Once confirming the design on the breadboard was successful, we prototyped a bre
 
 
 Good News: We were successfully able to identify IR treasurer with all frequencies. 
-![](./images/Lab2/peter.PNG)
+![](./images/Lab2/optics/peter.PNG)
 
 
 ## Merge:
