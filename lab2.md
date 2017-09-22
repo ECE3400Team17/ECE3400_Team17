@@ -198,7 +198,7 @@ Here is our data in an Excel chart:
 
 ### BONUS!!!!:
 
-Just for fun, we built a low pass filter.  We selected our parameters using the provided filter [wizard website] (http://www.analog.com/designtools/en/filterwizard/).
+Just for fun, we built a low pass filter.  We selected our parameters using the provided filter [wizard website](http://www.analog.com/designtools/en/filterwizard/).
 
 
 ![](./images/Lab2/acoustics/LowPassFilterSpecs.PNG)
@@ -222,7 +222,7 @@ In this part of the lab we use a phototransistor to detect an IR beacon transmit
 
 1) We first begin by developing our photo transistor circuit on a breadboard.
 
-![](./images/Lab2/1.png)
+![](./images/Lab2/optics/1.png)
 
 We notice that the amplitude of the signal produced is not high enough to meet the threshold for the transistor to acknowledge the presence of the IR led. Therefore we add an operational amplifier in order to amplify the input source signal.
 
