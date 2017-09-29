@@ -39,6 +39,7 @@ View our commitment: [Team Contract](./team_contract.md)
 
 ## Milestones
 * [Milestone 1](./milestone1.md)
+* [Milestone 2](./milestone2.md)
 
 ## Meeting Minutes
 Minutes for each meeting can be viewed [here](./meeting_min.md).
