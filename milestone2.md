@@ -128,7 +128,7 @@ Since the sensor could generate an absolute distance data, we could just use thi
 
 For our preliminary code, we would attach the sensor in the front of the robot, and would call that the robot detects a wall and turn left when the distance <= 90 mm. 
 
-Our implementation:
+### Our implementation: 
 
 ![](./images/Milestone2/finalPic.jpg)
 
