@@ -3,7 +3,7 @@
 # Milestone2
 
 ## Objective:
-
+The two main goals of this Milestone was to identify the 3 treasures and all the ability to detect walls.
 
 
 ## Treasure detection:
@@ -86,12 +86,20 @@ void loop() {
     delay(100);
   }}
 ```
-
+### 7kHz Treasure:
 ![](./images/Milestone2/7k.jpg)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/A4SQmpU6chg" frameborder="0" allowfullscreen></iframe>
+
+### 12kHz Treasure:
 ![](./images/Milestone2/12k.jpg)
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9KYcdi5lAQ0" frameborder="0" allowfullscreen></iframe>
+
+### 17kHz Treasure:
 ![](./images/Milestone2/17k.jpg)
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/DN0Qly8Bqns" frameborder="0" allowfullscreen></iframe>
 
 
 ## Wall detection:
@@ -233,7 +241,7 @@ void turnleft() {
   servoL.write(0);
   servoR.write(0);
 
-  delay(800);
+  delay(650);
 
   //servoL.write(90);
   servoR.write(90);
@@ -244,18 +252,19 @@ void turnRight() {
   servoL.write(180);
   servoR.write(180);
 
-  delay(800);
+  delay(650);
 
   servoL.write(90);
   servoR.write(90);
 }
 */
 void stay() {
-  Serial.print("333333\n");
   servoL.write(90);
   servoR.write(90);
 }
 ```
+### Video of the wall detection:
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Xuz5DzYh7hI" frameborder="0" allowfullscreen></iframe>
 
 
 
