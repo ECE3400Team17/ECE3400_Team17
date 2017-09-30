@@ -87,6 +87,13 @@ void loop() {
   }}
 ```
 
+![](./images/Milestone2/7k.jpg)
+
+![](./images/Milestone2/12k.jpg)
+
+![](./images/Milestone2/17k.jpg)
+
+
 ## Wall detection:
 
 For the distance sensor, we’re using the VL53L0X Time-of-Flight Distance Sensor. 
