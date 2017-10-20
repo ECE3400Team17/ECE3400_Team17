@@ -4,7 +4,9 @@
 
 ## October 14, 2017
 ### Note Taker: Stephanie Lin
-<iframe src="https://docs.google.com/a/cornell.edu/document/d/e/2PACX-1vR0ULjq8UL7HCRwgKsT7qAMeCElcVcJBG4LnIYyhwdlr8q4zeIrz-Sm8EMQsv-CVv9oksoZ9HfDVCy5/pub?embedded=true"></iframe>
+Today was a planning session.
+Meeting Minutes for today can be found [here](https://docs.google.com/a/cornell.edu/document/d/e/2PACX-1vR0ULjq8UL7HCRwgKsT7qAMeCElcVcJBG4LnIYyhwdlr8q4zeIrz-Sm8EMQsv-CVv9oksoZ9HfDVCy5/pub)
+We also complied a [list](https://docs.google.com/a/cornell.edu/spreadsheets/d/e/2PACX-1vSTQp0IG7Iwsusa700l3QNW1hzmw4rRXlBD25loEtV3EYwyXNp-MmKyH7rM3DGJ_d92AQiNVMZ2jJDK/pubhtml) of compnents to by.
 
 ## September 8, 2017:
 ### Note Taker: Stephanie Lin
