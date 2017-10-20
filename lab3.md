@@ -2,21 +2,16 @@
 
 # Lab 3: FPGA Video Controller and Sound Generation
 
-## Objective: 
+## Over all Objective: 
 
-## Work Distribution:
 
-### Graphics Team:
+## Graphics Team:
 * Stephanie
 * Yijia
 * Thinesiya 
 
-### Acoustic Team:
-* Mira
-* Peter
-* Alan
-
-## Graphics Team:
+### Objective:
+In this section of the lab we learned how to create a VGA output from a FPGA board.
 
 ### Description of how the DAC on the provided VGA connectors works and how the resistor values were chosen.
 
@@ -330,6 +325,9 @@ endmodule
  
 
 ## Acoustic Team:
+* Mira
+* Peter
+* Alan
 
 
 
