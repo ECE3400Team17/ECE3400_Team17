@@ -288,9 +288,7 @@ module DE0_NANO(
     end // always @ (posedge CLOCK_50)
 	
 	 
-	
-//	Team alpha
-	   //2-by-2 array of bits
+	//2-by-2 array of bits
        reg grid_array [1:0][1:0]; //[rows][columns]
        wire [1:0] grid_coord_x; //Index x into the array
        wire [1:0] grid_coord_y; //Index y into the array
@@ -298,41 +296,34 @@ module DE0_NANO(
        wire highlighted_x;
        wire highlighted_y;	 
       //Switch input through GPIO pins
-       assign highlighted_x = GPIO_0_D[33];
-       assign highlighted_y = GPIO_0_D[31];
-		 assign GPIO_CLK = GPIO_0_D[29];
+       	assign highlighted_x = GPIO_0_D[33];
+       	assign highlighted_y = GPIO_0_D[31];
+ 	assign GPIO_CLK = GPIO_0_D[29];
 		 
 		always @ (posedge CLOCK_25) begin
-		  pixel_grid[0][0] <= (highlighted_x==0 && highlighted_y==0)? 8'b000_000_11 : 8'b000_000_00; 
-        pixel_grid[0][1] <= (highlighted_x==0 && highlighted_y==1)? 8'b000_000_11 : 8'b000_000_00; 
-        pixel_grid[1][0] <= (highlighted_x==1 && highlighted_y==0)? 8'b000_000_11 : 8'b000_000_00; 
-        pixel_grid[1][1] <= (highlighted_x==1 && highlighted_y==1)? 8'b000_000_11 : 8'b000_000_00; 
+		  	pixel_grid[0][0] <= (highlighted_x==0 && highlighted_y==0)? 8'b000_000_11 : 8'b000_000_00; 
+        		pixel_grid[0][1] <= (highlighted_x==0 && highlighted_y==1)? 8'b000_000_11 : 8'b000_000_00; 
+        		pixel_grid[1][0] <= (highlighted_x==1 && highlighted_y==0)? 8'b000_000_11 : 8'b000_000_00; 
+        		pixel_grid[1][1] <= (highlighted_x==1 && highlighted_y==1)? 8'b000_000_11 : 8'b000_000_00; 
 		  
 		  if(PIXEL_COORD_X < 10'd320 && PIXEL_COORD_Y < 10'd240) begin
-			PIXEL_COLOR <= pixel_grid[0][0];
-			
+			PIXEL_COLOR <= pixel_grid[0][0];	
 		  end
 	
 		  if(PIXEL_COORD_X >= 10'd320 && PIXEL_COORD_Y < 10'd240) begin
 			PIXEL_COLOR <= pixel_grid[0][1];
-		
 		  end
 			
 		  if(PIXEL_COORD_X < 10'd320 && PIXEL_COORD_Y >= 10'd240) begin
 			PIXEL_COLOR <= pixel_grid[1][0];
-
-		
 		  end
 		 	
 		  if(PIXEL_COORD_X >= 10'd320 && PIXEL_COORD_Y >= 10'd240) begin
 			PIXEL_COLOR <= pixel_grid[1][1];
-		
 		  end
 
 
 endmodule
-
-
 ```
 
 
