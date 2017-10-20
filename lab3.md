@@ -47,7 +47,9 @@ We can  read external inputs to FPGA by assign certain pins and connecting them 
        assign highlighted_x = GPIO_0_D[33];
        assign highlighted_y = GPIO_0_D[31];
 ```
-### Correctly updating a 4-bit array dependent on the inputsWe divide the screen into 4 parts with the background in black and display blue in the chosen part. We use two switches to control the location,one for x, one for y.  [0,0] represents up-left, [0,1] represents up-right, [1,0] represents down-left, [1,1] represents down-left. the chosen part will display blue otherwise it’s in black.
+### Correctly updating a 4-bit array dependent on the inputs
+
+We divide the screen into 4 parts with the background in black and display blue in the chosen part. We use two switches to control the location,one for x, one for y.  [0,0] represents up-left, [0,1] represents up-right, [1,0] represents down-left, [1,1] represents down-left. the chosen part will display blue otherwise it’s in black.
 ```
 always @ (posedge CLOCK_25) begin
         pixel_grid[0][0] <= (highlighted_x==0 && highlighted_y==0)? 8'b000_000_11 : 8'b000_000_00; 
@@ -57,7 +59,7 @@ always @ (posedge CLOCK_25) begin
 
 ```
 ### Drawing one box on the screen
-To draw a box, we set the corresponding pixels in red, and display it.
+To draw a box, we set the corresponding pixels in red, and displayed it.
 ```
 	always @ (posedge CLOCK_25) begin
 		pixel_grid[0][0] <=  8'b111_000_00;  // red
@@ -65,25 +67,21 @@ To draw a box, we set the corresponding pixels in red, and display it.
         	pixel_grid[1][0] <=  8'b000_000_00;  // black
         	pixel_grid[1][1] <=  8'b000_000_00;  // black
 		  
-		  if(PIXEL_COORD_X < 10'd320 && PIXEL_COORD_Y < 10'd240) begin
-				PIXEL_COLOR <= pixel_grid[0][0];
-			end
+	  	if(PIXEL_COORD_X < 10'd320 && PIXEL_COORD_Y < 10'd240) begin
+			PIXEL_COLOR <= pixel_grid[0][0];
+		end
 			
-			if(PIXEL_COORD_X >= 10'd320 && PIXEL_COORD_Y < 10'd240) begin
-				PIXEL_COLOR <= pixel_grid[0][1];
-		
-		  end
+		if(PIXEL_COORD_X >= 10'd320 && PIXEL_COORD_Y < 10'd240) begin
+			PIXEL_COLOR <= pixel_grid[0][1];
+		 end
 			
-		  if(PIXEL_COORD_X < 10'd320 && PIXEL_COORD_Y >= 10'd240) begin
+		 if(PIXEL_COORD_X < 10'd320 && PIXEL_COORD_Y >= 10'd240) begin
 			PIXEL_COLOR <= pixel_grid[1][0];
-
-		
-		  end
+		 end
 		 	
-		  if(PIXEL_COORD_X >= 10'd320 && PIXEL_COORD_Y >= 10'd240) begin
-				PIXEL_COLOR <= pixel_grid[1][1];
-		
-		  end
+		 if(PIXEL_COORD_X >= 10'd320 && PIXEL_COORD_Y >= 10'd240) begin
+			PIXEL_COLOR <= pixel_grid[1][1];
+		 end
 			
 ```
 
@@ -117,8 +115,6 @@ We first used the FPGA to toggle one LED.
 				grid_array[0][1] <= ~grid_array[0][1];
 				grid_array[1][1] <= ~grid_array[1][1];
 				led_counter <= 25'b0; // reset clock
- 				//led_state   <= ~led_state;
-				//led_counter <= 25'b0;
 		  end 
 		  
 		  else begin	
@@ -127,14 +123,12 @@ We first used the FPGA to toggle one LED.
 				grid_array[0][1] <= grid_array[0][1];
 				grid_array[1][0] <= grid_array[1][0];
 				grid_array[1][1] <= grid_array[1][1];
-				
-				//led_state   <= led_state;
 				led_counter <= led_counter + 25'b1;
 		  end 
 	 end
 ```
 
-We next the button on the FPGA board to control multiple LEDs:
+We next used the button on the FPGA board to control multiple LEDs:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iLnJGlyvGGo" frameborder="0" allowfullscreen></iframe>
 
@@ -172,10 +166,6 @@ We first mapped out our switch inputs to positions on the screen:
 ![](./images/Lab3/FPGA_Graphic/10.PNG)
 
 ![](./images/Lab3/FPGA_Graphic/11.PNG)
-
-
-
-
 
 
 We also had to build a circuit containing a circuit and voltage divider.  The voltage divider is used to decrease the 5V output from the Arduino to 3.3V which is the voltage limit for the FPGA board.
