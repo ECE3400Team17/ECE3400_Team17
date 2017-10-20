@@ -4,7 +4,7 @@
 
 ## October 14, 2017
 ### Note Taker: Stephanie Lin
-<iframe width=200% height=200% src="https://docs.google.com/a/cornell.edu/document/d/e/2PACX-1vR0ULjq8UL7HCRwgKsT7qAMeCElcVcJBG4LnIYyhwdlr8q4zeIrz-Sm8EMQsv-CVv9oksoZ9HfDVCy5/pub?embedded=true"></iframe>
+<iframe src="https://docs.google.com/a/cornell.edu/document/d/e/2PACX-1vR0ULjq8UL7HCRwgKsT7qAMeCElcVcJBG4LnIYyhwdlr8q4zeIrz-Sm8EMQsv-CVv9oksoZ9HfDVCy5/pub?embedded=true"></iframe>
 
 ## September 8, 2017:
 ### Note Taker: Stephanie Lin
