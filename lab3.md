@@ -3,7 +3,7 @@
 # Lab 3: FPGA Video Controller and Sound Generation
 
 ## Over all Objective: 
-
+Lab 3 introduces the FPGA to our current setup.  The six of us were split into two teams.  One was incharge of setting up the VGA 
 
 ## Graphics Team:
 * Stephanie
