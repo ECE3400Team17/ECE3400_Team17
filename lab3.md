@@ -6,9 +6,7 @@
 Lab 3 introduces the FPGA to our current setup.  The six of us were split into two teams.  One was incharge of setting up the VGA 
 
 ## Graphics Team:
-* Stephanie
-* Yijia
-* Thinesiya 
+Yijia Chen, Thinesiya Krishnthasan, Stephanie Lin 
 
 ### Objective:
 In this section of the lab we learned how to create a VGA output from a FPGA board.
@@ -27,7 +25,7 @@ The DAC converter connected to a VGA cable is shown above. Each color is labeled
 
 To begin with, we set the whole screen color in green. The idea is let every pixel be green.
 
-```
+```verilog
 always @ (posedge CLOCK_25) begin
      PIXEL_COLOR <= 8’b000_000_11
 ```
@@ -35,7 +33,7 @@ always @ (posedge CLOCK_25) begin
 ### Reading external inputs to FPGA
 
 We can  read external inputs to FPGA by assign certain pins and connecting them with wires.  The wires are connected with external inputs.
-```
+```verilog
        wire highlighted_x;
        wire highlighted_y;	 
       //Switch input through GPIO pins
@@ -45,7 +43,7 @@ We can  read external inputs to FPGA by assign certain pins and connecting them 
 ### Correctly updating a 4-bit array dependent on the inputs
 
 We divide the screen into 4 parts with the background in black and display blue in the chosen part. We use two switches to control the location,one for x, one for y.  [0,0] represents up-left, [0,1] represents up-right, [1,0] represents down-left, [1,1] represents down-left. the chosen part will display blue otherwise it’s in black.
-```
+```verilog
 always @ (posedge CLOCK_25) begin
         pixel_grid[0][0] <= (highlighted_x==0 && highlighted_y==0)? 8'b000_000_11 : 8'b000_000_00; 
         pixel_grid[0][1] <= (highlighted_x==0 && highlighted_y==1)? 8'b000_000_11 : 8'b000_000_00; 
@@ -57,7 +55,7 @@ always @ (posedge CLOCK_25) begin
 
 To draw a box, we set the corresponding pixels in red, and displayed it.
 
-```
+```verilog
 	always @ (posedge CLOCK_25) begin
 		pixel_grid[0][0] <=  8'b111_000_00;  // red
        		pixel_grid[0][1] <=  8'b000_000_00;  // black
@@ -86,7 +84,7 @@ To draw a box, we set the corresponding pixels in red, and displayed it.
 Before writing Verilog to take in inputs that would switch among the four squares we first used buttons on the FPGA board to control one and then multiple LED.  We used as a starting step so that we will have the input logic down before adding in the VGA component.
 
 We first used the FPGA to toggle one LED.
-```	
+```verilog	
  // Simple state machine to toggle LED0 every one second
 	 always @ (posedge CLOCK_25) begin
 		  if (reset) begin
@@ -129,7 +127,7 @@ We next used the button on the FPGA board to control multiple LEDs:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/iLnJGlyvGGo" frameborder="0" allowfullscreen></iframe>
 
-```
+```verilog
 	 // Simple state machine to toggle multiple LEDs controlled by button
 	 always @ (posedge CLOCK_25) begin
 		  if (reset) begin
@@ -174,7 +172,7 @@ The following video shows us controlling the VGA from inputs given by switches:
 <iframe width="560" height="315" src="https://www.youtube.com/embed/eVZMVpm_ZxY" frameborder="0" allowfullscreen></iframe>
 
 Here is the full code that performs the functions shown in the video above: 
-```
+```verilog
 //=======================================================
 // ECE3400 Fall 2017
 // Lab 3: Switch Among f Squares
@@ -342,11 +340,11 @@ Figure 1: Resistor network of the 8-Bit R2R DAC, sourced from this [datasheet](h
 
 We started this lab by building a R2R Digital to Analog converter (DAC) to convert the digital FPGA outputs to an analog voltage audio signal. This circuit gets it's name because it is built from a resistor network composed of resistances R and 2R and is pictured in Figure 1. The 8-Bit R2R DAC is packaged in a 16-dip package that was user friendly and easy to solder.
 
-![R2R DAC Schematic]((./images/Lab3/FPGA_Acoustic/schematic.png)
+![R2R DAC Schematic](./images/Lab3/FPGA_Acoustic/schematic.png)
 
-![finished board]((./images/Lab3/FPGA_Acoustic/board.png)
+![finished board](./images/Lab3/FPGA_Acoustic/board.png)
 
-![Assembly of board and FPGA]((./images/Lab3/FPGA_Acoustic/assembled.png)
+![Assembly of board and FPGA](./images/Lab3/FPGA_Acoustic/assembled.png)
 
 Figure 2: The schematic of the finished 8-bit DAC Circuit (top), the soldered board (middle) and the board and FPGA assembly with speaker connected (bottom).
 
@@ -446,7 +444,7 @@ always @ (posedge CLOCK_25) begin
 end
 ```
 
-![sine wave output]((./images/Lab3/FPGA_Acoustic/sine.png)
+![sine wave output](./images/Lab3/FPGA_Acoustic/sine.png)
 
 Figure 3: The output 1 kHz sine wave
 
@@ -513,7 +511,7 @@ end
 
 ##### Part 4: Creating a Square Wave
 
-![square wave]((./images/Lab3/FPGA_Acoustic/square.png)
+![square wave](./images/Lab3/FPGA_Acoustic/square.png)
 
 Figure 4: The square wave output on the oscilloscope
 
