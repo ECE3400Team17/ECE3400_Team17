@@ -54,7 +54,9 @@ always @ (posedge CLOCK_25) begin
 
 ```
 ### Drawing one box on the screen
+
 To draw a box, we set the corresponding pixels in red, and displayed it.
+
 ```
 	always @ (posedge CLOCK_25) begin
 		pixel_grid[0][0] <=  8'b111_000_00;  // red
@@ -322,6 +324,7 @@ endmodule
 ```
 
 
+
  
 
 ## Acoustic Team:
@@ -329,8 +332,216 @@ endmodule
 * Peter
 * Alan
 
+### Objective: 
+FPGA response to an external input and generate 3 signals(tones) to a speaker using a 8-bit DAC
+
+### DAC schematic:
+
+![](./images/Lab3/FPGA_Acoustic/dacSchematic.jpg)
+
+### Pin assignment:
+
+```
+ assign GPIO_1_D[9] = amplitude[0];  //B0
+ assign GPIO_1_D[11] = amplitude[1];  //B1
+ assign GPIO_1_D[13] = amplitude[2];  //B2
+ assign GPIO_1_D[15] = amplitude[3];  //B3
+ assign GPIO_1_D[17] = amplitude[4];  //B4
+ assign GPIO_1_D[19] = amplitude[5];  //B5
+ assign GPIO_1_D[21] = amplitude[6];  //B6
+ assign GPIO_1_D[23] = amplitude[7];  //B7
+```
+
+### The soldered circuit:
+
+![](./images/Lab3/FPGA_Acoustic/soldered_circuit.jpg)
+
+![](./images/Lab3/FPGA_Acoustic/soldered_circuit2.jpg)
+
+### Part 1: 
+Build up the acoustic circuit and Play Square Wave
+To create the external input signal, we toggle between a high voltage output and a low voltage output to generate a square wave. To do so we created a counter that would increment at the clock rate. 
+This is the code we used to implement the square wave. 
+
+```
+// Basically we're using two values of the sine look up table (sin[64] & sin[188])
+// to simulate the high and low level of the square wave. The detail about sine look-up
+// table is in next section.
+ 
+reg [24:0] data_counter; // timer
+reg [7:0] data_state;   // the index of the sin_LUT
+wire [7:0] amplitude;
+ 
+// Sine LUT module
+        	 SINE_LUT sin(
+                    	.addr(data_state),
+                    	.clk(CLOCK_25),
+                    	.q(amplitude)
+        	 );
+ 
+always @ (posedge CLOCK_25) begin
+                    	  if (reset) begin
+                                            	data_state   <= 8'b01000000;
+                                            	data_counter <= 25'b0;                  	
+                    	  end
+                    	 
+                    	  if (data_counter == 250000) begin
+                    	  	if(data_state == 8'b01000000)
+                                            		data_state <= 8'b10111100;
+                                            	else
+                                            		data_state <= 8'b01000000;
+ 
+                                            	data_counter <= 25'b0;
+                    	  end
+                    	 
+                    	  else begin 	
+                                            	data_state   <= data_state;
+                                            	data_counter <= data_counter + 25'b1;
+                    	  end            	 
+        	 end
+
+```
+
+To confirm functionality of our code, we used the oscilloscope to view the signal. The frequency of the square wave we generated is 50 Hz. (since we choose our toggle rate at 250000 clk cycles, the freq = 1/(2*250000*(1/25MHz)) = 50 Hz.)
+
+![](./images/Lab3/FPGA_Acoustic/squareWave.png)
+ 
+
+We then connected the speakers to the GPIO pin and listened to our sound. We observed a low tune with a fuzzy signal. 
 
 
+### Part 2: 
+Generating and Playing a Sine Wave:
+To get a better sound, we generated a sine wave using the direct digital synthesis technique. 
+To do so we wanted to map the digital input of the FPGA to analog outputs. We created a sine look-up table using matlab that gives values of a sin wave of specified frequency for verilog to iterate through to produce desired frequencies.
+We then created a Verilog module to interface with the matlab look up table  
+
+```
+module SINE_LUT(input [7:0] addr, input clk, output reg [7:0] q);
+	reg [7:0] sine[255:0];
+	initial
+	begin
+		sine[0] <= 8'b01111111 
+// rest of the bits
+		sine[255] <= 8'b01111111;
+	end
+	always @ (posedge clk)
+	begin
+		q <= sine[addr];
+	end
+endmodule
+```
+
+The matlab function we used to generate the sine table:
+
+```
+function verilog_sinLUT(fid, data)
+    n = length(data);
+    fprintf(fid, 'module SINE_ROM(input [%i:0] addr, input clk, output reg [7:0] q);\r\n', ceil(log2(n))-1);
+    fprintf(fid, '\treg [7:0] sine[%i:0];\r\n', n-1);
+    
+    fprintf(fid, '\tinitial\r\n\tbegin\r\n');
+    for i = 0:n-1
+        fprintf(fid, '\t\tsine[%i] <= 8''b%s;\r\n', i,num2str(dec2bin(data(i+1),8)));
+    end
+    fprintf(fid, '\tend\r\n');
+    
+    fprintf(fid, '\talways @ (posedge clk)\r\n\tbegin\r\n');
+    fprintf(fid, '\t\tq <= sine[addr];\r\n\tend\r\n');
+    fprintf(fid, 'endmodule\r\n');
+```
+
+The part of the code to generate a sine wave (with freq = 1khz):
+
+```
+always @ (posedge CLOCK_25) begin
+                    	  if (reset) begin
+                                            	data_state   <= 8'b0;
+                                            	data_counter <= 25'b0;                  	
+                    	  end
+                    	 
+                    	  if (data_counter == 96) begin
+	                                  data_state <= data_state + 8'b1;
+                                            	data_counter <= 25'b0;
+                    	  end
+                    	 
+                    	  else begin 	
+                                            	data_state   <= data_state;
+                                            	data_counter <= data_counter + 25'b1;
+                    	  end            	 
+        	 end
+```
+
+The sine wave:
+
+![](./images/Lab3/FPGA_Acoustic/triangleWave.jpg)
+
+ 
+### Part 3: Generate a tone of at least 3 different frequencies:
+
+In the previous part, we used a counter threshold to determine the actual frequency of the sine wave. Hence to make a tone with audio signals of 3 different frequencies, we need to set up three different counter thresholds (Freq1, Freq2, Freq3) and let them work in sequence to generate the audio that changes its frequencies in serial.
+ 
+The algorithm and the code:
+
+```
+localparam Freq1 = 96;
+localparam Freq2 = 48;
+localparam Freq3 = 144;
+ 
+ 
+reg [24:0] count;
+reg [24:0] data_counter;
+reg [7:0] data_state;
+wire [7:0] amplitude;
+ 
+SINE_LUT sin(
+   .addr (data_state),
+   .clk (CLOCK_25),
+   .q (amplitude)
+);
+ 
+always @ (posedge CLOCK_25) begin
+                    	  if (reset) begin
+                                            	data_state   <= 8'b00000000;
+                                            	data_counter <= 25'b0;
+                                            	count <= 25'b0;
+                                            	
+                    	  end
+                    	 
+                    	  if (0<=count && count<300000 && data_counter == Freq1) begin
+                                            	data_state   <= data_state + 8'b00000001;
+                                            	count <= count + 25'b1;
+                                            	data_counter <= 25'b0;
+                    	  end
+                    	 
+                    	  else if (300000<=count && count<900000 && data_counter == Freq2) begin
+                    	        	   data_state   <= data_state + 8'b00000001;
+                                            	count <= count + 25'b1;
+                                            	data_counter <= 25'b0;
+                    	  end
+                    	 
+                    	  else if (900000<=count && count<1100000 && led_counter == Freq3) begin
+                    	  	data_state   <= data_state + 8'b00000001;
+                                            	count <= count + 25'b1;
+                                            	data_counter <= 25'b0;
+                    	  end
+                    	 
+                    	  else if (count == 1100000)
+                    	  	count <= 25'b0;
+                    	 
+                    	  else begin 	
+                                            	data_state   <= data_state;
+                                            	data_counter <= data_counter + 25'b1;
+                    	  end // always @ (posedge CLOCK_25)
+                    	 
+            	 end
+```
+
+For the first 300000 data pieces of the sine table, we will read in the value at the rate of Freq1 (i.e. one data per 96 clk cycles), and for the next 600000 (300000 ~ 900000) data pieces, we will change the reading rate to Freq2 (i.e. one data per 48 clk cycles), and for the last 200000 data pieces, we will use the reading rate of Freq3 (i.e. one data per 144 clk cycles). In that way, we will hear an audio signal with middle – high – low frequencies in sequence.
+ 
+-When the counter hits 1100000, it reaches the max value, and will be set back to zero.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5nfu_jhT2kA" frameborder="0" allowfullscreen></iframe>
 
 
 [To Home Page](./index.md)
