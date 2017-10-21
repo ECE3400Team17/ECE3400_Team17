@@ -164,7 +164,6 @@ We first mapped out our switch inputs to positions on the screen:
 
 
 We also had to build a circuit containing a circuit and voltage divider.  The voltage divider is used to decrease the 5V output from the Arduino to 3.3V which is the voltage limit for the FPGA board.
-
 ![](./images/Lab3/FPGA_Graphic/FPGA_input.jpg)
 
 The following video shows us controlling the VGA from inputs given by switches:
@@ -175,7 +174,7 @@ Here is the full code that performs the functions shown in the video above:
 ```verilog
 //=======================================================
 // ECE3400 Fall 2017
-// Lab 3: Switch Among f Squares
+// Lab 3: Switch Among 4 Squares
 //=======================================================
 
 `define ONE_SEC 25000000
