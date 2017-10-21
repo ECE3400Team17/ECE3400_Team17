@@ -27,7 +27,7 @@ To begin with, we set the whole screen color in green. The idea is let every pix
 
 ```verilog
 always @ (posedge CLOCK_25) begin
-     PIXEL_COLOR <= 8’b000_000_11
+     PIXEL_COLOR <= 8'b000_000_11
 ```
 
 ### Reading external inputs to FPGA
