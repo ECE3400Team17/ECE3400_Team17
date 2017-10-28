@@ -298,6 +298,187 @@ module SPI (input sck, input mosi, input cs, output reg MAP);
  
 When the cs (chip selected) goes down, the FPGA starts to receive data from the most line per positive clock cycle. For each cycle, the FPGA will receive a 8-bit data and stored it in MAP. Eventually the MAP will consist of 20 8-bit data for the robot being in all the positions in the maze, having a length of 160 bits and storing all the information of the vehicle when it is in the maze.
 
+### Map Rendering with an FPGA
 
+![Rendered 5x4 Map](./images/Lab4/map.jpg)
+
+Figure 1: The finished 5x4 map rendered with the robot (blue), explored areas (grey), and to be explored areas (white).
+
+
+
+The goal of this project is to be able to render the maze map using the FPGA's video output. The standard resolution for VGA is 640x480 pixels which divides nicely into 20x15 square tiles that are 32 pixels wide. Sadly, this didn't work out very well because the displays we are using have elongated pixels and the Y-dimension is shrunk. To fix this we extended the height from 32 to 38 to keep the rendered tiles square. Since each tile in the map is identical, we can breakdown this problem into two parts, first a module to render the data in a cell, for now this is just a color representing its state, and second a decoder that could convert X and Y coordinates to those relative to the cell to be rendered.
+
+##### Tile Rendering
+
+```verilog
+`define X_SIZE 10'd32
+`define Y_SIZE 10'd38
+`define N_WALL 10'd5
+`define S_WALL 10'd5
+`define E_WALL 10'd5
+`define W_WALL 10'd5
+`define COL_WALL 	8'b11100000
+`define COL_UNDF	8'b11100011
+`define COL_RBT 8'b00000011
+`define COL_VIS 8'b01101101
+`define COL_UNV 8'b11111111
+
+module TILE_RENDER (input [9:0] X, input [9:0] Y, input [9:0] XOFF, input [9:0] YOFF, input CLK, input [7:0] CELL, input [7:0] RBT, output reg [7:0] COL);
+	wire NORTH;
+	wire SOUTH;
+	wire EAST;
+	wire WEST;
+	wire [1:0] COLOR;
+	wire [1:0] TREASURE;
+	wire ncnd;
+	wire scnd;
+	wire ecnd;
+	wire wcnd;
+	wire rcnd;
+	wire icnd;
+	wire [1:0] ront;
+	wire rncnd;
+	wire rscnd;
+	wire recnd;
+	wire rwcnd;
+	
+	assign NORTH = CELL[0];
+	assign SOUTH = CELL[1];
+	assign EAST = CELL[2];
+	assign WEST = CELL[3];
+	assign COLOR = CELL[5:4];
+	assign TREASURE = CELL[7:6];
+	assign rcnd = RBT[0];
+	assign icnd = RBT[7];
+	assign ront = RBT[6:5];
+	assign rncnd = ront == 2'b00;
+	assign rscnd = ront == 2'b01;
+	assign recnd = ront == 2'b10;
+	assign rwcnd = ront == 2'b11;
+	
+	wire [9:0] xrel;
+	wire [9:0] yrel;
+	
+	assign xrel = X-XOFF;
+	assign yrel = Y-YOFF;
+	
+	assign ncnd = yrel  < `N_WALL;
+	assign scnd = yrel > `Y_SIZE-`S_WALL-1;
+	assign ecnd = xrel > `X_SIZE-`E_WALL-1;
+	assign wcnd = xrel < `W_WALL;
+	
+	always @ (posedge CLK)
+	begin
+		if(xrel >= 0 && xrel <= `X_SIZE && yrel >= 0 && yrel <= `Y_SIZE)
+		begin
+			if(rcnd)
+				COL <= `COL_RBT;
+			else if(COLOR == 2'b11)
+				COL <= `COL_VIS;
+			else if(COLOR == 2'b00)
+				COL <= `COL_UNV;
+			else
+				COL <= `COL_UNDF;
+		end
+		else
+			COL <= `COL_UNDF;
+	end
+endmodule
+```
+
+The code for the tile rendering is included above. It takes in pixel X and Y coordinates as well as the X and Y offsets to the current tile to be rendered. Additionally it takes in map data in terms of CELL and RBT to convey information about the current tile and the robot to be rendered. To see how this data is decoded and encoded look in the SPI communication section. Using the current pixel position and offsets we calculated tile relative coordinates that are always within X_SIZE and Y_SIZE of the tile. We then use the robot and cell data to pick which color we render to the screen which is an output of the module.
+
+
+
+#####  Tile Decoding
+
+```verilog
+`define X_SIZE 10'd32
+`define Y_SIZE 10'd38
+`define X_OFFSET 10'd0
+`define Y_OFFSET 10'd1
+
+module TILE_DECODE (input [9:0] X, input [9:0] Y, input [167:0] MAP, input CLK, output reg [9:0] XOFF, output reg [9:0] YOFF, output reg [7:0] CELL, output reg [7:0] RBT);
+	wire [4:0] rpos;
+	wire [2:0] roth;
+	assign rpos = MAP[164:160];
+	assign roth = MAP[167:164];
+	
+	always @ (posedge CLK)
+	begin
+// row
+		if(X >= (`X_SIZE*10'd0 + `X_OFFSET) && X < (`X_SIZE*(10'd0+10'd1) + `X_OFFSET) && Y >= (`Y_SIZE*10'd0 + `Y_OFFSET) && Y < (`Y_SIZE*(10'd0+10'd1) + `Y_OFFSET))
+		begin 
+			XOFF <= (`X_SIZE*10'd0 + `X_OFFSET);
+			YOFF <= (`Y_SIZE*10'd0 + `Y_OFFSET);
+			CELL <= MAP[7:0];
+			if(rpos == 5'b00000)
+				RBT <= {roth,5'b11111};
+			else
+				RBT <= {roth,5'b00000};
+				
+		end
+		
+		else if(X >= (`X_SIZE*10'd1 + `X_OFFSET) && X < (`X_SIZE*(10'd1+10'd1) + `X_OFFSET) && Y >= (`Y_SIZE*10'd0 + `Y_OFFSET) && Y < (`Y_SIZE*(10'd0+10'd1) + `Y_OFFSET))
+		begin 
+			XOFF <= (`X_SIZE*10'd1 + `X_OFFSET);
+			YOFF <= (`Y_SIZE*10'd0 + `Y_OFFSET);
+			CELL <= MAP[15:8];
+			if(rpos == 5'b00001)
+				RBT <= {roth,5'b11111};
+			else
+				RBT <= {roth,5'b00000};
+		end
+		
+		else if(X >= (`X_SIZE*10'd2 + `X_OFFSET) && X < (`X_SIZE*(10'd2+10'd1) + `X_OFFSET) && Y >= (`Y_SIZE*10'd0 + `Y_OFFSET) && Y < (`Y_SIZE*(10'd0+10'd1) + `Y_OFFSET))
+		begin 
+			XOFF <= (`X_SIZE*10'd2 + `X_OFFSET);
+			YOFF <= (`Y_SIZE*10'd0 + `Y_OFFSET);
+			CELL <= MAP[23:16];
+			if(rpos == 5'b00010)
+				RBT <= {roth,5'b11111};
+			else
+				RBT <= {roth,5'b00000};
+		end
+		
+		else if(X >= (`X_SIZE*10'd3 + `X_OFFSET) && X < (`X_SIZE*(10'd3+10'd1) + `X_OFFSET) && Y >= (`Y_SIZE*10'd0 + `Y_OFFSET) && Y < (`Y_SIZE*(10'd0+10'd1) + `Y_OFFSET))
+		begin 
+			XOFF <= (`X_SIZE*10'd3 + `X_OFFSET);
+			YOFF <= (`Y_SIZE*10'd0 + `Y_OFFSET);
+			CELL <= MAP[31:24];
+			if(rpos == 5'b00011)
+				RBT <= {roth,5'b11111};
+			else
+				RBT <= {roth,5'b00000};
+		end
+	
+/*..........CODE REMOVED....................*/
+		
+		else if(X >= (`X_SIZE*10'd3 + `X_OFFSET) && X < (`X_SIZE*(10'd3+10'd1) + `X_OFFSET) && Y >= (`Y_SIZE*10'd4 + `Y_OFFSET) && Y < (`Y_SIZE*(10'd4+10'd1) + `Y_OFFSET))
+		begin 
+			XOFF <= (`X_SIZE*10'd3 + `X_OFFSET);
+			YOFF <= (`Y_SIZE*10'd4 + `Y_OFFSET);
+			CELL <= MAP[159:152];
+			if(rpos == 5'b10000)
+				RBT <= {roth,5'b11111};
+			else
+				RBT <= {roth,5'b00000};
+		end
+		
+		else
+		begin
+			XOFF <= 10'b1111111111;
+			YOFF <= 10'b1111111111;
+			CELL <= 8'b00000000;
+			RBT <= 8'b00000000;
+		end
+	end
+	
+endmodule
+```
+
+
+
+A truncated version of our cell decoder is shown above. For each tile, a set of discrete checks if performed that determines what tile the current pixel is in. The code then calculates the X and Y offsets of that tile and updates the CELL and RBT data from the MAP that gets wired to the tile renderer. The code follows a simple repetitive structure so while pretty long, the actual time to produce was short. Figure 1 shows the results of this process, this system is able to successfully decode the map input data and output the current state of each cell as a solid color. Additionally, the code was written with modularity in mind so it will be easy to add more tests to the renderer to decode walls and treasures in the future labs. 
 
 [To Home Page](./index.md)
