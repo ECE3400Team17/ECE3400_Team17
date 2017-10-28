@@ -37,10 +37,12 @@ View our commitment: [Team Contract](./team_contract.md)
 * [Lab1: Microcontroller](./lab1.md)
 * [Lab2: Analog Circuitry and FFTs](./lab2.md)
 * [Lab3: FPGA Video Controller and Sound Generation](./lab3.md)
+* [Lab4: Radio Communication and Map Drawing](./lab4.md)
 
 ## Milestones
 * [Milestone 1](./milestone1.md)
 * [Milestone 2](./milestone2.md)
+
 
 ## Meeting Minutes
 Minutes for each meeting can be viewed [here](./meeting_min.md).
