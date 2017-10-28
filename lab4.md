@@ -3,7 +3,7 @@
 # Lab 4: FPGA Video Controller and Sound Generation
 
 ## Over all Objective: 
-Lab 4
+Lab4 is an extension of the work that was done for lab3. The goal of lab4 is to use the maze information that is received from the radio to update the maze information that will be displayed on a VGA monitor.  Our team was divided into to two different groups. One group worked on setting up the radio and the other worked on setting up the FPGA.
 
 ## Radio Team:
 Yijia Chen, Thinesiya Krishnthasan, Stephanie Lin 
@@ -194,7 +194,7 @@ if ( role == role_pong_back )
 
 The serial monitor displayed as expected. We sent and received a payload of value 60 (00111100). Our results are pictured below. The left side is the transmitter screen, and the right side is the receiver screen.
 
-![](./images/Lab4/NewDataSend Receive.png)
+![](./images/Lab4/NewDataSendReceive.png)
 
 ## FPGA Team:
 Peter Slater, Mira Bhut, Yirong Alan
