@@ -36,12 +36,12 @@ Next, we modified the code to send the maze as a single packet. We defined the m
 
 ```arduino 
 	unsigned char maze[4][5] =
-    {
-      2, 2, 2, 2, 2,
-      3, 1, 1, 1, 3,
-      3, 2, 0, 1, 2,
-      3, 1, 3, 1, 3,
-    }; 
+    	{
+	      2, 2, 2, 2, 2,
+	      3, 1, 1, 1, 3,
+	      3, 2, 0, 1, 2,
+	      3, 1, 3, 1, 3,
+   	}; 
 ```
 
 #### Modified code for the transmitting end —
@@ -49,26 +49,26 @@ Next, we modified the code to send the maze as a single packet. We defined the m
 ```arduino  
 	if (role == role_ping_out)
   	{
-  		// First, stop listening so we can talk.
+		// First, stop listening so we can talk.
   		radio.stopListening();
 
-     	// NOTE: the maze array is defined here
+     		// NOTE: the maze array is defined here
 
-       	// Send the maze in a single payload
-    	printf("Sending the maze!\n");
-    	bool ok = radio.write( maze, sizeof(maze) );
-    
-    	if (ok)
-      		printf("ok, sending. \n");
-    	else
-      		printf("failed.\n\r");
+       		// Send the maze in a single payload
+		printf("Sending the maze!\n");
+		bool ok = radio.write( maze, sizeof(maze) );
 
-    	// Now, continue listening
-    	radio.startListening();
+		if (ok)
+			printf("ok, sending. \n");
+		else
+			printf("failed.\n\r");
 
-    	// Try again 1s later
-    	delay(1000);
-  } 
+		// Now, continue listening
+		radio.startListening();
+
+    		// Try again 1s later
+    		delay(1000);
+  	} 
 ```
 
 *Note: the maze array is also defined in this section.*
