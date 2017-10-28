@@ -26,7 +26,7 @@ const uint64_t pipes[2] = { 0x000000002ALL, 0x000000002BLL };
 
 We then programmed both Arduino boards with the Getting Started example, plugged them into two different laptops, and selected one board to be the transmitter by entering “T” into the serial monitor. Below is a screenshot of what we saw on each monitor. The left side is from the transmitter and the right side is the response. We received regular outputs for successfully sent and received signals. Then, we examined the effect of moving the radios far from one another. We then noticed that the sending failed (see that the screen on the right does not show payload 67313 at all) and that the failures that didn’t time out would return with an exceptionally long round-trip delay.
 
-![](./images/Lab4/Send and Receive Getting Started.png)
+![](./images/Lab4/SendandReceiveGettingStarted.png)
 
 ### Sending an entire maze:
 
@@ -36,25 +36,25 @@ Next, we modified the code to send the maze as a single packet. We defined the m
 
 ```arduino 
 unsigned char maze[4][5] =
-	{
-      2, 2, 2, 2, 2,
-      3, 1, 1, 1, 3,
-      3, 2, 0, 1, 2,
-      3, 1, 3, 1, 3,
-	}; 
+{
+	2, 2, 2, 2, 2,
+	3, 1, 1, 1, 3,
+	3, 2, 0, 1, 2,
+	3, 1, 3, 1, 3,
+}; 
 ```
 
 #### Modified code for the transmitting end —
 
 ```arduino  
 if (role == role_ping_out)
-	{
+{
 	// First, stop listening so we can talk.
-		radio.stopListening();
+	radio.stopListening();
 
- 		// NOTE: the maze array is defined here
+	// NOTE: the maze array is defined here
 
-   		// Send the maze in a single payload
+	// Send the maze in a single payload
 	printf("Sending the maze!\n");
 	bool ok = radio.write( maze, sizeof(maze) );
 
@@ -66,9 +66,9 @@ if (role == role_ping_out)
 	// Now, continue listening
 	radio.startListening();
 
-		// Try again 1s later
-		delay(1000);
-	} 
+	// Try again 1s later
+	delay(1000);
+} 
 ```
 
 *Note: the maze array is also defined in this section.*
@@ -78,43 +78,43 @@ if (role == role_ping_out)
 
 ```arduino
 if ( role == role_pong_back )
-	{
+{
 	// if there is data ready
 	if ( radio.available() )
 	{
-  		// Dump the payloads until we've gotten everything
-  		unsigned char got_maze[4][5];
-  		bool done = false;
-  		while (!done)
-  		{
-    		// Fetch the payload, and see if this was the last one.
-    		done = radio.read( got_maze, sizeof(got_maze) );
+		// Dump the payloads until we've gotten everything
+		unsigned char got_maze[4][5];
+		bool done = false;
+		while (!done)
+		{
+			// Fetch the payload, and see if this was the last one.
+			done = radio.read( got_maze, sizeof(got_maze) );
 
-    		// Spew it
-    		for (int i=0 ; i<4 ; i++){
-      			for (int j=0 ; j<5 ; j++){
-        			printf ("%d ", got_maze[i][j]);
-      			}
-      			printf ("\n");
-    		}
+			// Spew it
+			for (int i=0 ; i<4 ; i++){
+				for (int j=0 ; j<5 ; j++){
+					printf ("%d ", got_maze[i][j]);
+				}
+				printf ("\n");
+			}
 
-	        // Delay just a little bit to let the other unit
-	        // make the transition to receiver
-	        delay(20);
-        }
+			// Delay just a little bit to let the other unit
+			// make the transition to receiver
+			delay(20);
+		}
 	}
-	}
+}
 ```
 
 The serial monitors display as we expect them to. The transmitting side sends the payload, and the second Arduino receives and displays the matrix.
 
 *Transmitting:*
 
-![](./images/Lab4/Pong Out.JPG)
+![](./images/Lab4/PongOut.JPG)
 
 *Receiving:*
 
-![](./images/Lab4/Pong Back 4x5.png)
+![](./images/Lab4/PongBack4x5.png)
 
 *Note: The RFK library has an Auto-ACK feature.*
 
@@ -130,38 +130,38 @@ For the transmitter, we packed the bits by using a left shift and sent the packa
 
 ```arduino
 if (role == role_ping_out)
-	{
-		// First, stop listening so we can talk.
-  	radio.stopListening();
+{
+	// First, stop listening so we can talk.
+	radio.stopListening();
 
-  
-  	// Define data.
-  	unsigned char new_data;
-  	// pack bits as follows:
-  	// indicator | direction (N/S/E/W) | position (cell 0 - 19)
-  	// 1 bit | 2 bits | 5 bits
+
+	// Define data.
+	unsigned char new_data;
+	// pack bits as follows:
+	// indicator | direction (N/S/E/W) | position (cell 0 - 19)
+	// 1 bit | 2 bits | 5 bits
 
 		// test
 	unsigned char ind = 0;  // indicator
-  	unsigned char dir = 3;  // direction
-  	unsigned char pos = 12; // robot position
+	unsigned char dir = 3;  // direction
+	unsigned char pos = 12; // robot position
 
-  	// shift bits in order to pack bits, then or them together
-  	new_data = ind << 6 | dir << 4 | pos;
-  	// (0,3,12) should give 0111100 or 60 in decimal
+	// shift bits in order to pack bits, then or them together
+	new_data = ind << 6 | dir << 4 | pos;
+	// (0,3,12) should give 0111100 or 60 in decimal
 
-  	// Send maze in single payload
-  	printf("Now sending new data!\n");
-  	bool ok = radio.write(&new_data, sizeof(unsigned char) );
+	// Send maze in single payload
+	printf("Now sending new data!\n");
+	bool ok = radio.write(&new_data, sizeof(unsigned char) );
 
-  	if (ok)
-    	printf("ok\n");
-  	else
-    	printf("failed.\n\r");
+	if (ok)
+		printf("ok\n");
+	else
+		printf("failed.\n\r");
 
-  	// Now, continue listening
-  	radio.startListening();
-	}
+	// Now, continue listening
+	radio.startListening();
+}
 ```
 
 The receiver side unpacks the bits.
@@ -170,31 +170,31 @@ The receiver side unpacks the bits.
 
 ```arduino
 if ( role == role_pong_back )
-	{
+{
 	// if there is data ready
 	if ( radio.available() )
 	{
-  		unsigned char got_data;
-  		bool done = false;
-  		while (!done)
-  		{
-    		// Fetch the payload, and see if this was the last one.
-    		done = radio.read(&got_data, sizeof(unsigned char) );
+		unsigned char got_data;
+		bool done = false;
+		while (!done)
+		{
+			// Fetch the payload, and see if this was the last one.
+			done = radio.read(&got_data, sizeof(unsigned char) );
 
-			    // Spew it
-    		printf("Got payload %d...\n",got_data); // display decimal
+		    	// Spew it
+			printf("Got payload %d...\n",got_data); // display decimal
 
-    		// Delay just a little bit to let the other unit
-    		// make the transition to receiver
-    		delay(20);
-   		}
+			// Delay just a little bit to let the other unit
+			// make the transition to receiver
+			delay(20);
+		}
 	}
-	}	
+}	
 ```
 
 The serial monitor displayed as expected. We sent and received a payload of value 60 (00111100). Our results are pictured below. The left side is the transmitter screen, and the right side is the receiver screen.
 
-![](./images/Lab4/New Data Send Receive.png)
+![](./images/Lab4/NewDataSendReceive.png)
 
 ## FPGA Team:
 Peter Slater, Mira Bhut, Yirong Alan
