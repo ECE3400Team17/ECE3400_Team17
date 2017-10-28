@@ -122,7 +122,7 @@ The serial monitors display as we expect them to. The transmitting side sends th
 
 We then modified the code to send new data. We sent 3 pieces of information: a 1-bit indicator, a 2-bit (cardinal) direction, and a 5-bit position coordinate. The indicator is for any extraneous information (i.e. treasures, walls) to be implemented in a suitable fashion in the future. If it turns out that this doesn’t work out well, our code can be easily modified to change the number of bits and the meaning of the indicator. The 2-bit direction denotes which way the robot is facing: North, South, East, or West. (Corresponding binary numbers to be assigned later when code is combined). Finally, the 5-bit position coordinate represents which cell the robot is in. Since the maze is a 4x5 grid, there are 20 boxes, and thus we need 5 bits. We will coordinate the position numbers as follows:
 
-![](./images/Lab4/grid.jpg)
+![](./images/Lab4/grid.JPG)
 
 For the transmitter, we packed the bits by using a left shift and sent the package as a single payload.
 
