@@ -302,7 +302,7 @@ When the cs (chip selected) goes down, the FPGA starts to receive data from the 
 
 ![Rendered 5x4 Map](./images/Lab4/map.jpg)
 
-Figure 1: The finished 5x4 map rendered with the robot (blue), explored areas (grey), and to be explored areas (white).
+*The finished 5x4 map rendered with the robot (blue), explored areas (grey), and to be explored areas (white).*
 
 
 
@@ -476,8 +476,6 @@ module TILE_DECODE (input [9:0] X, input [9:0] Y, input [167:0] MAP, input CLK, 
 	
 endmodule
 ```
-
-
 
 A truncated version of our cell decoder is shown above. For each tile, a set of discrete checks if performed that determines what tile the current pixel is in. The code then calculates the X and Y offsets of that tile and updates the CELL and RBT data from the MAP that gets wired to the tile renderer. The code follows a simple repetitive structure so while pretty long, the actual time to produce was short. Figure 1 shows the results of this process, this system is able to successfully decode the map input data and output the current state of each cell as a solid color. Additionally, the code was written with modularity in mind so it will be easy to add more tests to the renderer to decode walls and treasures in the future labs. 
 
