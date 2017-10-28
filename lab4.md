@@ -194,7 +194,7 @@ if ( role == role_pong_back )
 
 The serial monitor displayed as expected. We sent and received a payload of value 60 (00111100). Our results are pictured below. The left side is the transmitter screen, and the right side is the receiver screen.
 
-![](./images/Lab4/NewDataSendReceive.png)
+![](./images/Lab4/NewDataSend Receive.png)
 
 ## FPGA Team:
 Peter Slater, Mira Bhut, Yirong Alan
