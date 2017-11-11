@@ -7,10 +7,10 @@ Adafruit_VL53L0X lox = Adafruit_VL53L0X();
 Servo servoL;
 Servo servoR;
 
-int s2 = A1;
-int s3 = A2;
+int s2 = A2;
+int s3 = A3;
 int s0 = A0;
-int s5 = A3;
+int s5 = A5;
 int val0;
 int val2;
 int val3;
@@ -79,51 +79,36 @@ void goStraight() {
     servoR.write(60);
   }
   else if((val3<500)){
-    
     servoL.write(90);
     servoR.write(60);
   }
   else if((val2<500)){
-    
     servoL.write(120);
     servoR.write(90);
   }
   else{
-    
     servoL.write(90);
     servoR.write(90);
   }
 }
 
 void turnleft() {
+  //servoL.write(120);
+  //servoR.write(60);
   
-  servoL.write(120);
-  servoR.write(60);
-  
-  delay(100);
+  //delay(100);
   stay();
   servoL.write(0);
   servoR.write(0);
 
   delay(800);
 
-  //servoL.write(90);
-  servoR.write(90);
-}
-/*
-void turnRight() {
-  stay();
-  servoL.write(180);
-  servoR.write(180);
-
-  delay(800);
-
   servoL.write(90);
   servoR.write(90);
 }
-*/
+
 void stay() {
-  Serial.print("333333\n");
   servoL.write(90);
   servoR.write(90);
 }
+

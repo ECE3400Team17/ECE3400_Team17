@@ -12,8 +12,6 @@ Lab TAs: Leah Forrest and Curran Sinha
 ## Team members:
 Welcome to our webpage!
 
-![](./images/frenchPolice.PNG)
-
 * Mira A. Bhut (mab586) 
 
 * Yijia Chen (yc2366)
@@ -42,7 +40,7 @@ View our commitment: [Team Contract](./team_contract.md)
 ## Milestones
 * [Milestone 1](./milestone1.md)
 * [Milestone 2](./milestone2.md)
-
+* [Milestone 3](./milestone3.md)
 
 ## Meeting Minutes
 Minutes for each meeting can be viewed [here](./meeting_min.md).
