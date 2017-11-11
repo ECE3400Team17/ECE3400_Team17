@@ -40,6 +40,7 @@ The vedio below shows that the simulation:
 
  <iframe width="560" height="315" src="https://www.youtube.com/embed/Ljgl3WTfQXA" frameborder="0" gesture="media" allowfullscreen></iframe>
  
+ 
  ### Overview of Optimized Algorithum:
 The DFS is our stepping stone.  We started optimizing our algorithum by weighing the cost at each intersection and choosing the path with the lower cost.  At a deadend, the robot will follow the shortest path back to the most recent intersection with other potential paths.
  
