@@ -8,7 +8,7 @@
 
 ## In Simulation:
 
-We are using the DFS method to solve the maze. For any maze the robot is searching through, we could treat the maze as a tree structure with the top node as the starting point and one leaf node as the exit (ending point). Then, by applying Depth-First Searching recursion algorithm, we could lead the robot searching through the maze.
+We are using the DFS (Depth First Search) method to solve the maze. For any maze the robot is searching through, we could treat the maze as a tree structure with the top node as the starting point and one leaf node as the exit (ending point). Then, by applying Depth-First Searching recursion algorithm, we could lead the robot searching through the maze.
 
 For example, with the maze given below:
 
@@ -25,13 +25,20 @@ While depth-first searching the maze (in-order traverse with backtracking), we w
 
 A B D (backtrack) E H L (backtrack) M ** 
 
+
+We tried out our algorithum in matlab and use the simulation given by Professor Bruce Land.  We split the simulation to funtions like:
+* collectSensorInformation.m = Outputs the information from the three wall sensors (left, front, and right wall sensors)
+* dfs.m = traces the maze recursively. At each grid point the robot collects information about all it's neighbors which will help it decide whether any of the neigbors are a wall or a path to trace. If it reaches a deadend, the robot will trace back to the last time it reached an intersection with multiple options to go down (a fork in the rode).  It prints out Done! when it has mapped out the entire maze.
+
+The vedio below shows that the simulation: 
+
  <iframe width="560" height="315" src="https://www.youtube.com/embed/Ljgl3WTfQXA" frameborder="0" gesture="media" allowfullscreen></iframe>
 
 
 
 ## In Real Life:
 
-Line & Wall sensors:
+### Line & Wall sensors:
 
 We’re using 4 line sensors (product #) to let the robot go straight along the black tape and detecting the cross section. The most implementation of this part will be the same as what we did in milestone 1 and 2. For the extra requirement of milestone 3, we will treat each cross section we detected as a decision-making place where the robot will collect the information from the three wall detectors and to decide which way it will keep going based on the DFS algorithm.
 
