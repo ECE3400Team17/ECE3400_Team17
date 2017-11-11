@@ -37,7 +37,7 @@ The wall detectors we’re using are VL53L0X () sensors, which could detect the 
 
 To alternate between sensors to get all wall information, we will assign each sensor a unique address via a XSHUT pin. The Arduino code for alternating multiple wall sensors is below (we were alternating between two wall sensors in the test code):
 
-```matlab
+```arduino
 
 #include "Adafruit_VL53L0X.h"
 
