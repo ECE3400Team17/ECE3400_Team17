@@ -3,8 +3,7 @@
 # Milestone3
 
 ## Objective:
-
-
+The first goal of this milestone is to use the simulation to write a maze solving algorithum. The second goal of this milestone was to start putting all the past labs and milestones together an implement our search algorithum in real-life. 
 
 ## In Simulation:
 
@@ -26,15 +25,25 @@ While depth-first searching the maze (in-order traverse with backtracking), we w
 A B D (backtrack) E H L (backtrack) M ** 
 
 
+
+
+### Overview of DFS Algorithum:
 We tried out our algorithum in matlab and use the simulation given by Professor Bruce Land.  We split the simulation to funtions like:
 * collectSensorInformation.m = Outputs the information from the three wall sensors (left, front, and right wall sensors)
-* dfs.m = traces the maze recursively. At each grid point the robot collects information about all it's neighbors which will help it decide whether any of the neigbors are a wall or a path to trace. If it reaches a deadend, the robot will trace back to the last time it reached an intersection with multiple options to go down (a fork in the rode).  It prints out Done! when it has mapped out the entire maze.
+* dfs.m = traces the maze recursively. 
+
+At each grid point the robot collects information about all it's neighbors which will help it decide whether any of the neigbors are a wall or a path to trace. If it reaches a deadend, the robot will trace back to the last time it reached an intersection with multiple options to go down (a fork in the rode).  It prints out Done! when it has mapped out the entire maze.
+
+The matlab code is provided at the bottom.
 
 The vedio below shows that the simulation: 
 
  <iframe width="560" height="315" src="https://www.youtube.com/embed/Ljgl3WTfQXA" frameborder="0" gesture="media" allowfullscreen></iframe>
-
-
+ 
+ ### Overview of Optimized Algorithum:
+The DFS is our stepping stone.  We started optimizing our algorithum by weighing the cost at each intersection and choosing the path with the lower cost.  At a deadend, the robot will follow the shortest path back to the most recent intersection with other potential paths.
+ 
+ 
 
 ## In Real Life:
 
@@ -137,13 +146,282 @@ void detect2() {
 } 
 ```
 
-
-
 ## To do list:
 
 * Work out the motor and IMU
 * Integrate Radio & SPI transmission (data for maze drawing)
 * Draw the Maze based on the data transmitted
+
+## Matlab Simulation Code:
+
+### Collecting Wall Sensor Data Information:
+```matlab
+function out= collectSensorInfo(robot_y_pos, robot_x_pos,robot_orient,maze)
+
+% facing north
+if (robot_orient==0)
+    right_wall_sensor = maze(robot_y_pos, robot_x_pos+1);
+    rY = robot_y_pos;
+    rX = robot_x_pos+1;
+    
+    left_wall_sensor = maze(robot_y_pos, robot_x_pos-1);
+    lY = robot_y_pos;
+    lX = robot_x_pos-1;
+    
+    front_wall_sensor = maze(robot_y_pos+1, robot_x_pos);
+    fY = robot_y_pos+1;
+    fX = robot_x_pos;
+    
+    bY = robot_y_pos-1;
+    bX = robot_x_pos;
+    
+% facing east    
+elseif (robot_orient==1)
+    right_wall_sensor = maze(robot_y_pos-1, robot_x_pos);
+    rY = robot_y_pos-1;
+    rX =  robot_x_pos ;
+    
+    left_wall_sensor = maze(robot_y_pos+1, robot_x_pos);
+    lY =robot_y_pos+1 ;
+    lX = robot_x_pos;
+    
+    front_wall_sensor = maze(robot_y_pos, robot_x_pos+1);
+    fY = robot_y_pos;
+    fX = robot_x_pos+1;
+    
+    bY = robot_y_pos;
+    bX = robot_x_pos-1;
+    
+% facing south
+elseif (robot_orient==2)
+    right_wall_sensor = maze(robot_y_pos, robot_x_pos-1);
+    rY = robot_y_pos ;
+    rX = robot_x_pos-1;
+    
+    left_wall_sensor = maze(robot_y_pos, robot_x_pos+1);
+    lY = robot_y_pos;
+    lX = robot_x_pos+1;
+    
+    front_wall_sensor = maze(robot_y_pos-1,robot_x_pos);
+    fY = robot_y_pos-1;
+    fX = robot_x_pos;
+    
+    bY = robot_y_pos+1;
+    bX = robot_x_pos;
+    
+% facing west
+elseif (robot_orient==3)
+    right_wall_sensor = maze(robot_y_pos+1, robot_x_pos);
+    rY = robot_y_pos+1;
+    rX = robot_x_pos;
+    
+    left_wall_sensor = maze(robot_y_pos-1, robot_x_pos);
+    lY = robot_y_pos-1;
+    lX = robot_x_pos;
+    
+    front_wall_sensor = maze(robot_y_pos, robot_x_pos-1);
+    fY = robot_y_pos;
+    fX = robot_x_pos-1;
+    
+    bY = robot_y_pos;
+    bX = robot_x_pos+1;
+    
+end
+
+% output sensor information
+out = [left_wall_sensor,front_wall_sensor,right_wall_sensor,lY,fY,rY,lX,fX,rX];
+end
+```
+
+### Move the location of the Robot:
+```matlab
+function move(robot_orient,robot_y_pos,robot_x_pos,maze)
+
+% motion settings
+if (robot_orient==0)
+    x_inc = 0; y_inc = 1;
+    eye_x = -.1 ; eye_y=0.3;
+elseif (robot_orient==1)
+    x_inc = 1; y_inc = 0;
+    eye_x = .3 ; eye_y=0.1;
+elseif (robot_orient==2)
+    x_inc = 0; y_inc = -1;
+    eye_x = 0 ; eye_y=-0.3;
+elseif (robot_orient==3)
+    x_inc = -1; y_inc = 0;
+    eye_x = -0.5 ; eye_y=-0.1;
+end
+
+maze(robot_y_pos,robot_x_pos) = 0;
+robot_y_pos = robot_y_pos + y_inc;
+robot_x_pos = robot_x_pos + x_inc;
+maze(robot_y_pos,robot_x_pos) = 2;
+
+pause(0.1)
+% draw it
+imagesc(maze)
+robot_eyes = text(robot_x_pos+eye_x,robot_y_pos+eye_y,'O');
+colormap spring
+xlabel 'x'
+ylabel 'y'
+axis tight
+axis xy
+drawnow
+
+
+end
+```
+
+### Back Track:
+```matlab
+function nextO = backTrack(robot_orient,diffY,diffX)
+
+    if robot_orient == 0
+        if diffY==0
+            if diffX==1
+                nextO = 1;
+            else
+                nextO = 3;
+            end
+        else
+            if diffY==1
+                nextO = 0;
+            else
+                nextO = 2;
+            end
+        end
+        
+        
+    elseif robot_orient == 1
+        if diffY==0
+            if diffX==1
+                nextO = 0;
+            else
+                nextO = 2;
+            end
+        else
+            if diffY==1
+                nextO = 3;
+            else
+                nextO = 1;
+            end
+        end
+        
+    elseif robot_orient == 2
+        if diffY==0
+            if diffX==1
+                nextO = 3;
+            else
+                nextO = 1;
+            end
+        else
+            if diffY==1
+                nextO = 2;
+            else
+                nextO = 0;
+            end
+        end
+        
+    else
+        if diffY==0
+            if diffX==1
+                nextO = 2;
+            else
+                nextO = 0;
+            end
+        else
+            if diffY==1
+                nextO = 1;
+            else
+                nextO = 3;
+            end
+        end
+    end
+
+end
+```
+
+
+### Recursive DFS:
+```matlab
+function brain = dfs(visited, robot_orient,maze,brain)
+
+if (isempty(find(brain==0))) % when map is finished
+    disp('Done!')
+    return
+end
+
+curr = visited(end);
+robot_x_pos = mod(curr,100);
+robot_y_pos = ((curr-robot_x_pos)/100);
+sensorInfo = collectSensorInfo(robot_y_pos,robot_x_pos,robot_orient,maze);
+
+neighbors = sensorInfo(1:3);
+neighborsY = sensorInfo(4:6);
+neighborsX = sensorInfo(7:9);
+orients=[3,0,1];
+
+while (length(neighbors)>0)
+    
+    % get all neighbors
+    nextN = neighbors(1);
+    nextY = neighborsY(1);
+    nextX = neighborsX(1);
+    nextO = orients(1);
+    
+    neighbors(1) = [];
+    neighborsY(1) = [];
+    neighborsX(1) = [];
+    orients(1) = [];
+    
+    if nextN ~= 1 % not a wall
+        if (isempty(find(brain==(nextY*100+nextX))))
+            % mark position as visited
+            visited = [visited (nextY*100+nextX)]; 
+            brain(nextY,nextX) = 2;
+            
+            robot_orient = mod(robot_orient+nextO,4);
+            move(robot_orient,robot_y_pos,robot_x_pos,maze);
+            
+            % do DFS again
+            brain = dfs(visited,robot_orient,maze,brain);
+            return
+        end
+    else
+        % mark position as wall
+        brain(nextY,nextX) = 1;
+    end
+    
+end
+
+% if we hit a deadend
+if length(neighbors)==0
+    if length(visited)==1
+        return
+    end
+    
+    old = visited(end-1);
+    robot_x_posOLD = mod(old,100);
+    robot_y_posOLD = ((old-robot_x_posOLD)/100);
+    
+    diffX = robot_x_posOLD-robot_x_pos;
+    diffY = robot_y_posOLD-robot_y_pos;
+    
+    % Go back to most recent node
+    nextO = backTrack(robot_orient,diffY,diffX);
+    
+    robot_orient = mod(robot_orient+nextO,4);
+    move(robot_orient,robot_y_pos,robot_x_pos,maze);
+    
+    % do DFS again
+    brain = dfs(visited(1:end-1),robot_orient,maze,brain);
+    return
+    
+end
+
+end
+
+```
 
 
 [To Home Page](./index.md)
