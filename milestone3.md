@@ -147,9 +147,8 @@ void detect2() {
 ```
 
 ## To do list:
-
 * Work out the motor and IMU
-* Integrate Radio & SPI transmission (data for maze drawing)
+* Integrate Radio & SPI transmission (data for maze drawing by figuring out the packet)
 * Draw the Maze based on the data transmitted
 
 ## Matlab Simulation Code:
