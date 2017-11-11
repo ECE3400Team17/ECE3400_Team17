@@ -11,9 +11,11 @@
 We are using the DFS method to solve the maze. For any maze the robot is searching through, we could treat the maze as a tree structure with the top node as the starting point and one leaf node as the exit (ending point). Then, by applying Depth-First Searching recursion algorithm, we could lead the robot searching through the maze.
 
 For example, with the maze given below:
+
 ![](./images/Milestone3/pic1.png)
 
 We could represent the maze as the tree given below:
+
 ![](./images/Milestone3/pic2.png)
 
 
@@ -132,9 +134,9 @@ void detect2() {
 
 ## To do list:
 
-Work out the motor and IMU;
-Integrate Radio & SPI transmission (data for maze drawing);
-Draw the Maze based on the data transmitted;
+* Work out the motor and IMU
+* Integrate Radio & SPI transmission (data for maze drawing)
+* Draw the Maze based on the data transmitted
 
 
 [To Home Page](./index.md)
