@@ -14,10 +14,10 @@ We basically have all the separate parts work now for the final competition, and
 
 What we have now:
  
-1.     The robot searching through the maze with algorithm while also sending data to base station’s Arduino for maze drawing.
-2.     The radio communication code to transmit data wirelessly between two Arduino.
-3.     The SPI transmission interface to transmit the robot’s state data from Arduino to FPGA.
-4.     The Verilog code to draw the maze blocks with different color based on the whether the block is a path, wall, or treasure.
+1. The robot searching through the maze with algorithm while also sending data to base station’s Arduino for maze drawing.
+2. The radio communication code to transmit data wirelessly between two Arduino.
+3. The SPI transmission interface to transmit the robot’s state data from Arduino to FPGA.
+4. The Verilog code to draw the maze blocks with different color based on the whether the block is a path, wall, or treasure.
 
 
 ## Work Distribution For Milestone 4:
