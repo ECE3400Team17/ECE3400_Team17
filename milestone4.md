@@ -44,8 +44,9 @@ We had a MATLAB script from Milestone 3 which allowed us to test out our maze na
 * Is it at a crossroad (intersection)?
 
 ### Our logic was as follows:
-If (robot is at a crossroads):
-	If (there is no Left Wall):
+```
+ If (robot is at a crossroads):
+	 If (there is no Left Wall):
 		Turn left and follow line
 	Else:
 		If (there is no Front Wall):
@@ -55,7 +56,7 @@ Else:
 		Turn right and follow line
 	Else:
 		Make a U Turn
-
+```
 ### Arduino Script 
 
 ```arduino
