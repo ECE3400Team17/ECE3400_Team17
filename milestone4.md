@@ -266,16 +266,16 @@ bool detectRightWall() {
 ### Package format that the Robot sends the Base Station:
 
 #### Package1:Maze Mapping Informaition
-indicator:0 |indicator:0|orientation|orientation|x-corrdinate|x-corrdinate|x-corrdinate|x-corrdinate
+|indicator:0 |indicator:0|orientation|orientation|x-corrdinate|x-corrdinate|x-corrdinate|x-corrdinate|
 
 #### Package2: Maze Mapping Information
-indicator:1 |1=if there is a left wall |1=if there is a front wall |1=if there is a right wall |y-corrdinate|y-corrdinate|y-corrdinate|y-corrdinate
+|indicator:1 |1=if there is a left wall |1=if there is a front wall |1=if there is a right wall |y-corrdinate|y-corrdinate|y-corrdinate|y-corrdinate|
 
 #### Package3: Treasure Information
-indicator:0 |indicator:1|1=if there is treasure on left wall |1=if there is treasure on  front wall |1=if there is treasure on right wall |1= if 7kHz treasure|1= if 12kHz treasure|1= if 17kHz treasure
+|indicator:0 |indicator:1|1=if there is treasure on left wall |1=if there is treasure on  front wall |1=if there is treasure on right wall |1= if 7kHz treasure|1= if 12kHz treasure|1= if 17kHz treasure|
 
 #### Package4: Done Signal
-indicator:0 |indicator:1|1|1 |1|1|1|1
+|indicator:0 |indicator:1|1|1 |1|1|1|1|
 
 
 ## Radio
