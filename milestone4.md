@@ -30,11 +30,13 @@ What we have now:
 We had a MATLAB script from Milestone 3 which allowed us to test out our maze navigating algorithm before implementing it in Arduino and incorporating our robot.  We started off with a simple follow the left wall algorithm.  
 
 ### Follow the Left Wall:
+
 #### Void Functions
 * Follow Line: Uses our middle two of the four line sensors to guide the robot along the black line
 * Turn Left: turn 90 degrees left
 * Turn Right: turn 90 degrees right
 * U Turn: turn 180 degrees
+
  #### Boolean Functions 
 * Is there a Left wall?
 * Is there a Front wall?
