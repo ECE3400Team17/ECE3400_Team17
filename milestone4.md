@@ -37,7 +37,7 @@ We had a MATLAB script from Milestone 3 which allowed us to test out our maze na
 * Turn Right: turn 90 degrees right
 * U Turn: turn 180 degrees
 
- #### Boolean Functions 
+#### Boolean Functions 
 * Is there a Left wall?
 * Is there a Front wall?
 * Is there a Right wall?
