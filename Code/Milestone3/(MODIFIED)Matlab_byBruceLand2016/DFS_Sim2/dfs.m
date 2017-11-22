@@ -1,6 +1,6 @@
 function brain = dfs(visited, robot_orient,maze,brain)
 
-if (isempty(find(brain==0)))
+if (isempty(find(brain==0))) % when map is finished
     disp('Done!')
     return
 end
@@ -17,6 +17,7 @@ orients=[3,0,1];
 
 while (length(neighbors)>0)
     
+    % get all neighbors
     nextN = neighbors(1);
     nextY = neighborsY(1);
     nextX = neighborsX(1);
@@ -29,23 +30,25 @@ while (length(neighbors)>0)
     
     if nextN ~= 1 % not a wall
         if (isempty(find(brain==(nextY*100+nextX))))
-            
-            visited = [visited (nextY*100+nextX)];
-            % brain(nextY,nextX) = (nextY*100+nextX);
+            % mark position as visited
+            visited = [visited (nextY*100+nextX)]; 
             brain(nextY,nextX) = 2;
             
             robot_orient = mod(robot_orient+nextO,4);
             move(robot_orient,robot_y_pos,robot_x_pos,maze);
             
+            % do DFS again
             brain = dfs(visited,robot_orient,maze,brain);
             return
         end
     else
+        % mark position as wall
         brain(nextY,nextX) = 1;
     end
     
 end
 
+% if we hit a deadend
 if length(neighbors)==0
     if length(visited)==1
         return
@@ -58,12 +61,13 @@ if length(neighbors)==0
     diffX = robot_x_posOLD-robot_x_pos;
     diffY = robot_y_posOLD-robot_y_pos;
     
+    % Go back to most recent node
     nextO = backTrack(robot_orient,diffY,diffX);
-    
     
     robot_orient = mod(robot_orient+nextO,4);
     move(robot_orient,robot_y_pos,robot_x_pos,maze);
     
+    % do DFS again
     brain = dfs(visited(1:end-1),robot_orient,maze,brain);
     return
     

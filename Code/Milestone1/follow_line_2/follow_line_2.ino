@@ -3,6 +3,8 @@
 Servo servoL;
 Servo servoR;
 
+int thresLine = 550;
+
 int s2 = A1;
 int s3 = A2;
 
@@ -11,8 +13,8 @@ int val3;
 
 void setup(){
   Serial.begin(9600);
-  servoL.attach(10); 
-  servoR.attach(11);
+  servoL.attach(11); 
+  servoR.attach(10);
 }
 
 void loop(){
@@ -29,15 +31,15 @@ void loop(){
 //  Serial.println(val3);
 
   
-  if ((val2>500)&&(val3>500)){
+  if ((val2>thresLine)&&(val3>thresLine)){
     servoL.write(120);
     servoR.write(60);
   }
-  else if((val3<500)){
+  else if((val3<thresLine)){
     servoL.write(90);
     servoR.write(60);
   }
-  else if((val2<500)){
+  else if((val2<thresLine)){
     servoL.write(120);
     servoR.write(90);
   }

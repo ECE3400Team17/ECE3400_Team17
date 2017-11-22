@@ -12,7 +12,7 @@ void setup(){
     //Set pins as outputs
     pinMode(motorPin1, OUTPUT);
     pinMode(motorPin2, OUTPUT);
-    pinMode(motorPin3, OUTPUT);
+    pinMode(motorPin3, OUTPUT); 
     pinMode(motorPin4, OUTPUT);
     
     //Motor Control - Motor A: motorPin1,motorpin2 & Motor B: motorpin3,motorpin4
