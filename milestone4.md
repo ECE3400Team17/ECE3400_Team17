@@ -267,7 +267,7 @@ bool detectRightWall() {
 
 #### Package1:Maze Mapping Informaition
 |indicator:0 |indicator:0|orientation|orientation|x-corrdinate|x-corrdinate|x-corrdinate|x-corrdinate|
-|---|---|---|---|---|
+|---|---|---|---|---|---|---|---|
 
 #### Package2: Maze Mapping Information
 |indicator:1 |1=if there is a left wall |1=if there is a front wall |1=if there is a right wall |y-corrdinate|y-corrdinate|y-corrdinate|y-corrdinate|
