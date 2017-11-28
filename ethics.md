@@ -3,12 +3,12 @@
 # Ethics Assignment
 
 ## Links/references on the case:
-* [IEEE - Trials] (https://spectrum.ieee.org/the-human-os/robotics/medical-robots/autonomous-robot-surgeon-bests-human-surgeons-in-world-first)
-* [CASE STUDY - 66 year old patient] (https://psnet.ahrq.gov/webmm/case/368/robotic-surgery-risks-vs-rewards-)
-* [MIT - Moving to autonomy] (https://www.technologyreview.com/s/601378/nimble-fingered-robot-outperforms-the-best-human-surgeons/)
-* [Robotic surgery center NYU] (https://med.nyu.edu/robotic-surgery/physicians/what-robotic-surgery)
-* [Ethics and Virtue] (https://www.scu.edu/ethics/ethics-resources/ethical-decision-making/ethics-and-virtue/)
-* [Economic evaluation of robot-assisted hysterectomy: a cost-minimisation analysis] (http://onlinelibrary.wiley.com/doi/10.1111/1471-0528.12836/full)
+* [IEEE - Trials](https://spectrum.ieee.org/the-human-os/robotics/medical-robots/autonomous-robot-surgeon-bests-human-surgeons-in-world-first)
+* [CASE STUDY - 66 year old patient](https://psnet.ahrq.gov/webmm/case/368/robotic-surgery-risks-vs-rewards-)
+* [MIT - Moving to autonomy](https://www.technologyreview.com/s/601378/nimble-fingered-robot-outperforms-the-best-human-surgeons/)
+* [Robotic surgery center NYU](https://med.nyu.edu/robotic-surgery/physicians/what-robotic-surgery)
+* [Ethics and Virtue](https://www.scu.edu/ethics/ethics-resources/ethical-decision-making/ethics-and-virtue/)
+* [Economic evaluation of robot-assisted hysterectomy: a cost-minimisation analysis](http://onlinelibrary.wiley.com/doi/10.1111/1471-0528.12836/full)
 
 ## Case and Stakeholders
 
@@ -33,6 +33,15 @@ The decision that produces the greatest benefits over the costs for all affected
 Should there someday be a policy enacted about the use of autonomous surgical robots, it is very likely that the procedures will be outlined by a certain amount of professional supervision. While sensory technology and precision can be continuously improved, there still remains a level of doubt from both patients and surgeons alike. So, while programmers may design and code the robots to optimize the efficiency and uniformity of the procedure, the fact remains that the other stakeholders involved will decide on a set level of human participation.
 
 ## Justice Test
+
+Though there are many individuals affected by the ethical dilemma on autonomous surgery, one ought to prove its justification based on its equality. Though an equality test may seem subjective, there are objective means to measure the justification of autonomous surgery. In doing such, we will assess the the correctness of the validity based on evaluating the distribution. For autonomous surgery, the distribution that ought to be evaluated includes those benefited or burdened by the existence of robotic surgeons. 
+
+The “who” in this test will be all involved in the health care policy and potential candidates for surgery. Though all of these potential patients may not need surgery, their medical evaluation will be affected and altered due to this growing technology. Therefore when assessing the distribution for the justice test, we are narrowing the stakeholders to be the surgeons, patients, and all potential candidates in need for medical attention.
+
+This distribution is subjected to be either burdened or benefited with these growing technologies. The distinction between those benefited and burdened is undefined as there are many cases in which those positively influenced by the integration of autonomous surgery will also be negatively impacted. For example, though the autonomous surgery may offer a greater degree of precision, the robotic surgeon may not be able to account for inevitable unexpected turns in surgery. As the MIT article referenced above mentioned, there will always be a need for human intervention and supervision in autonomous surgery due to this issue. Despite this detrimental effect for the patient, the doctors benefit greatly from less pressure and need for perfection. Though there is the negative effect of changing technology and a greater learning curve, their jobs seem objectively “easier” as there is less pressure for perfection. Though there are payoffs for all parties involved, these negative effects can have positive solutions and are less weighted than the benefits of the positive outcomes. Therefore, the distribution seems fair in terms of risk of life and career. Though we acknowledge there are other conditions that can be accounted for in calculating the justice, we will focus on the specific distribution to conclude that it is relatively fair for the potential patients and doctors involved in the treatment.
+
+Discussing new technology puts the effects of cost and accessibility into light. Surgery is not a viable option for many in our country and around the world. Similarly, autonomous surgery may make surgery less accessible and less accessible. This forces us to meet a criterion that not only is the autonomous procedure proven to be successful, but also that the surgery is affordable and can be performed in isolated and remote areas. Though this does not occur in an ideal world, there could be many efforts made to transform the lack of trained professionalism in remote areas. Therefore with integrating criterion on the development of this technology, we can observe that the new technologies will vastly benefit the majority of distribution involved.
+
 
 ## Virtue Test
 
