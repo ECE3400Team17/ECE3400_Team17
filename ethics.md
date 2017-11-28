@@ -1,6 +1,7 @@
 [To Home Page](./index.md)
 
 # Ethics Assignment
+After discussing the topic of the use of robotics in medical surgeries, we decided to look up a concrete example and dive deeper into how we can view this debate ethically. 
 
 ## Links/references on the case:
 * [IEEE - Trials](https://spectrum.ieee.org/the-human-os/robotics/medical-robots/autonomous-robot-surgeon-bests-human-surgeons-in-world-first)
