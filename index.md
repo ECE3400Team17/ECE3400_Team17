@@ -46,6 +46,9 @@ View our commitment: [Team Contract](./team_contract.md)
 ## Meeting Minutes
 Minutes for each meeting can be viewed [here](./meeting_min.md).
 
+## Ethics Assignment
+We discussed and wrote about the ethical debate about using robots in medical surgeries for our [ethics assignment](./ethics.md).
+
 
 
 
