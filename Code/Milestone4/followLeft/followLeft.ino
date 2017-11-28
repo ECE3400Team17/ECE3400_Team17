@@ -1,15 +1,9 @@
 #include <Servo.h>
 
-
 // instantiate the 2 servos
 Servo servoL;
 Servo servoR;
 
-int robot_x_pos = 1;
-int robot_y_pos = 1;
-int robot_orient = 0; // 0=North, 1=East, 2=South, 3=West
-
-int robot_corr = 100*robot_y_pos + robot_x_pos;
 
 int lineS0 = A0; // Line Sensor0 (Left)
 int lineS2 = A1; // Line Sensor1 (Center Left)
