@@ -2,7 +2,7 @@
 
 ##### Part 1: Building the Circuit
 
-![Detector circuit](./Final_Report/img/detector.png)
+![Detector circuit](./img/detector.png)
 
 Figure 1: The IR treasure detector circuit.
 
@@ -12,7 +12,7 @@ The treasures are infrared (IR) LEDs that pulse at either 7 kHz, 12 kHz or 17 kH
 
 
 
-![Amplifier circuit](./Final_Report/img/amplifier.png)
+![Amplifier circuit](./img/amplifier.png)
 
 Figure 2: The amplifier circuit.
 
@@ -24,7 +24,7 @@ U1 and U2 are the two opamps in the LF 353 where U1 is used as an inverting ampl
 
 
 
-![Oscilloscope testing](./Final_Report/img/oscilloscope.jpg)
+![Oscilloscope testing](./img/oscilloscope.jpg)
 
 Figure 3: Testing the treasure circuits and amplifier. The output of the comparator is the purple trace on the oscilloscope.
 
