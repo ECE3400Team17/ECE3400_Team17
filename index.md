@@ -32,21 +32,21 @@ You can contact the team at: ece3400.team17.2017@gmail.com
 View our commitment: [Team Contract](./team_contract.md)
 
 ## Labs 
-* [Lab1: Microcontroller](./lab1.md)
-* [Lab2: Analog Circuitry and FFTs](./lab2.md)
-* [Lab3: FPGA Video Controller and Sound Generation](./lab3.md)
-* [Lab4: Radio Communication and Map Drawing](./lab4.md)
+* [Lab1: Microcontroller](./Lab_Docs/lab1.md)
+* [Lab2: Analog Circuitry and FFTs](./Lab_Docs/lab2.md)
+* [Lab3: FPGA Video Controller and Sound Generation](./Lab_Docs/lab3.md)
+* [Lab4: Radio Communication and Map Drawing](./Lab_Docs/lab4.md)
 
 ## Milestones
-* [Milestone 1](./milestone1.md)
-* [Milestone 2](./milestone2.md)
-* [Milestone 3](./milestone3.md)
-* [Milestone 4](./milestone4.md)
+* [Milestone 1](./Milestone_Docs/milestone1.md)
+* [Milestone 2](./Milestone_Docs/milestone2.md)
+* [Milestone 3](./Milestone_Docs/milestone3.md)
+* [Milestone 4](./Milestone_Docs/milestone4.md)
 
 ## Final Competition
-* [Introduction and Competition](./intro_comp.md)
-* [Design](./design.md)
-* [Control](./control.md)
+* [Introduction and Competition](./Final_Report/intro_comp.md)
+* [Design](./Final_Report/design.md)
+* [Control](./Final_Report/control.md)
 
 
 ## Meeting Minutes
