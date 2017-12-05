@@ -43,6 +43,12 @@ View our commitment: [Team Contract](./team_contract.md)
 * [Milestone 3](./milestone3.md)
 * [Milestone 4](./milestone4.md)
 
+## Final Competition
+* [Introduction and Competition](./intro_comp.md)
+* [Design](./design.md)
+* [Control](./control.md)
+
+
 ## Meeting Minutes
 Minutes for each meeting can be viewed [here](./meeting_min.md).
 
