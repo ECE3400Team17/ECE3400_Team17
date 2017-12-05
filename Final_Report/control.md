@@ -1,5 +1,5 @@
 [To Home Page](./index.md)
 
-* [Treasure Detection](./Final_Report/TreasureDetection.md)
+* [Treasure Detection](./TreasureDetection.md)
 
 [To Home Page](./index.md)
