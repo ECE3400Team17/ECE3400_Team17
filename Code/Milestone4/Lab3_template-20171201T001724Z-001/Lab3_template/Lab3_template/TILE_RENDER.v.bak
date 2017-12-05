@@ -1,0 +1,49 @@
+`define X_SIZE 10'd32
+`define Y_SIZE 10'd38
+`define H_WALL 10'd5
+`define W_WALL 10'd10
+`define COL_WALL 	8'b11100000
+`define COL_UNDF	8'b00000000
+
+module TILE_DECODE (input [9:0] X, input [9:0] Y, input [9:0] XOFF, input [9:0] YOFF, input CLK, input [7:0] TYPE, output reg [7:0] COL);
+	wire NORTH;
+	wire SOUTH;
+	wire EAST;
+	wire WEST;
+	wire [1:0] COLOR;
+	wire [1:0] ROBOT;
+	wire [1:0] TREASURE;
+	
+	assign NORTH = TYPE[0];
+	assign SOUTH = TYPE[1];
+	assign EAST = TYPE[2];
+	assign WEST = TYPE[3];
+	assign COLOR = TYPE[5:4];
+	assign ROBOT = TYPE[7:5];
+	assign TREASURE = 2'b00;
+	
+	wire [9:0] xrel;
+	wire [9:0] yrel;
+	
+	assign xrel = XOFF;
+	assign yrel = YOFF;
+	
+	always @ (posedge CLK)
+	begin
+
+		if(NORTH || SOUTH || EAST || WEST)
+		begin
+			if(NORTH)
+			begin
+				COL <= xrel;
+			end
+		end
+		
+		
+		else
+		begin
+			COL <= `COL_UNDF;
+		end
+		//COL <= XREL | (YREL<<4);
+	end
+endmodule

@@ -5,7 +5,7 @@
 int binNum = 20;
 int soundThres = 60;
 
-int D7 = 7;
+int D7 = 4;
 
 void setup() {
   Serial.begin(115200); // use the serial port
@@ -17,7 +17,7 @@ void loop() {
   while(1) {
     cli();
     for (int i = 0 ; i < 512 ; i += 2) {
-      fft_input[i] = analogRead(A0); // <-- NOTE THIS LINE
+      fft_input[i] = analogRead(A15); // <-- NOTE THIS LINE
       fft_input[i+1] = 0;
     }
     fft_window();
@@ -32,6 +32,8 @@ void loop() {
     for (byte i = 0 ; i < FFT_N/2 ; i++) {
 //      Serial.println(fft_log_out[i]);
       if (fft_log_out[binNum]> soundThres){
+
+        // ------------------------- instead of setting signal high, start robot code
         Serial.println("Yay");
         digitalWrite(D7, HIGH); 
       }

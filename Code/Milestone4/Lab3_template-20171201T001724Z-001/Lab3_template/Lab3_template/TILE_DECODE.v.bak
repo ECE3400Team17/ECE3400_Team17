@@ -1,0 +1,45 @@
+`define X_SIZE 10'd32
+`define Y_SIZE 10'd38
+`define X_OFFSET 10'd0
+`define Y_OFFSET 10'd1
+
+module TILE_DECODE (input [9:0] X, input [9:0] Y, input [35:0] MAP, input CLK, output reg [9:0] XOFF, output reg [9:0] YOFF, output reg [7:0] TYPE);
+	always @ (posedge CLK)
+	begin
+		if(X >= (`X_SIZE*10'd0 + `X_OFFSET) && X < (`X_SIZE*(10'd0+10'd1) + `X_OFFSET) && Y >= (`Y_SIZE*10'd0 + `Y_OFFSET) && Y < (`Y_SIZE*(10'd0+10'd1) + `Y_OFFSET))
+		begin 
+			XREL <= (`X_SIZE*10'd0 + `X_OFFSET);
+			YREL <= (`Y_SIZE*10'd0 + `Y_OFFSET);
+			TYPE <= MAP[7:0];
+		end
+		
+		else if(X >= (`X_SIZE*10'd1 + `X_OFFSET) && X < (`X_SIZE*(10'd1+10'd1) + `X_OFFSET) && Y >= (`Y_SIZE*10'd0 + `Y_OFFSET) && Y < (`Y_SIZE*(10'd0+10'd1) + `Y_OFFSET))
+		begin 
+			XREL <= (`X_SIZE*10'd1 + `X_OFFSET);
+			YREL <= (`Y_SIZE*10'd0 + `Y_OFFSET);
+			TYPE <= MAP[15:8];
+		end
+		
+		else if(X >= (`X_SIZE*10'd0 + `X_OFFSET) && X < (`X_SIZE*(10'd0+10'd1) + `X_OFFSET) && Y >= (`Y_SIZE*10'd1 + `Y_OFFSET) && Y < (`Y_SIZE*(10'd1+10'd1) + `Y_OFFSET))
+		begin 
+			XREL <= (`X_SIZE*10'd0 + `X_OFFSET);
+			YREL <= (`Y_SIZE*10'd1 + `Y_OFFSET);
+			TYPE <= MAP[23:17];
+		end
+		
+		else if(X >= (`X_SIZE*10'd1 + `X_OFFSET) && X < (`X_SIZE*(10'd1+10'd1) + `X_OFFSET) && Y >= (`Y_SIZE*10'd1 + `Y_OFFSET) && Y < (`Y_SIZE*(10'd1+10'd1) + `Y_OFFSET))
+		begin 
+			XREL <= (`X_SIZE*10'd1 + `X_OFFSET);
+			YREL <= (`Y_SIZE*10'd1 + `Y_OFFSET);
+			TYPE <= MAP[35:24];
+		end
+		
+		else
+		begin
+			XREL <= 10'b1111111111;
+			YREL <= 10'b1111111111;
+			TYPE <= 8'b00000000;
+		end
+	end
+	
+endmodule
