@@ -1,4 +1,4 @@
-[To Home Page](/index.md)
+[To Home Page](../index.md)
 
 # Lab 1: Microcontroller
 ### Objective: 
@@ -245,7 +245,7 @@ void loop() {
 
 
 
-[To Home Page](/index.md)
+[To Home Page](../index.md)
 
 
 
