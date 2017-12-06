@@ -1,4 +1,4 @@
-[To Home Page](/index.md)
+[To Home Page](../index.md)
 
 [To Control Page](./control.md)
 
@@ -107,4 +107,4 @@ The renderer would first test if the pixel belonged to any feature such as a wal
 
 [To Control Page](./control.md)
 
-[To Home Page](/index.md)
+[To Home Page](../index.md)

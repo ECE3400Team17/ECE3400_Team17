@@ -1,4 +1,4 @@
-[To Home Page](/index.md)
+[To Home Page](../index.md)
 
 # Lab 4: FPGA Video Controller and Sound Generation
 
@@ -20,13 +20,13 @@ The goal of this lab is to implement the wireless communication between two Ardu
 ### Prelab:
 First, we downloaded the RF34 Arduino library and added it to our Arduino library directory. After downloading the Getting Started code from the Lab 4 webpage and replacing the example in the RF 24 library, we modified it to test out our radios and become familiar with the library. We changed the identifier numbers by using the formula 2(3D+N)+X, where D = 4 (Friday lab), N = 17 (team number), and X = 0, 1 for our two radios. We changed the channel numbers to 3A and 3B, implemented in the following code:
 
-```arduino 
+```c 
 const uint64_t pipes[2] = { 0x000000002ALL, 0x000000002BLL };
 ```
 
 We then programmed both Arduino boards with the Getting Started example, plugged them into two different laptops, and selected one board to be the transmitter by entering “T” into the serial monitor. Below is a screenshot of what we saw on each monitor. The left side is from the transmitter and the right side is the response. We received regular outputs for successfully sent and received signals. Then, we examined the effect of moving the radios far from one another. We then noticed that the sending failed (see that the screen on the right does not show payload 67313 at all) and that the failures that didn’t time out would return with an exceptionally long round-trip delay.
 
-![](/images/Lab4/SendandReceiveGettingStarted.png)
+![](../images/Lab4/SendandReceiveGettingStarted.png)
 
 ### Sending an entire maze:
 
@@ -34,7 +34,7 @@ Next, we modified the code to send the maze as a single packet. We defined the m
 
 #### Defining the maze —
 
-```arduino 
+```c
 unsigned char maze[4][5] =
 {
 	2, 2, 2, 2, 2,
@@ -46,7 +46,7 @@ unsigned char maze[4][5] =
 
 #### Modified code for the transmitting end —
 
-```arduino  
+```c 
 if (role == role_ping_out)
 {
 	// First, stop listening so we can talk.
@@ -76,7 +76,7 @@ if (role == role_ping_out)
 
 #### Modified code for receiving end —
 
-```arduino
+```c
 if ( role == role_pong_back )
 {
 	// if there is data ready
@@ -110,11 +110,11 @@ The serial monitors display as we expect them to. The transmitting side sends th
 
 *Transmitting:*
 
-![](/images/Lab4/PongOut.JPG)
+![](../images/Lab4/PongOut.JPG)
 
 *Receiving:*
 
-![](/images/Lab4/PongBack4x5.png)
+![](../images/Lab4/PongBack4x5.png)
 
 *Note: The RFK library has an Auto-ACK feature.*
 
@@ -122,13 +122,13 @@ The serial monitors display as we expect them to. The transmitting side sends th
 
 We then modified the code to send new data. We sent 3 pieces of information: a 1-bit indicator, a 2-bit (cardinal) direction, and a 5-bit position coordinate. The indicator is for any extraneous information (i.e. treasures, walls) to be implemented in a suitable fashion in the future. If it turns out that this doesn’t work out well, our code can be easily modified to change the number of bits and the meaning of the indicator. The 2-bit direction denotes which way the robot is facing: North, South, East, or West. (Corresponding binary numbers to be assigned later when code is combined). Finally, the 5-bit position coordinate represents which cell the robot is in. Since the maze is a 4x5 grid, there are 20 boxes, and thus we need 5 bits. We will coordinate the position numbers as follows:
 
-![](/images/Lab4/grid.JPG)
+![](../images/Lab4/grid.JPG)
 
 For the transmitter, we packed the bits by using a left shift and sent the package as a single payload.
 
 #### Transmitter side code —
 
-```arduino
+```c
 if (role == role_ping_out)
 {
 	// First, stop listening so we can talk.
@@ -168,7 +168,7 @@ The receiver side unpacks the bits.
 
 #### Receiver side code —
 
-```arduino
+```c
 if ( role == role_pong_back )
 {
 	// if there is data ready
@@ -194,7 +194,7 @@ if ( role == role_pong_back )
 
 The serial monitor displayed as expected. We sent and received a payload of value 60 (00111100). Our results are pictured below. The left side is the transmitter screen, and the right side is the receiver screen.
 
-![](/images/Lab4/NewDataSendReceive.png)
+![](../images/Lab4/NewDataSendReceive.png)
 
 ## FPGA Team:
 Peter Slater, Mira Bhut, Yirong Alan
@@ -205,11 +205,11 @@ In the final design, we need to send back information about the vehicle location
  
 ### Hardware setup:
 
-![](/images/Lab4/hardwareSetup.png)
+![](../images/Lab4/hardwareSetup.png)
 
 *Note:  For all the signal sent from Arduino (5v) to FPGA (3.3v), it needs to go through a voltage divider.*
 
-![](/images/Lab4/resistors.png)
+![](../images/Lab4/resistors.png)
 
 So basically, the Arduino here is the master while the FPGA is the slave. The data is sent from the Arduino to the FPGA to let it know the maze situation and draw it. We use a 8-bit data to represent the vehicle’s location in the maze:
  
@@ -300,7 +300,7 @@ When the cs (chip selected) goes down, the FPGA starts to receive data from the 
 
 ### Map Rendering with an FPGA
 
-![Rendered 5x4 Map](/images/Lab4/map.jpg)
+![Rendered 5x4 Map](../images/Lab4/map.jpg)
 
 *The finished 5x4 map rendered with the robot (blue), explored areas (grey), and to be explored areas (white).*
 
@@ -479,4 +479,4 @@ endmodule
 
 A truncated version of our cell decoder is shown above. For each tile, a set of discrete checks if performed that determines what tile the current pixel is in. The code then calculates the X and Y offsets of that tile and updates the CELL and RBT data from the MAP that gets wired to the tile renderer. The code follows a simple repetitive structure so while pretty long, the actual time to produce was short. Figure 1 shows the results of this process, this system is able to successfully decode the map input data and output the current state of each cell as a solid color. Additionally, the code was written with modularity in mind so it will be easy to add more tests to the renderer to decode walls and treasures in the future labs. 
 
-[To Home Page](/index.md)
+[To Home Page](../index.md)

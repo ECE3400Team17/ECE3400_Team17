@@ -1,4 +1,4 @@
-[To Home Page](/index.md)
+[To Home Page](../index.md)
 
 # Lab 3: FPGA Video Controller and Sound Generation
 
@@ -15,11 +15,11 @@ In this section of the lab we learned how to create a VGA output from a FPGA boa
 
 We used an 8-bit DAC (Digital to Analog Converter) to encode colors to the display. It uses 3 bits to represent values for green and red, and 2 bits for blue. The DAC uses 8 pins to connect to the FPGA board, and the sections for each color combine to produce a voltage between 0 and 1V. We use the resistors to step down the voltage from 3.3 volts to designated voltages calculated using a voltage divider. The resistor values calculated allow us to step down the voltage to our desired values. Since the red and green colors are comprised of 3 bits each and blue is comprised of 2, there should be 8 possible colors and therefore 8 different voltages (with a 1/7V difference).
 
-![](/images/Lab3/FPGA_Graphic/VGA_cable.JPG)
+![](../images/Lab3/FPGA_Graphic/VGA_cable.JPG)
 
 The DAC converter connected to a VGA cable is shown above. Each color is labeled by R, G, and B. They have resistors in parallel along with the VGA cable having 50Ω resistance in series. The calculations and diagram shown below are set up so that each color pin sums to a total of 1V with each pin representing a bit. The most significant bit has twice the voltage of the second most significant bit, four times as much voltage as the third, and so on and so forth. The voltages turned out to be 1/7V, 2/7V, and 4/7V in order of increasing bit significance. (For blue, since there are only two bits, the voltages were ⅓V and ⅔V instead). 
 
-![](/images/Lab3/FPGA_Graphic/Resistor_calcs.JPG)
+![](../images/Lab3/FPGA_Graphic/Resistor_calcs.JPG)
 
 ### Green Screen
 
@@ -154,17 +154,17 @@ We next used the button on the FPGA board to control multiple LEDs:
 We first mapped out our switch inputs to positions on the screen:
 
 
-![](/images/Lab3/FPGA_Graphic/00.PNG)
+![](../images/Lab3/FPGA_Graphic/00.PNG)
 
-![](/images/Lab3/FPGA_Graphic/01.PNG)
+![](../images/Lab3/FPGA_Graphic/01.PNG)
 
-![](/images/Lab3/FPGA_Graphic/10.PNG)
+![](../images/Lab3/FPGA_Graphic/10.PNG)
 
-![](/images/Lab3/FPGA_Graphic/11.PNG)
+![](../images/Lab3/FPGA_Graphic/11.PNG)
 
 
 We also had to build a circuit containing a circuit and voltage divider.  The voltage divider is used to decrease the 5V output from the Arduino to 3.3V which is the voltage limit for the FPGA board.
-![](/images/Lab3/FPGA_Graphic/FPGA_input.jpg)
+![](../images/Lab3/FPGA_Graphic/FPGA_input.jpg)
 
 The following video shows us controlling the VGA from inputs given by switches:
 
@@ -336,7 +336,7 @@ Peter Slater, Mira Bhut, Yirong Alan
 
 ##### Part 1: Building the DAC
 
-![R2R Network](/images/Lab3/FPGA_Acoustic/R2R.png)
+![R2R Network](../images/Lab3/FPGA_Acoustic/R2R.png)
 
 Figure 1: Resistor network of the 8-Bit R2R DAC, sourced from this [datasheet](https://www.bourns.com/pdfs/r2rap.pdf).
 
@@ -344,11 +344,11 @@ Figure 1: Resistor network of the 8-Bit R2R DAC, sourced from this [datasheet](h
 
 We started this lab by building a R2R Digital to Analog converter (DAC) to convert the digital FPGA outputs to an analog voltage audio signal. This circuit gets it's name because it is built from a resistor network composed of resistances R and 2R and is pictured in Figure 1. The 8-Bit R2R DAC is packaged in a 16-dip package that was user friendly and easy to solder.
 
-![R2R DAC Schematic](/images/Lab3/FPGA_Acoustic/schematic.png)
+![R2R DAC Schematic](../images/Lab3/FPGA_Acoustic/schematic.png)
 
-![finished board](/images/Lab3/FPGA_Acoustic/board.png)
+![finished board](../images/Lab3/FPGA_Acoustic/board.png)
 
-![Assembly of board and FPGA](/images/Lab3/FPGA_Acoustic/assembled.png)
+![Assembly of board and FPGA](../images/Lab3/FPGA_Acoustic/assembled.png)
 
 Figure 2: The schematic of the finished 8-bit DAC Circuit (top), the soldered board (middle) and the board and FPGA assembly with speaker connected (bottom).
 
@@ -448,7 +448,7 @@ always @ (posedge CLOCK_25) begin
 end
 ```
 
-![sine wave output](/images/Lab3/FPGA_Acoustic/sine.png)
+![sine wave output](../images/Lab3/FPGA_Acoustic/sine.png)
 
 Figure 3: The output 1 kHz sine wave
 
@@ -515,7 +515,7 @@ end
 
 ##### Part 4: Creating a Square Wave
 
-![square wave](/images/Lab3/FPGA_Acoustic/square.png)
+![square wave](../images/Lab3/FPGA_Acoustic/square.png)
 
 Figure 4: The square wave output on the oscilloscope
 
@@ -563,4 +563,4 @@ end
 
 
 
-[To Home Page](/index.md)
+[To Home Page](../index.md)

@@ -1,4 +1,4 @@
-[To Home Page](/index.md)
+[To Home Page](../index.md)
 
 [To Control Page](./control.md)
 
@@ -81,4 +81,4 @@ The main design choice for this revision of the treasure detection was to avoid 
 
 [To Control Page](./control.md)
 
-[To Home Page](/index.md)
+[To Home Page](../index.md)

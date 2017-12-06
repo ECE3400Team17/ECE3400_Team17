@@ -1,4 +1,4 @@
-[To Home Page](/index.md)
+[To Home Page](../index.md)
 
 # Milestone2
 
@@ -12,9 +12,9 @@ Based on the FFT library of Arduino, we developed a code that could generate “
 
 Using the Excel, we plotted the spectrum, which is essentially a distribution over 128 FFT bins. (There are 256 bins in total, but only 128 of them stores the real value) From the distribution graph we could see that IR signal with different frequencies has different peak value locations:
 
-![](/images/Milestone2/treasureTable.PNG)
+![](../images/Milestone2/treasureTable.PNG)
 
-![](/images/Milestone2/treasureFFT.PNG)
+![](../images/Milestone2/treasureFFT.PNG)
 
 Based on the distribution, we could set thresholds in between to identify 7, 12, and 17 kHz IR signals. Considering the accuracy of the categorization, we set the threshold in the middle of the two biggest peak bin #:
 
@@ -87,17 +87,17 @@ void loop() {
   }}
 ```
 ### 7kHz Treasure:
-![](/images/Milestone2/7k.jpg)
+![](../images/Milestone2/7k.jpg)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/A4SQmpU6chg" frameborder="0" allowfullscreen></iframe>
 
 ### 12kHz Treasure:
-![](/images/Milestone2/12k.jpg)
+![](../images/Milestone2/12k.jpg)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/9KYcdi5lAQ0" frameborder="0" allowfullscreen></iframe>
 
 ### 17kHz Treasure:
-![](/images/Milestone2/17k.jpg)
+![](../images/Milestone2/17k.jpg)
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/DN0Qly8Bqns" frameborder="0" allowfullscreen></iframe>
 
@@ -107,7 +107,7 @@ void loop() {
 For the distance sensor, we’re using the VL53L0X Time-of-Flight Distance Sensor. 
 
 ### Pinout:
-![](/images/Milestone2/pinout.png)
+![](../images/Milestone2/pinout.png)
 
 
 ### Wiring:
@@ -116,13 +116,13 @@ For the distance sensor, we’re using the VL53L0X Time-of-Flight Distance Senso
 * SCL - I2C data SCL pin (also A5 for arduino Uno)
 * Vdd - 5V    GND - GND 
 
-![](/images/Milestone2/arduinoLayout.png)
+![](../images/Milestone2/arduinoLayout.png)
 
 The sensor uses Vertical Cavity Surface-Emitting Laser (VCSEL) to detect the absolute distance between the objects and the sensor. According to the VL53L0X library on adafruit, we could measure and store the distance data through arduino. The following picture shows how we detect the distance between a card and the sensor and print it out:
 
-![](/images/Milestone2/1.jpg)
+![](../images/Milestone2/1.jpg)
 
-![](/images/Milestone2/2.jpg)
+![](../images/Milestone2/2.jpg)
 
 Since the sensor could generate an absolute distance data, we could just use this data to set a threshold for the robot to detect a wall in front of it.
 
@@ -130,7 +130,7 @@ For our preliminary code, we would attach the sensor in the front of the robot, 
 
 ### Our implementation: 
 
-![](/images/Milestone2/finalPic.jpg)
+![](../images/Milestone2/finalPic.jpg)
 
 ### The code for wall-detection:
 ```
@@ -268,4 +268,4 @@ void stay() {
 
 
 
-[To Home Page](/index.md)
+[To Home Page](../index.md)

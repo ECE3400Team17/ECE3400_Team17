@@ -1,4 +1,4 @@
-[To Home Page](/index.md)
+[To Home Page](../index.md)
 
 # Lab 2: Analog circuitry and FFT
 
@@ -68,7 +68,7 @@ We wanted to learn about the FFT sample code given by the Open Music Labs Arduin
 
 The Excel Plot:
 
-![](/images/Lab2/acoustics/signalGenFFT.png)
+![](../images/Lab2/acoustics/signalGenFFT.png)
 
 The graph shows the reading in each bin, and since we don’t have a filter, you can see the effects of aliasing in the extra harmonics that are present after the initial large spike. 
 
@@ -76,7 +76,7 @@ The graph shows the reading in each bin, and since we don’t have a filter, you
 
 We ran the sample code shown above, but with the signal generator replaced by the Microphone.  We played a tones at various frequencies (660Hz, 1320Hz, 1980Hz, 2640Hz, 3300Hz, and 3960Hz) from our phone and plotted the results the Arduino outputted onto an plot:
   
-![](/images/Lab2/acoustics/microFFT.png)
+![](../images/Lab2/acoustics/microFFT.png)
   
 On this plot you can clearly see which bin the played frequency falls into.  Unlike our previous setup, which had the signal from the signal generator go into the Arduino, the microphone has a filter which removes all the extra harmonics that we say before.  This makes our graph clear.
 
@@ -197,21 +197,21 @@ void loop() {
 Here is our data in an Excel chart:
 
 
-![](/images/Lab2/acoustics/distinguishFFT.png)
+![](../images/Lab2/acoustics/distinguishFFT.png)
 
 ### BONUS!!!!:
 
 Just for fun, we built a low pass filter.  We selected our parameters using the provided filter [wizard website](http://www.analog.com/designtools/en/filterwizard/).
 
 
-![](/images/Lab2/acoustics/LowPassFilterSpecs.PNG)
+![](../images/Lab2/acoustics/LowPassFilterSpecs.PNG)
 
 The website also outpute a schematic on how to build the low pass filter.
 
-![](/images/Lab2/acoustics/LowPassCircuit.PNG)
+![](../images/Lab2/acoustics/LowPassCircuit.PNG)
 
 We then built it and it worked!
-![](/images/Lab2/acoustics/20170916_150159.jpg) 
+![](../images/Lab2/acoustics/20170916_150159.jpg) 
 
 
 ## Optical Team:
@@ -226,7 +226,7 @@ In this part of the lab we use a phototransistor to detect an IR beacon transmit
 
 1) We first begin by developing our photo transistor circuit on a breadboard.
 
-![](/images/Lab2/optics/1.png)
+![](../images/Lab2/optics/1.png)
 
 We notice that the amplitude of the signal produced is not high enough to meet the threshold for the transistor to acknowledge the presence of the IR led. Therefore we add an operational amplifier in order to amplify the input source signal.
 
@@ -240,29 +240,29 @@ We notice that the amplitude of the signal produced is not high enough to meet t
 
 FINAL CIRCUIT:
 
-![](/images/Lab2/optics/IR-AMP-Circuit.png)
+![](../images/Lab2/optics/IR-AMP-Circuit.png)
 
 6) We then checked by probing the IR LED that each frequency was being omitted.
 
-![](/images/Lab2/optics/2.png)
+![](../images/Lab2/optics/2.png)
 
 7) We then apply a digital filter through the FFT library and check to see if our treasurer is detected by the phototransistor at various frequencies. As seen in the graph below,
 
 
 When there was no IR light detected, we notice that there is no obvious spike in any of the bins, indicating no frequencies were detected
 
-![](/images/Lab2/optics/not_etected.PNG)
+![](../images/Lab2/optics/not_etected.PNG)
 
 7kHz, we see that there is a spike, as calculated at bin 49.
 
-![](/images/Lab2/optics/7k.PNG)
+![](../images/Lab2/optics/7k.PNG)
 
 12kHz, we see that there is a spike around bin 80.
-![](/images/Lab2/optics/12k.PNG)
+![](../images/Lab2/optics/12k.PNG)
 
 
 17kHz, we observe a spike around bin 117. 
-![](/images/Lab2/optics/17k.PNG)
+![](../images/Lab2/optics/17k.PNG)
 
 
 
@@ -270,7 +270,7 @@ Once confirming the design on the breadboard was successful, we prototyped a bre
 
 
 Good News: We were successfully able to identify IR treasurer with all frequencies. 
-![](/images/Lab2/optics/peter.PNG)
+![](../images/Lab2/optics/peter.PNG)
 
 
 ## Merge:
@@ -401,4 +401,4 @@ void loop() {
  ```
 
 
-[To Home Page](/index.md)
+[To Home Page](../index.md)

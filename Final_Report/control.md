@@ -1,4 +1,4 @@
-[To Home Page](/index.md)
+[To Home Page](../index.md)
 
 # Control:
 
@@ -7,7 +7,6 @@
 These are the section that was preforming on the 
 
 * [Start Tone](./StartTone.md)
-* [Wall Detection](./WallDetection.md)
 * [Treasure Detection](./TreasureDetection.md)
 * [Navigation Algorithm](./NavigationAlgo.md)
 
@@ -17,4 +16,4 @@ These are the section that was preforming on the
 * [SPI](./Spi.md)
 * [Map Drawing](./DrawingtheMaze.md)
 
-[To Home Page](/index.md)
+[To Home Page](../index.md)

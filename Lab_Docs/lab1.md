@@ -74,13 +74,13 @@ void loop()
   Serial.println(analogvin);             // debug value
 }
 ```
-![](/images/Lab1/pot.jpg)
+![](../images/Lab1/pot.jpg)
 
 ## Part 4: Analog Output
 Besides the voltage divider circuit with potentiometer, we also attached a LED and a 330 Ohm resistor in serial to port 9. We write an arduino program to read the analog value of the potentiometer and output it to power the LED circuit.
 
 ### Diagram:
-![](/images/Lab1/part4_diagram.png)
+![](../images/Lab1/part4_diagram.png)
 
 ### Code:
 ```
@@ -101,10 +101,10 @@ void loop() {
 ```
 
 This is how our setup looked like at the brighest:
-![](/images/Lab1/File_005.jpeg)
+![](../images/Lab1/File_005.jpeg)
 
 And changing the potentiometer settings, dimmed the light:
-![](/images/Lab1/File_010.jpeg)
+![](../images/Lab1/File_010.jpeg)
 
 ## Part 5: Parallax Servos
 
@@ -132,9 +132,9 @@ void loop() {
 ```
 We checked the signal on the oscilloscope, which has a frequency of 49.95Hz and a duty cycle of 7.49%:
 
-![](/images/Lab1/90_far.jpg)
+![](../images/Lab1/90_far.jpg)
 
-![](/images/Lab1/90_near.jpg)
+![](../images/Lab1/90_near.jpg)
 
 ### Servo written to 180
 
@@ -160,9 +160,9 @@ void loop() {
 ```
 We checked the signal on the oscilloscope, which has a frequency of 49.95Hz and a duty cycle of 12.49%:
 
-![](/images/Lab1/180_far.jpg)
+![](../images/Lab1/180_far.jpg)
 
-![](/images/Lab1/180_near.jpg)
+![](../images/Lab1/180_near.jpg)
 
 ### Servo written to 0
 We then ran the servo set to a value of 0. This is the maximum speed, with the motor turning clockwise. 
@@ -188,15 +188,15 @@ void loop() {
 ```
 We checked the signal on the oscilloscope, which has a frequency of 49.95Hz and a duty cycle of 2.75%:
 
-![](/images/Lab1/0_far.jpg)
+![](../images/Lab1/0_far.jpg)
 
-![](/images/Lab1/0_near.jpg)
+![](../images/Lab1/0_near.jpg)
 
 
 ## Part 6: Assemble and Run Your Robot
 To assemble our robot, first, we attached two frame on each side of the board, and using nuts, nails to attach servos on that frame so that they can drive wheels later. Second, we added a front wheel to the robot using a plastic structure with a small caster, attached with a nail which is a temporary design and we’ll improve it later. Third, we rearranged the space on the robot to place Arduino, breadboard and battery in a reasonable way so that the whole robot is in a balance.
 
-![](/images/Lab1/assembled_bot.jpg)
+![](../images/Lab1/assembled_bot.jpg)
 
 After upload the forward and back code, we can see that the car can move in a line as expected.
 

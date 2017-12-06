@@ -1,4 +1,4 @@
-[To Home Page](/index.md)
+[To Home Page](../index.md)
 
 # Design
 
@@ -6,4 +6,4 @@
 
 
 
-[To Home Page](/index.md)
+[To Home Page](../index.md)

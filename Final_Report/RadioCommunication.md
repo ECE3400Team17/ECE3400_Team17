@@ -1,4 +1,4 @@
-[To Home Page](/index.md)
+[To Home Page](../index.md)
 
 [To Control Page](./control.md)
 
@@ -86,4 +86,4 @@ Figure 2: Cell numbering for the maze. The robot always starts in position 19, f
 
 [To Control Page](./control.md)
 
-[To Home Page](/index.md)
+[To Home Page](../index.md)

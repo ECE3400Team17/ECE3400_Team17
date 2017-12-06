@@ -1,4 +1,4 @@
-[To Home Page](/index.md)
+[To Home Page](../index.md)
 
 # Introduction 
 
@@ -27,4 +27,4 @@ Our boy never stops working. Literally. He doesn’t stop. But nonetheless, it w
 
 
 
-[To Home Page](/index.md)
+[To Home Page](../index.md)
