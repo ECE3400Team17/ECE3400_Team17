@@ -35,7 +35,7 @@ The two features that we added were:
 #### Improvements to Navigation Algorithm
 We improved upon the algorithm by adding the capability for the robot to keep track of the position it has visited.  Which we were able to do by keeping track of the robot’s orientation.  We also added four wall sensors to the robot so that it can transmit its environment from all directions back to the base station. We used the crosssections as indicators where the robot would decide on where to go as well as the transmit it packets. Here is a vedio of the test run where the robot stops when it has traversed the maze.:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/5ZV0g7oCqXc" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe> 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BwsDFrqkYBE" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
 Here is the link to the full length [code](./NavigationAlgo.md)
 
