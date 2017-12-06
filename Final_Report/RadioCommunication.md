@@ -7,10 +7,10 @@
 To communicate between robot and base station, we wrote code for the Arduino to send two packets containing necessary information. From the robot, we transmit two packets of information, each containing 8bits. The packets are formatted as follows:
 
 *Type 1*
-![Packet Type 1](./img/packet1.jpg)
+![Packet Type 1](./img/packet1.PNG)
 
 *Type 2*
-![Packet Type 2](./img/packet2.jpg)
+![Packet Type 2](./img/packet2.PNG)
 
 Packet type #1 tells us whether the robot has traversed the entire maze, which direction it is facing, and which cell it is in. The cells are numbered from 0 to 19, and the starting point is always cell 19. 
 
