@@ -1,7 +1,6 @@
 [To Home Page](../index.md)
 
-[To Control Page](./control.md)
-
+[To Final Report Page](./FinalReport.md)
 
 ## Previous Work 
 The first requirement the competition is to have the robot start navigating the maze when a 660Hz tone is played from speakers near the robot.  We used a [MAX4466]( https://www.adafruit.com/product/1063) Microphone with adjustable gain, which we used in Lab2.  During Lab2, we learned how to use the Arduino FFT library, which gives us the ability to identify the frequency of the tone based on the value found in a certain bin.  In our case 660 Hz gave us a spike in bin 20.  The microphone we used had an adjustable gain, which we set to the maximum value and ran the FFT script again and tested what distance the speakers needed to be for the Arduino to be able to pick up the 660Hz signal, which was only a few inches.  We decided to build an amplifier, which would help increase the signal so that the Arduino will be able to pick it up form a greater distance.
@@ -45,6 +44,5 @@ After determining the bin number and threshold value we added it to our full Ard
 
 
 
-[To Control Page](./control.md)
-
+[To Final Report Page](./FinalReport.md)
 [To Home Page](../index.md)

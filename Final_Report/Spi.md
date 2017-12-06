@@ -1,7 +1,6 @@
 [To Home Page](../index.md)
 
-[To Control Page](./control.md)
-
+[To Final Report Page](./FinalReport.md)
 
 ### SPI:Communication between Arduino and FPGA board on the base station
 
@@ -99,6 +98,5 @@ Below is a video showing the FPGA is receiving data incrementing from 0 to 255 f
 
 
 
-[To Control Page](./control.md)
-
+[To Final Report Page](./FinalReport.md)
 [To Home Page](../index.md)

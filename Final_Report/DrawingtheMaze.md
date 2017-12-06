@@ -1,6 +1,6 @@
 [To Home Page](../index.md)
 
-[To Control Page](./control.md)
+[To Final Report Page](./FinalReport.md)
 
 ### Drawing the Maze
 
@@ -143,6 +143,6 @@ Figure 4: test displaying
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wSyzOmto8Sg" frameborder="0" gesture="media" allowfullscreen></iframe>
 
-[To Control Page](./control.md)
+[To Final Report Page](./FinalReport.md)
 
 [To Home Page](../index.md)

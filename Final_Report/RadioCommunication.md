@@ -1,6 +1,6 @@
 [To Home Page](../index.md)
 
-[To Control Page](./control.md)
+[To Final Report Page](./FinalReport.md)
 
 ### Radio Communication
 
@@ -84,6 +84,6 @@ Figure 1: Serial monitor output from base station. A treasure is detected at pos
 Figure 2: Cell numbering for the maze. The robot always starts in position 19, facing North.
 
 
-[To Control Page](./control.md)
+[To Final Report Page](./FinalReport.md)
 
 [To Home Page](../index.md)
