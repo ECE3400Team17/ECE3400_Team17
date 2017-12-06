@@ -1,4 +1,4 @@
-[To Home Page](./index.md)
+[To Home Page](/index.md)
 
 # Milestone3
 
@@ -11,11 +11,11 @@ We are using the DFS (Depth First Search) method to solve the maze. For any maze
 
 For example, with the maze given below:
 
-![](./images/Milestone3/pic1.png)
+![](/images/Milestone3/pic1.png)
 
 We could represent the maze as the tree given below:
 
-![](./images/Milestone3/pic2.png)
+![](/images/Milestone3/pic2.png)
 
 
 ( ** represent the finishing the maze)
@@ -425,4 +425,4 @@ end
 ```
 
 
-[To Home Page](./index.md)
+[To Home Page](/index.md)

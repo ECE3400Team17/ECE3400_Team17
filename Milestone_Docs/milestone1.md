@@ -1,11 +1,11 @@
-[To Home Page](./index.md)
+[To Home Page](/index.md)
 
 # Milestone 1
 
 ## Hardware Implementation:
 We attached 4 sensors in a horizontal line at the bottom of our robot, two of them being in the middle of the car (S2, S3), and the other two being at relatively marginal area of the robot(S0, S5). 
 
-![](./images/Milestone1/sensor_followLine.PNG) 
+![](/images/Milestone1/sensor_followLine.PNG) 
 
 Besides connecting all the sensors to 5v and GND pins, we input the signals of the sensors to arduino's analog input pins:
 	
@@ -30,7 +30,7 @@ We connect sensor and Arduino, used a paper to block the light in front of a cer
 #### 2.     Develop the control algorithm
 The key in this logic is to make sure the car will automatically change its moving direction slightly so that it can move on line.
 
-![](./images/Milestone1/sensor_followLine.PNG) 
+![](/images/Milestone1/sensor_followLine.PNG) 
 
 * If S2 sees white and S3 sees black, adjust right;
 (the left sensor moves faster)
@@ -113,7 +113,7 @@ void loop(){
  
 For the grid on which our robot moves, the robot would turn 90 degrees at the crossroad points to draw a figure 8. Hence how to detect the place to turn is the first fundamental sub-routine we need to design. When the robot comes across a crossline, all of the sensors lined up at the bottom of the robot will be on the black tapes. That is to say, if all sensors have a very high input value, we make the robot start to rotate.
 
-![](./images/Milestone1/crossingMap.PNG) 
+![](/images/Milestone1/crossingMap.PNG) 
 
 #### 2.     Turning 90 degrees: 
 
@@ -127,7 +127,7 @@ To make the robot turn 90 degrees, we basically used the delay method. We make t
  
 The robot will move in a figure 8 if we make the turning direction in a loop shown below:
 
-![](./images/Milestone1/figure8.PNG) 
+![](/images/Milestone1/figure8.PNG) 
 
 That is :
  
@@ -304,4 +304,4 @@ void loop(){
 
 
 
-[To Home Page](./index.md)
+[To Home Page](/index.md)

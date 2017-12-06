@@ -1,4 +1,4 @@
-[To Home Page](./index.md)
+[To Home Page](/index.md)
 
 # Milestone4
 
@@ -266,7 +266,7 @@ bool detectRightWall() {
 
 ### Package format that the Robot sends the Base Station:
 
-![](./images/Milestone4/packets.PNG)
+![](/images/Milestone4/packets.PNG)
 
 
 ## Radio
@@ -285,7 +285,7 @@ There are 3 outputs from the Arduino: clock (sck) from pin 13; master out slave 
  
 With a voltage divider (5v to 3.3v) in between, we connect sck with GPIO_0_D[28], mosi with GPIO_0_D[24], and ss with GPIO_0_D[26].
 
-![](./images/Milestone4/spiBoard.jpg)
+![](/images/Milestone4/spiBoard.jpg)
 
 We would use the Arduino to send data with the SPI library with the following function:
 ```arduino 
@@ -450,4 +450,4 @@ The following is the vedio of the Monitor displaying the different squares and t
 We have have the milestone in components and be plan to put all our parts together to get a rea-time update while the Robot navigates the maze.
 
 
-[To Home Page](./index.md)
+[To Home Page](/index.md)
