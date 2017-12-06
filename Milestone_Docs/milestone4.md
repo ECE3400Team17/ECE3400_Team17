@@ -447,8 +447,6 @@ The renderer would first test if the pixel belonged to any feature such as a wal
 
 ##### Video of operation
 
-[Render coder running on test data](https://youtu.be/wSyzOmto8Sg)
-
 The following is the vedio of the Monitor displaying the different squares and the walls. The grey squares are blank space the and the colored ones are the ones that contain the treasures.:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wSyzOmto8Sg" frameborder="0" gesture="media" allowfullscreen></iframe>
