@@ -20,7 +20,7 @@ Here is a video of our pride and joy during the competition, featuring Thinesiya
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aayaG6dnSNM" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 
-Our boy never stops working. Literally. He doesn’t stop. But nonetheless, it was a wholesome learning experience in which we learned about hardware, software, & mental wear and tear due to our superb, marvelous communication skills. We like to think we grew as a team and as individuals thanks to this semester-long ~~hardship~~ team project.
+Our boy never stops working. Literally. He doesn’t stop. But nonetheless, it was a wholesome learning experience in which we learned about hardware, software, & mental wear and tear due to our superb, marvelous communication skills. We like to think we grew as a team and as individuals thanks to this semester-long team project.
 
 ### Robot
 We used an Arduino Mega for our robot becasue it allowed us to have more pinouts and enough memory. We even had a nice sheild for the Mega which was print in the Maker Lab:
