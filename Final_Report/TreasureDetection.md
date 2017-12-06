@@ -1,3 +1,7 @@
+[To Home Page](/index.md)
+
+[To Control Page](./control.md)
+
 ### Treasure Detection
 
 ##### Part 1: Building the Circuit
@@ -73,3 +77,8 @@ Figure 4: The arduino code for treasure detection.
 
 
 The main design choice for this revision of the treasure detection was to avoid using an analog input and the FFT library. We found that they just took up to much memory and decided that this way was simpler and provided more intuitive results. The code is listed in Figure 4, the *treasure_frequency()* function measures four high pulses and four low pulses of the square waves to get an average value. The high and low averages were then summed to get the period of the treasure signal from which the frequency is calculated and returned.
+
+
+[To Control Page](./control.md)
+
+[To Home Page](/index.md)

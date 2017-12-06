@@ -12,6 +12,8 @@ The goal of this project was to build an intelligent physical system that could 
 
 Our robot, unfortunately, did not meet all the requirements of the final competition, but he sure tried really hard. He also looks the part. We are proud of it, our robo son. While he stubbornly refused to use SPI to map the maze, he was adequate in wall detection, treasure detection, and maze traversal. 
 
+# Competition
+
 Here is a video of our pride and joy during the competition, featuring Thinesiya’s hair at some point:
 
 

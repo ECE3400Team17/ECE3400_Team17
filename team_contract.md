@@ -67,13 +67,13 @@ Every person on the team will be assigned a leadership role for at least two wee
 
 9/16 - 9/29 (Lab 2, Milestones 1 & 2): Mira A. Bhut
 
-9/30 - 10/20 (Lab 3, start Lab 4): Thinesiya Krishnathasan
+9/30 - 10/20 (Lab 3, start Lab 4): Peter Slater
 
 10/21 - 11/3 (Lab 4, Milestone 3): Yirong Alan Cheng
 
 11/4 - 11/17 (Milestone 4): Yijia Chen    
 
-11/18 - 12/5 (Final competition and submission deadline): (We could all pitch in for this moment) 
+11/18 - 12/5 (Final competition and submission deadline): Thinesiya Krishnathasan 
 
 ## We Commit
 I have participated in formulating the above standards, roles, and procedures. I understand that I am obligated to abide by these terms and conditions, and that if I do not, I will suffer the consequences as stated in this contract. 
