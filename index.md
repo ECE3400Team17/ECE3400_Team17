@@ -44,9 +44,7 @@ View our commitment: [Team Contract](./team_contract.md)
 * [Milestone 4](./Milestone_Docs/milestone4.md)
 
 ## Final Competition
-* [Introduction and Competition](./Final_Report/intro_comp.md)
-* [Design](./Final_Report/design.md)
-* [Control](./Final_Report/control.md)
+* [Team17 Final Report](./Final_Report/FinalReport.md)
 
 
 ## Meeting Minutes
