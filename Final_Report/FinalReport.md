@@ -92,7 +92,7 @@ We all helped each other, especially when integrating the components. But we spl
 * Radio Communication: Stephanie
 * SPI: Alan & Yijia
 * Map Drawing: Peter & Alan & Yijia
-* Final Product & Formating Website: Thinesiya  
+* Formating Website: Thinesiya  
 
 
 
