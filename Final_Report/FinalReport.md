@@ -22,11 +22,44 @@ Here is a video of our pride and joy during the competition, featuring Thinesiya
 
 Our boy never stops working. Literally. He doesn’t stop. But nonetheless, it was a wholesome learning experience in which we learned about hardware, software, & mental wear and tear due to our superb, marvelous communication skills. We like to think we grew as a team and as individuals thanks to this semester-long team project.
 
+### Design
+
+The objective of the challenge was to build a system that was capable of solving and mapping a maze once promoted by a 660 Hz signal. While the robot solves the maze, it is to report using radio to radio communication the current position of the robot, its previous occurrences, and the location and specific frequency of the treasures. To indicate completion, the robot is to play a sound. 
+
+In order to succeed these objectives, our group chose to maximize stability and reduce drag in order to develop a robot with high accuracy and speed. 
+
+The Bill of Materials utilized includes: 
+* Arduino Mega
+* 2 continuous rotation servo motors
+* 2 Wheels
+* 4 IR treasure sensors
+* 4 wall detection sensors
+* 4 line detection sensors
+* 1 microphone
+* 1 push button
+* 1 radio
+* 1 5V External Battery
+* 1 9V External Battery
+
+*Note: In our prelimary design, we were utilizing the Arduino Uno, which do not provide enough analog pins needed to integrate all sensors. Instead of utilizing a MUX to select between various signals, we decided to switch our microcontroller to the Arduino Mega which provided significantly more analog pins.* 
+
+In order to avoid a messy electronics cage, we minimized amounts of wires needed by designing and milling a shield for the Arduino Mega. This eliminated the need for a breakout board. 
+
+![Shield](./img/shield.png)
+
+We placed the line sensors underneath the body of the robot. This decision to w
+make them as close to the ground as possible was due to correlation between closer distances and accuracy. The code to prompt the robot to follow the black lines detected can be found later in this tutorial. 
+
+We then mounted the wall detectors on each axis of the robot. In competition, we found that because one of these sensors was tilted, our robot was unable to detect a wall and therefore incorrectly continued to turn into a wall. The algorithm and code for this is also provided later in this tutorial. It is important to know, that using these sensors, we figured out which threshold was needed to achieve wall detection. Through designing the system, we were sure to clear the path needed for the IR sensors
+
+Additionally, we included the 4 IR treasure sensors. These sensors also showed to have higher accuracy when placed very close to the the treasures. Therefore, we created 4 arms on each side of the robot to extend these circuits to be as close to the treasures without interference.
+
+In order to communicate the sensor detection, we mounted a radio on the top of the robot in order to communicate with the base station. 
+
+A few of the technical hardware solutions we needed to account for was the uneven distribution of weight. Because it was not an option to build a wider base due to space constraints, we built our system vertically. From this, we noticed that the robot had a tendency to tip forward and backward. We added ballpoint stabilizers in order to increase stability. As seen in competition videos, our robot not only made very controlled movements indicating stability.
+
+
 ### Robot
-We used an Arduino Mega for our robot becasue it allowed us to have more pinouts and enough memory. We even had a nice sheild for the Mega which was print in the Maker Lab:
-
-![Shield](./img/shield.png)  
-
 The two features that we added were: 
 
 * [Start Tone](./StartTone.md)
@@ -53,6 +86,7 @@ We all learned a lot about integrating all parts of ECE to great this final prod
 ### Work Distribution For the Report/Final Product
 We all helped each other, especially when integrating the components. But we split the work as follows amongst ourselves based on people coming to lab for component wise testing:
 * Introduction: Stephanie
+* Design: Mira
 * Improvements to Navigation Algorithm & Start Tone: Thinesiya 
 * Treasure Detection: Peter
 * Radio Communication: Stephanie
