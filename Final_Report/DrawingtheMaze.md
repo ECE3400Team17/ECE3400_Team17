@@ -49,6 +49,7 @@ It then passes the current requested X and Y pixel data through as cascade of if
 
 
 
+
 ##### Renderer
 
 ```verilog
@@ -96,14 +97,51 @@ The render takes the input data and provides a one to one mapping of relative pi
 
 The renderer would first test if the pixel belonged to any feature such as a wall and if the wall was to be rendered then the color would be set to the wall color. Otherwise the color would be set to a background color RED, GREEN or BLUE if there was a treasure and special colors to indicate that the robot was currently in the cell or that the robot had previously visited the cell, these were useful for algorithm testing purposes. Finally, if the cell had no special background then a default of white was used.
 
+##### Connection 
+We design the data format with 168 bits to display the maze according to the data transmitted from the arduino. 
+The most significant byte is the information of the robot.
+The rest 20 bytes represents 20 cell in the maze, we number them in Decoder using rpos, the order is shown in diagram below, the lowest byte represents information of the cell0, and so on.
 
+![Number of cells](./img/Number_of_cells.PNG) 
+
+Figure 3: Number of cells
+
+Arduino sent the data byte by byte, according to our data formate, we need 21 bytes to display the maze. Arduino sent the data byte by byte, to track the order of data, we set a index to record the byte coming from arduino. 
+
+```verilog
+	always @ (posedge ss)  begin
+ 		if(reset) 	
+ 			map_counter <= 25'b0;
+			map_counter <= map_counter + 1;
+    	if(map_counter==25'd20)
+    		map_counter <= 25'b0;//back to 0
+    ...
+```
+Then we put the 1-byte data recieved in its corresponding position in the 21 byte data
+
+```verilog
+    ...
+        else if(map_counter==25'd0) 
+			MAP[7:0] <=  map_part[1];
+		else if(map_counter==25'd1) 
+			MAP[15:8] <=  map_part[2];
+		...
+		else if(map_counter==25'd20) 
+			MAP[167:160] <=  map_part[0];
+		else MAP <= MAP;	
+	end		
+```	 
+
+To check whether the code works, we hardcode the map_part, turns out it can display maze normally. 
+
+![Test displaying](./img/test_displaying.jpg)
+Figure 4: test displaying 
 
 ##### Video of operation
 
 *The following is a vedio of the Render coder running on test data:*
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/wSyzOmto8Sg" frameborder="0" gesture="media" allowfullscreen></iframe>
-
 
 [To Control Page](./control.md)
 
